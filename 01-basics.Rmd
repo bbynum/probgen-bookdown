@@ -71,7 +71,7 @@ Each path from the top of the tree to the bottom represents one possible outcome
 We can now understand why getting one head is more likely as there are two paths, HT and TH, compared to only one path generating zero heads, TT, and only one path generating two heads, HH, resulting in the following probabilities:
 
 $$P(0\ heads) = P(TT) = (0.5)(0.5) = 0.25$$
-$$P(1\ head) = P(TH\ or\ HT) = P(TH) + P(HT) = (0.5)(0.5) + (0.5)(0.5) = 0.25 + 0.25 = 0.5$$
+$$\small P(1\ head) = P(TH\ or\ HT) = P(TH) + P(HT) = (0.5)(0.5) + (0.5)(0.5) = 0.25 + 0.25 = 0.5$$
 
 $$P(2\ heads) = P(HH) = (0.5)(0.5) = 0.25$$
 
@@ -185,3 +185,147 @@ A third correct approach uses **The Complement Principle** which observes that f
 $$P(at\ least\ one\ six) = 1 - P(no\ sixes) = 1 - P(N_{1}\ and\ N_{2}) = \\  1 - \frac{5}{6} \times \frac{5}{6} = \frac{11}{36}$$
 
 To summarize what we have learned about problem-solving here, there is more than one way to solve a probability problem (and some ways are wrong!). But several good strategies to use are the addition rule being careful not to double-count, divide and conquer by partitioning the event into mutually exclusive pieces, or use the complement principle to solve the opposite problem and subtract this from one. 
+
+
+## Appendix 1: Genetics Examples  
+
+In this appendix, you are introduced to the absolute basic terminology of genetics and how the principles of probability that you learned in chapter 1 can be applied to genetics.  
+We are going to adapt the examples from the main part of chapter 1 to genetics. We'll look at some of the same tree diagrams and simulations but within a simple genetics framework (rather than coin flips and urns).  
+
+### Genetics Terminology  
+
+For now, we are going to use the minimum of genetic lingo to get going:  
+
+**trait**: a characteristic, something you can see or measure (e.g. height, Huntington's disease)  
+
+**gene**: the DNA that controls a trait (e.g. hemoglobin beta gene, aka locus)  
+
+**variant**: one of several versions of a gene (e.g. HbS variant in hemoglobin beta that can cause Sickle Cell Anemia, aka allele)  
+
+**chromosome**: long, continuous stretch of DNA that contains many genes (humans have 2 copies of each of 22 numbered chromosomes and either 2 X chromosomes for females or an X and a Y for males)  
+
+**gamete**: 
+
+### Genetics Basics
+
+intro to genetics
+humans are diploid - 2 copies of every gene (can be same variant or different)
+meiosis making gametes
+fertilization
+
+2 chromosomes, one from mom and one from dad. just like H and T.
+you can think of each parent like a coin for each gene, and each gene-coin has 2 sides - one for each copy of the gene.
+
+gene and variant "notation" (don't call it that)
+
+### Genetics Simulation  
+
+explain sim
+
+```{r}
+# gametes for parents
+parent1_gametes <- c('A1','A1')
+parent2_gametes <- c('A2','A2')
+
+# list of 1000 gametes from each parent
+parent1 <- sample(parent1_gametes, 1000, replace = TRUE)
+parent2 <- sample(parent2_gametes, 1000, replace = TRUE)
+
+# put alleles together to make 1000 offspring
+cross_x1 <- paste(parent1, parent2, sep="/")
+offspring1 <- data.frame(table(cross_x1))
+
+# table
+knitr::kable(offspring1, caption = 'A1/A2 first cross simulation', booktabs = TRUE)
+
+# makes a bar graph of the frequency of genotypes
+ggplot(offspring1, aes(x=cross_x1, y=Freq)) + geom_bar(stat="identity")
+```
+
+
+```{r}
+# simulation of a simple genetic cross
+
+# 
+parent3_gametes <- c('A1','A2')
+parent4_gametes <- c('A1','A2')
+
+# 
+parent3 <- sample(parent3_gametes, 1000, replace = TRUE)
+parent4 <- sample(parent4_gametes, 1000, replace = TRUE)
+
+#
+cross_x2 <- paste(parent3, parent4, sep="/")
+
+offspring2 <- data.frame(table(cross_x2))
+offspring2
+
+# makes a bar graph of the frequency of genotypes
+# offspring is the data frame with results, aes() tells ggplot what to use for X and Y
+# geom_bar() makes the bars, and stat="identity" uses the Y value for the bar height
+ggplot(offspring2, aes(x=cross_x2, y=Freq)) + geom_bar(stat="identity")
+```
+
+
+
+```{r}
+# 
+parent1_gametes <- c('B','B')
+parent2_gametes <- c('b','b')
+
+# 
+parent1 <- sample(parent1_gametes, 1000, replace = TRUE)
+parent2 <- sample(parent2_gametes, 1000, replace = TRUE)
+
+#
+cross_x1 <- paste(parent1, parent2, sep="")
+
+offspring1 <- data.frame(table(cross_x1))
+offspring1
+
+# makes a bar graph of the frequency of genotypes
+ggplot(offspring1, aes(x=cross_x1, y=Freq)) + geom_bar(stat="identity")
+```
+
+```{r}
+# long form simulation of a simple genetic cross
+
+# 
+parent3_gametes <- c('B','b')
+parent4_gametes <- c('B','b')
+
+# 
+parent3 <- sample(parent3_gametes, 1000, replace = TRUE)
+parent4 <- sample(parent4_gametes, 1000, replace = TRUE)
+
+#
+cross_x2 <- paste(parent3, parent4, sep="")
+cross_x2 <- gsub("bB", "Bb", cross_x2)
+offspring2 <- data.frame(table(cross_x2))
+offspring2
+
+# makes a bar graph of the frequency of genotypes
+# offspring is the data frame with results, aes() tells ggplot what to use for X and Y
+# geom_bar() makes the bars, and stat="identity" uses the Y value for the bar height
+ggplot(offspring2, aes(x=cross_x2, y=Freq)) + geom_bar(stat="identity")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
