@@ -155,3 +155,9 @@ In order to make sure we obtain a sample space with equally likely outcomes we m
 
 Out of these six elements of the sample space, in four of the cases is the other side of the card the same color - B1, B2, R1, R2 - and in only two cases - B3, R3 - is the other side the opposite color. Thus, the probability the other card is the same color is $4/6$ and the probability the other card is a different color is $2/6$. Unfortunately, this means we are more likely to lose $\$1$ than to win $\$1$ and the game is not fair.
 
+## Exercises {#exercises}
+
+### Exercise - The Monty Hall Problem
+You are shown three doors.  Behind one is a car, behind the other two are goats.  You are to choose one door.  Hopefully you get the car.  To spice it up, Let’s Make a Deal host, Monty Hall, who knows exactly what is behind each door, reveals a donkey behind one of the doors that you have not chosen.  Now, there remain two doors – the one you chose, and the other unopened door.  Monty asks you if you want to switch doors.  Should you?
+
+

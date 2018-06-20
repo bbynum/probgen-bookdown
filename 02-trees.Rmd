@@ -70,7 +70,7 @@ $$\small P(1\ head) = P(TH\ or\ HT) = P(TH) + P(HT) = (0.5)(0.5) + (0.5)(0.5) = 
 
 $$P(2\ heads) = P(HH) = (0.5)(0.5) = 0.25$$
 
-### An Example with Rats {#an_example_with_rats}
+## An Example with Rats {#an_example_with_rats}
 
 Now consider the experiment of choosing three rats at random from a large population of rats that is 40% male and 60% female. Just as we did for coins, we can draw a tree diagram with branches representing the sex of the first, second, and third rat chosen and label the associated probabilities on each branch. Selecting the rats and identifying gender would be equivalent to having a coin that lands on one side 40% of the time and on the other 60% of the time. In the tree diagram below, we have added subscripts to identify whether we are referring to the first, second, or third rat selected.
 
@@ -86,11 +86,10 @@ What is the probability of selecting 1 female rat? There are actually three dist
 
 $$P(1\ female\ rat) = 3 \times (0.6) (0.4)^2 = 0.288$$
 
-#### Practice Exercise 1
+### Practice Exercise
 For the probability experiment described above, choosing three rats at random from a large population of rats that is 40% male and 60% female, what is the probability of getting 2 female rats? 3 female rats?
 
-#### Practice Exercise 2
-Draw a tree diagram for the probability experiment of flipping three coins. Label each node as either H for Heads or T for tails and label the probability along each branch. Find the probabilities of obtaining exactly 0 heads, 1 head, 2 heads, and 3 heads.
+
 
 ## The Urn Model {#the_urn_model}
 
@@ -128,5 +127,16 @@ In spite of the numerators being in different orders, we notice that these three
 
 $$P(1\ black) = 3 \times \frac{12}{20} \times \frac{8}{19} \times \frac{7}{18} = 0.295$$
 
-### Practice Problem
+### Practice Exercise
 For the urn described above containing 12 black and 8 white beads with three beads drawn at random without replacement, what is the probability of obtaining two black beads? What is the probability of obtaining three black beads?
+
+## Exercises {#exercises}
+
+### Exercise - Three Coins in the Fountain
+A penny, a nickel, and a dime are all flipped at the same time. Draw an appropriate tree diagram with associated probabilities labeled on each branch and find the probabilities of the following events: obtaining no heads, obtaining exactly one head, exactly two heads, and exactly three heads.
+
+### Exercise - More Coins
+Draw a tree diagram for the probability experiment of flipping four coins. Label each node as either H for Heads or T for tails and label the probability along each branch. Find the probability of obtaining no heads and the probability of obtaining at least one head and describe the relationship between these two probabilities.
+
+### Exercise - Class Committee
+Consider the experiment of selecting a committee of three individuals from a class of 20 of which 8 are male and 12 are female. Draw a tree diagram with associated probabilities for the gender of the first, second, and third person chosen for the committee and find the probabilities the committee consists of 0 females, 1 female, 2 females, and 3 females, respectively.
