@@ -5,6 +5,59 @@ library(mosaic)
 set.seed(2018)
 ```
 
+## Interlude - In an Attempt to Kill the Student, the Authors Solve the Same Simple Problem Four Ways (One Bad and Three Good) {#kill_the_student}
+
+By dissecting an easy problem we can gain insight into multiple problem-solving strategies that can be useful in other problems. Or we can kill motivation altogether. We will see. 
+
+In this interlude, we see one example worked multiple ways. The specific problem-solving tools will be expounded upon in subsequent chapters.
+
+## A Problem from the Game of Risk {#risk_problem}
+
+In the game of Risk competitors resolve attacks by rolling dice. Suppose that you are rolling two dice and you are interested in whether or not we obtain a six. We consider the following compound events.
+
+While there are six sides to each die, because we are primarily interested in whether or not we obtain a six, we will use the tree diagram below where event **S** represents getting a six and event **N** represents getting a non-six, ie., 1, 2, 3, 4, or 5.
+
+```{r nice-fig-31, fig.cap='Tree Diagram for Sixes on Two Dice', out.width='60%', fig.asp=.75, fig.align='center', echo=FALSE}
+knitr::include_graphics("01-basics-figures/tree_two_dice_sixes.png")
+```
+
+Even if we are tossing identical dice simultaneously it is helpful to conceptualize the experiment as if we are tossing the dice sequentially. We have added subscripts to identify whether we are referring to the first die tossed or the second die tossed.
+
+What is the probability of obtaining a six on both dice? Because the two events of getting a six on the first die and getting a six on the second die are **independent**, we can use **The Multiplication Rule for Independent Events** which says for any two independent events $E$ and $F$, $P(E\ and\ F) = P(E) \times P(F)$.
+
+$$P(two\ sixes) = P(S_{1}\ and\ S_{2}) = P(S_{1}) \times P(S_{2}) =  \frac{1}{6} \times \frac{1}{6}$$
+
+What is the probability of obtaining a six on at least one of the two dice? We examine this problem from four points of view - the wrong point of view, the addition rule, the partition technique, and the complement principle.
+
+#### The Wrong Way
+
+Here is a faulty answer:
+
+$$P(at\ least\ one\ six) = P(S_{1}\ or\ S_{2}) = P(S_{1})+ P(S_{2}) = \frac{1}{6} + \frac{1}{6} = \frac{2}{6} = \frac{1}{3}\ \ WRONG!$$
+
+Can you spot the problem? The issue is that one branch with a six on both dice, the overlap where both events $S_{1}$ and $S_{2}$ occur, was counted twice. 
+
+#### The Addition Rule
+
+Here is a correct version using what is called **The Addition Rule** where the overlap, since it was counted twice, is subtracted:
+
+$$P(at\ least\ one\ six) = P(S_{1}\ or\ S_{2}) = P(S_{1})+ P(S_{2}) - P(S_{1}\ AND\ S_{2}) =\\ \frac{1}{6} + \frac{1}{6} - \frac{1}{6} \times \frac{1}{6}  = \frac{11}{36}$$
+
+#### The Partition Approach
+
+An alternative approach is to **partition** the event into mutually exclusive parts. We might informally describe this approach as *divide and conquer*. In this case, there are three distinct branches that satisfy at least one six occurring:
+
+$$P(at\ least\ one\ six) = P(S_{1}\ and\ N_{2}) + P(N_{1}\ and\ S_{2}) + P(S_{1}\ and\ S_{2}) = \\  \frac{1}{6} \times \frac{5}{6} + \frac{5}{6} \times \frac{1}{6} + \frac{1}{6} \times \frac{1}{6} = \frac{11}{36}$$
+
+#### The Complement Principle
+
+A third correct approach uses **The Complement Principle** which observes that for any event $E$, $P(E) = 1 - P(not\ E)$. In this situation, we note $P(at\ least\ one) = 1 - P(none)$. Sometimes it is less work to find the complement of an event and subtract from one.
+
+$$P(at\ least\ one\ six) = 1 - P(no\ sixes) = 1 - P(N_{1}\ and\ N_{2}) = \\  1 - \frac{5}{6} \times \frac{5}{6} = \frac{11}{36}$$
+
+To summarize what we have learned about problem-solving here, there is more than one way to solve a probability problem (and some ways are wrong!). But several good strategies to use are the addition rule being careful not to double-count, divide and conquer by partitioning the event into mutually exclusive pieces, or use the complement principle to solve the opposite problem and subtract this from one. 
+
+
 ## Introduction {#introduction}
 
 Most of the interesting probability questions involve combinations of simple events. In this section we examine the probabilities of two events both occurring (**and**), at least one of two events occurring (**or**), as well as an event not occurring (**not**). In this chapter,  we describe the key probability principles related to **and**, **or**, and **not** statements, namely, the Multiplication Principle, Addition Principle, and Complement Principle, respectively. 
@@ -28,7 +81,42 @@ Game Two:	For a longer game, you could bet on the chance of getting at least one
 Estimate the probability of winning Game One and the probability of winning Game Two. No formal computation necessary at this point.
 <br/>
 <br/>
-Each of these games was an even-money game meaning the payoff ratio was 1:1 where you would either win or lose the exact amount bet. The Chevalier de Mere had a lot of experience and felt that the first game offered a better chance of winning than the second game but he could find no theoretical explanation as to why. In short, his mathematical reasoning was letting him down.
+Each of these games was an even-money game meaning the payoff ratio was 1:1 where you would either win or lose the exact amount bet. The Chevalier de Mere had a lot of experience and felt that the first game offered a better chance of winning than the second game but he could find no theoretical explanation as to why. In his mind, with the prevailing math at the time, the two games seemed comparable. If I am given 4 tries to get something that happens on average every 6 times then being given 24 tries at something that happens on average every 36 times should be comparable. But in reality it was not. In short, his mathematical reasoning was letting him down.
+
+We can use simulation to recreate the Chevalier's experience. The code below simulates 10,000 trials of Game One and documents the number of wins and losses.
+
+```{r nice-tab-32, tidy=FALSE}
+die_tosses <- matrix(sample(1:6, 4*10000, replace=TRUE), ncol=4) #generate die tosses
+sixes_logic <- die_tosses==6 #identify where there are sixes (TRUE=1, FALSE=0)
+number_of_sixes <- apply(sixes_logic, 1, sum) #Tabulate the number of sixes in each game
+game_one_winners <- number_of_sixes > 0 #Identify the winners - those with at least one six
+
+ #Calculate the proportion of game one winners
+knitr::kable(
+  prop.table(table(game_one_winners)), caption = 'Game One Simulation',
+  booktabs = TRUE
+)
+```
+
+The simulated Chevalier in this simulation would notice winning $51.39\%$ of the time. Let's simulate 10,000 trials of Game Two for comparison sake.
+
+```{r nice-tab-33, tidy=FALSE}
+
+two_Die_tosses <- matrix(sample(1:6, 24*10000, replace=TRUE) + 
+    sample(1:6, 24*10000, replace=TRUE), ncol=24) #generate 10000 trials of 24 two dice rolls
+double_sixes_logic <- two_Die_tosses==12 #identify double sixes (TRUE=1, FALSE=0)
+#head(double_sixes_logic, n=10) 
+number_of_double_sixes <- apply(double_sixes_logic, 1, sum) #tabulate number of double sixes in each game
+game_two_winners <- number_of_double_sixes > 0 #identify winners - those with at least one double six
+
+#Calculate the proportion of game two winners
+knitr::kable(
+  prop.table(table(game_two_winners)), caption = 'Game Two Simulation',
+  booktabs = TRUE
+)
+```
+
+This time, our simulated Chevalier sees he is winning only $49.04\%$ of the time. Hence the rub. Why is Game One better than Game Two?  
 
 Enter Pascal, stage right.  Here we let you do a little play-acting and audition for the role of Pascal by analyzing the games and determining the chances of winning each. To do this, let’s explore what we now call the multiplication rule and the complement rule.
 
@@ -89,57 +177,82 @@ The tree diagram for four tosses of a die considering the two outcomes of succes
 
 Examine the tree diagram above and identify the one branch in the sample space in which the gambler loses by shading it and find the probability of this occurrence.
 
-$$P(no \ sixes \ in \ four \ tosses)=P(S_{1}^{c} \ and \ S_{2}^{c} \ and \ S_{3}^{c} \ and \ S_{4}^{c}) = P(S_{1}^{c}) \cdot P(S_{2}^{c}) \cdot P(S_{3}^{c}) \cdot P(S_{4}^{c})=(5/6)^{4}$$
+$$P(no \ sixes \ in \ four \ tosses)=P(S_{1}^{c} \ and \ S_{2}^{c} \ and \ S_{3}^{c} \ and \ S_{4}^{c}) = \\ P(S_{1}^{c}) \cdot P(S_{2}^{c}) \cdot P(S_{3}^{c}) \cdot P(S_{4}^{c})=(5/6)^{4}$$
 Thus, by the Complement Principle,
 
-$$P(at \ least \ one \ six \ in \ four \ tosses) = 1 - P(no \ sixes \ in \ four \ tosses) = 1 - (5/6)^{4}$$
+$$P(at \ least \ one \ six \ in \ four \ tosses) = 1 - P(no \ sixes \ in \ four \ tosses) = \\ 1 - (5/6)^{4}$$
+
+### Practice Exercise
+Are the probabilities you have found for losing or winning Game One consistent with the Chevalier de Mere’s observation that he found Game One to be a favorable game? Explain.
+
+## Analyzing Game Two {#analyzing_game_two}
+Recall, in this game the gambler rolls a pair of dice and has 24 chances to obtain double-six winning the amount bet if she does and losing the bet if she does not obtain a double-six in 24 rolls. The Chevalier did not like this game as much. We analyze the game here to see if his lack of enthusiasm is justified.
+
+Consider what a tree diagram would look like for this game. If we let event $D_{i}$ represent getting a double six on the $i^{th}$ roll of the dice and $N_{i}$ represent its complement we can stop the branching as a win whenever we hit a double six. Examine
+
+Would it be realistic to use this tree diagram to assist us find the probability of a win? The main issue is there are so many ways to win - on the first toss, the second toss,..., the 24th toss. Who wants to add up 24 separate probabilities? Maybe the complement principle can help us since there is only one way to lose - never get a double six in all 24 tosses. Follow the chain of reasoning:
+
+$$P(win) = 1 - P(lose) = 1 -P(no \ sixes \ in \ 24 \ rolls) = 1 - P(N_{1} \ and \ N_{2} \ and \ ... \ N_{24}) = \\ 1 - P(N_{1}) \cdot P(N_{2}) \cdot ... \cdot P(N_{24}) = 1 - (35/36)^{24}$$
+
+We are using the fact that the different tosses of the dice are all independent. 
 
 
-## In an Attempt to Kill the Student, the Authors Solve the Same Simple Problem Four Ways (One Bad and Three Good) {#kill_the_student}
+### Practice Exercise 
+Compare the probabilities of winning and losing Game One with the probabilities of winning and losing Game Two and whether the opinions of the Chevalier de Mere’s games obtained through the simulation in R are consistent with the theoretical conclusions of our probability analysis.
 
-By dissecting an easy problem we can gain insight into multiple problem-solving strategies that can be useful in other problems. Or we can kill motivation altogether. We will see.
+### Practice Exercise
+Suppose that a fair coin is flipped five times. What is the probability there is at least one head? 
 
-In the game of Risk competitors resolve attacks by rolling dice. Suppose that you are rolling two dice and you are interested in whether or not we obtain a six. We consider the following compound events.
+## OR and the Addition Principle {#or_and_the_addition_principle}
 
-While there are six sides to each die, because we are primarily interested in whether or not we obtain a six, we will use the tree diagram below where event **S** represents getting a six and event **N** represents getting a non-six, ie., 1, 2, 3, 4, or 5.
+## Chapter Scenario - Paying Taxes {#chapter_scenario_paying_taxes}
 
-```{r nice-fig-31, fig.cap='Tree Diagram for Sixes on Two Dice', out.width='60%', fig.asp=.75, fig.align='center', echo=FALSE}
-knitr::include_graphics("01-basics-figures/tree_two_dice_sixes.png")
-```
+On the Diane Rehm show on Wednesday, September 28, 2016 a discussion of federal taxes occurred. Here is the link to the show: https://thedianerehmshow.org/. 
 
-Even if we are tossing identical dice simultaneously it is helpful to conceptualize the experiment as if we are tossing the dice sequentially. We have added subscripts to identify whether we are referring to the first die tossed or the second die tossed.
+A claim something like the following was made: 55% of individuals pay federal income tax, 70% pay payroll taxes, and 80% pay at least one of the two. Can you determine the percentage of individuals that pay federal income tax but not payroll taxes and the percentage who pay payroll taxes but not federal income tax?
 
-What is the probability of obtaining a six on both dice? Because the two events of getting a six on the first die and getting a six on the second die are **independent**, we can use **The Multiplication Rule for Independent Events** which says for any two independent events $E$ and $F$, $P(E\ and\ F) = P(E) \times P(F)$.
+## Class Composition Example
 
-$$P(two\ sixes) = P(S_{1}\ and\ S_{2}) = P(S_{1}) \times P(S_{2}) =  \frac{1}{6} \times \frac{1}{6}$$
+Suppose we took a poll of all 25 students in class and asked them to identify whether or not they were from Utah and whether or not they are planning to major in a business-related field with the following results:
 
-What is the probability of obtaining a six on at least one of the two dice? We examine this problem from four points of view - the wrong point of view, the addition rule, the partition technique, and the complement principle.
+* 13 are from Utah
+* 8 plan to major in a business-related field
+* 5 are from Utah AND plan to major in a business-related field
 
-#### The Wrong Way
+If one student is chosen at random what is the probability they are from Utah OR plan to major in a business-related field?
 
-Here is a faulty answer:
+Let's let U represent the event of being from Utah and B the event of planning to major in a buisness-related field.
 
-$$P(at\ least\ one\ six) = P(S_{1}\ or\ S_{2}) = P(S_{1})+ P(S_{2}) = \frac{1}{6} + \frac{1}{6} = \frac{2}{6} = \frac{1}{3}\ \ WRONG!$$
+### Practice Exercise
+What is wrong with the following approach?
 
-Can you spot the problem? The issue is that one branch with a six on both dice, the overlap where both events $S_{1}$ and $S_{2}$ occur, was counted twice. 
+$$P(U \ or \ B) = P(U)+P(B)= 13/25 + 8/25 = 21/25 \ WRONG!!!$$
 
-#### The Addition Rule
+You may have spotted the mistake that some individuals have been double-counted. The Addition Principle will take care of this.
 
-Here is a correct version using what is called **The Addition Rule** where the overlap, since it was counted twice, is subtracted:
+$$P(U \ or \ B) = P(U)+P(B)-P(U \ and \ B) = 13/25 + 8/25 - 5/25 = 16/25$$
 
-$$P(at\ least\ one\ six) = P(S_{1}\ or\ S_{2}) = P(S_{1})+ P(S_{2}) - P(S_{1}\ AND\ S_{2}) =\\ \frac{1}{6} + \frac{1}{6} - \frac{1}{6} \times \frac{1}{6}  = \frac{11}{36}$$
+Venn Diagrams are a helpful way to visualize the relationships between overlapping events. Two overlapping events may be represented in a Venn diagram with two overlapping circles. Think of the rectangle containing them as the entire sample space.
 
-#### The Partition Approach
+Examine the three Venn diagrams below. The first Venn diagram illustrates the compound event each region represents. The second Venn diagram identifies the number of individuals in each region. The third Venn diagram identifies the proportion of the population in each region, or, equivalently, the probability of selecting an individual in the given region if one person was chosen at random. 
 
-An alternative approach is to **partition** the event into mutually exclusive parts. We might informally describe this approach as *divide and conquer*. In this case, there are three distinct branches that satisfy at least one six occurring:
 
-$$P(at\ least\ one\ six) = P(S_{1}\ and\ N_{2}) + P(N_{1}\ and\ S_{2}) + P(S_{1}\ and\ S_{2}) = \\  \frac{1}{6} \times \frac{5}{6} + \frac{5}{6} \times \frac{1}{6} + \frac{1}{6} \times \frac{1}{6} = \frac{11}{36}$$
+## Exercises {#exercises}
 
-#### The Complement Principle
+### Exercise - Venn for Four
+Create a Venn diagram template for four events {A, B, C, D} and accurately label each region.
 
-A third correct approach uses **The Complement Principle** which observes that for any event $E$, $P(E) = 1 - P(not\ E)$. In this situation, we note $P(at\ least\ one) = 1 - P(none)$. Sometimes it is less work to find the complement of an event and subtract from one.
+### Exercise - Class Schedules
+Suppose that a group of 100 first year students were given a survey indicating that 58 of them are registered for a math class and 40 of them are registered for a foreign language class. Can we safely assume that 98 of them are registered for either a math class or a foreign language class? Suppose we are told that 22 of them are registered for both a math class and a foreign language class, then determine how many are registered for a math class or a foreign language class.
 
-$$P(at\ least\ one\ six) = 1 - P(no\ sixes) = 1 - P(N_{1}\ and\ N_{2}) = \\  1 - \frac{5}{6} \times \frac{5}{6} = \frac{11}{36}$$
+### Exercise - Venn for Three
+Consider the generic Venn diagram for three overlapping events - A, B, C - given below. Identify the event associated with each region (For example, region 2 is **A and B and not C**).
 
-To summarize what we have learned about problem-solving here, there is more than one way to solve a probability problem (and some ways are wrong!). But several good strategies to use are the addition rule being careful not to double-count, divide and conquer by partitioning the event into mutually exclusive pieces, or use the complement principle to solve the opposite problem and subtract this from one. 
+
+
+
+
+
+
+
 

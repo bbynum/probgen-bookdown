@@ -30,7 +30,7 @@ Consider a die is tossed and we examine whether the outcome. We say it is a fair
 
 Running a simulation of tossing a die might be instructive here. The R code below performs 10,000 trials of tossing a die and recording the results in both a table and a histogram. At this point, focus on the output and don't worry so much about the R code.
 
-```{r nice-tab, tidy=FALSE}
+```{r nice-tab-11, tidy=FALSE}
 die <- sample(x=c(1,2,3,4,5,6), size=10000, replace = TRUE)
 sim_die <- data.frame(die)
 knitr::kable(
@@ -41,7 +41,7 @@ knitr::kable(
 
 Because samples vary, we do not get each face appearing exactly $1/6$ of the time but when we examine the data visually in a histogram we see how similar the outcomes are.
 
-```{r nice-fig-11, fig.cap='Histogram for Tossing One Die', out.width='80%', fig.asp=.75, fig.align='center'}
+```{r nice-fig-12, fig.cap='Histogram for Tossing One Die', out.width='80%', fig.asp=.75, fig.align='center'}
 ggplot(data=sim_die, aes(x=die)) + geom_histogram(aes(y=..density..), binwidth = 1)
 ```
 
