@@ -1,7 +1,0 @@
-# Combinations and Permutations
-
-Combinations and Permutations
-
-## Combinations
-
-## Permutations

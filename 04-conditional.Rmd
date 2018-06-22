@@ -1,9 +1,0 @@
-# Conditional Probability {#conditional}
-
-Conditional probability is a thing.
-
-## Example one  
-some stuff
-
-## Example two  
-more stuff

@@ -1,4 +1,0 @@
-# Multinomial Distribution {#multinom}
-
-Beyond the Binomial to the Multinomial...
-

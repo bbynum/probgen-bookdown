@@ -1,4 +1,0 @@
-# Normal Distribution {#normal}
-
-Not everything is Normal (we certainly aren't), but it's useful!
-
