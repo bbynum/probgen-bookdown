@@ -1,0 +1,44 @@
+# Permutations and Combinations {#permutations_and_combinations}
+
+## Introduction {#introduction}
+
+Determine correct probabilities relies heavily on correct counting. Combinatorics is the mathematics of counting and in this chapter we learn how to count ordered arranements (permutations) and unordered collections (combinations) for the ultimate purpose of tracking the probabilities of repeated events.
+
+## Chapter Scenario - Three Counting Problems and an Algebra Problem {#chapter_scenario_three_counting_problems}
+
+Below are three counting problems and one algebra problem. On the surface these appear to be unrelated problems but can you find a deep connection between them? It might help to team up with classmates to gain multiple perspectives. 
+
+Problem 1: Write down all the possible birth orderings for a family of three boys and two girls (for example, BGBBG is one of them).
+
+Problem 2: Find the number of ways that you can walk along the blocks from point A to point B by a path of shortest length.
+
+```{r nice-fig-91, fig.cap='Block-walking Scenario', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+knitr::include_graphics("01-basics-figures/block_walking_scenario.png")
+```
+
+Problem 3: How many ways could two captains be chosen from the five starting members of a basketball team?
+
+Problem 4: Expand the following: $(p + q)^{5}$.
+
+
+## Permutations {#permutations}
+
+Permutations are ordered arrangements. If we are given n distinct objects and are to select k of them and place them in order, we call this the permutation of k objects taken from n and symbolize it as P(n,k). By looking at some examples we will determine how to calculate permutations.
+
+One key to calculating permutations is using the Fundamental Principle of Counting. 
+
+## Fundamental Principle of Counting Principle{#fundamental_principle_counting}
+Consider a multi-step process requiring k steps. If Step1 can be done $n_{1}$ ways, Step2 done $n_{2} ways, and so on up to Step k being done $n_{k} ways, then the total number of ways the entire process can be done $n_{1} \cdot n_{2} \cdot ... \codt n_{k}$ ways.
+
+Suppose you are playing scrabble and have four distinct letters, say A, S, N, and P. Not all of rearrangements are real words, of course, but how many total rearrangements of these four letters would we need to consider to check all the possible permuations? A tree diagram helps and shows there are 24 different orderings. Using the FPC there are four choices for the first letter, three for the second, two for the third, and only one choice left for the last letter making the total $4 \cdot 3 \cdot 2 \cdot 1=4!=24$. Thus, $P(4,4)=4!=24$.
+
+
+
+## Combinations {#combinations}
+
+## Exercises {#exercises}
+
+### Exercise - The Name Game 
+Find the number of possible rearrangements for the following names - JON, BRAN, TYRION, TORMUND, KERMIT, ARYA, SANSA, JOFFREY, ELLARIA, CERSEI, EDDARD, LITTLEFINGER, DAENERYS TARGARYEN (as one word), DAENERYS TARGARYEN (as two words keeping first name letters together and last name letters together).
+
+
