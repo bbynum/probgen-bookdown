@@ -120,6 +120,10 @@ The gambler bets on the chance of getting at least one six on four rolls of a di
 
 Consider drawing a tree diagram for four tosses of the die including the probabilities along each branch. For each toss of the die we need only identify two branches – NOT SIX (1,2,3,4 or 5) or SIX (6). You can stop the branch whenever a six occurs since the gambler wins in this instance.
 
+```{r nice-fig-63, fig.cap='Tree Diagram for Game One', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+knitr::include_graphics("01-basics-figures/chevalier_game_one.png")
+```
+
 The tree diagram for four tosses of a die considering the two outcomes of success or failure of getting a six on each toss generates sixteen branches through the tree but only five branches if we terminate the tree whenever we get a success. These branches are not equally likely, though, so we need to be careful about calculating probabilities. When finding the probability of at least one success in an experiment like this we often utilize the Complement Rule because while there are many branches that end in a success there is only one branch of all failures so this one would be easier to calculate the probability of than adding together the other branches. 
 
 Examine the tree diagram above and identify the one branch in the sample space in which the gambler loses by shading it and find the probability of this occurrence.
@@ -129,13 +133,17 @@ Thus, by the Complement Principle,
 
 $$P(at \ least \ one \ six \ in \ four \ tosses) = 1 - P(no \ sixes \ in \ four \ tosses) = \\ 1 - (5/6)^{4}$$
 
-### Practice Exercise
+### Practice 
 Are the probabilities you have found for losing or winning Game One consistent with the Chevalier de Mere’s observation that he found Game One to be a favorable game? Explain.
 
 ## Analyzing Game Two {#analyzing_game_two}
 Recall, in this game the gambler rolls a pair of dice and has 24 chances to obtain double-six winning the amount bet if she does and losing the bet if she does not obtain a double-six in 24 rolls. The Chevalier did not like this game as much. We analyze the game here to see if his lack of enthusiasm is justified.
 
-Consider what a tree diagram would look like for this game. If we let event $D_{i}$ represent getting a double six on the $i^{th}$ roll of the dice and $N_{i}$ represent its complement we can stop the branching as a win whenever we hit a double six. Examine
+Consider what a tree diagram would look like for this game. If we let event $D_{i}$ represent getting a double six on the $i^{th}$ roll of the dice and $N_{i}$ represent its complement we can stop the branching as a win whenever we hit a double six. 
+
+```{r nice-fig-64, fig.cap='Venn Diagram of Class Composition', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+knitr::include_graphics("01-basics-figures/chevalier_game_two.png")
+```
 
 Would it be realistic to use this tree diagram to assist us find the probability of a win? The main issue is there are so many ways to win - on the first toss, the second toss,..., the 24th toss. Who wants to add up 24 separate probabilities? Maybe the complement principle can help us since there is only one way to lose - never get a double six in all 24 tosses. Follow the chain of reasoning:
 
@@ -178,7 +186,13 @@ $$P(match)=1-P(no \ match)=1-(365/365) \cdot (364/365) \cdot (363/365) \cdot (36
 ###Practice
 Extend this thinking to find the probability of no match with five people.
 
-We want to describe the solution in general for any number of people n. A computational shortcut will help. 
+We want to describe the solution in general for any number of people n according to the tree diagram below. 
+
+```{r nice-fig-65, fig.cap='Tree Diagram for Birthday Problem', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+knitr::include_graphics("01-basics-figures/birthday_problem_tree_diagram.png")
+```
+
+A computational shortcut will help us calculate the result. 
 
 Given n people, the probability of a birthday match is 
 

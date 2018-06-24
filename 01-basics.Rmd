@@ -132,7 +132,6 @@ Note that, in general, for events E and F, $P(E \ | \ F)$ means something very d
 In some cases, $P(E \ | \ F)$ is the same as $P(E)$. In this case, knowledge that F occurred did not change the probability of E occurring and we say these two events are **independent**. Here is the formal definition.
 
 
-
 ### Definition: Independent
 Events E and F are independent if and only if $P(E \ | \ F) = P(E)$.
 <br/>
@@ -159,4 +158,7 @@ Out of these six elements of the sample space, in four of the cases is the other
 
 ### Exercise - The Monty Hall Problem
 You are shown three doors.  Behind one is a car, behind the other two are goats.  You are to choose one door.  Hopefully you get the car.  To spice it up, Let’s Make a Deal host, Monty Hall, who knows exactly what is behind each door, reveals a donkey behind one of the doors that you have not chosen.  Now, there remain two doors – the one you chose, and the other unopened door.  Monty asks you if you want to switch doors.  Should you?
+
+### Exercise - Twelve-sided Die
+Consider the different probability experiment of tossing one 12-sided Dungeons and Dragons dice. Describe the sample space and identify several events and find the probabilities of these simple events as well as at least one complement, one AND, one OR, and one conditional probability. Use probability function notation where appropriate.
 

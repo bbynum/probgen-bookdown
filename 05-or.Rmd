@@ -37,16 +37,23 @@ You may have spotted the mistake that some individuals have been double-counted.
 
 $$P(U \ or \ B) = P(U)+P(B)-P(U \ and \ B) = 13/25 + 8/25 - 5/25 = 16/25$$
 
-From the information above we can determine there are 9 individuals that are not from Utah and not planning on majoring in business-related field. Venn Diagrams are a helpful way to visualize the relationships between overlapping events like these. Examine the Venn diagram below illustrating the probability within each region.
-
+From the information above we can determine there are 9 individuals that are not from Utah and not planning on majoring in business-related field. Venn Diagrams are a helpful way to visualize the relationships between overlapping events like these. 
 
 Two overlapping events may be represented in a Venn diagram with two overlapping circles. Think of the rectangle containing them as the entire sample space.
 
 Examine the three Venn diagrams below. The first Venn diagram illustrates the compound event each region represents. The second Venn diagram identifies the number of individuals in each region. The third Venn diagram identifies the proportion of the population in each region, or, equivalently, the probability of selecting an individual in the given region if one person was chosen at random. 
 
+```{r nice-fig-51, fig.cap='Venn Diagram of Class Composition', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+knitr::include_graphics("01-basics-figures/venn_class_composition.png")
+```
+
 ## Venn Diagrams for Three Events
 
 A Venn diagram for three overlapping events is represented with three overlapping circles creating the eight regions all labeled in the diagram below. By the Fundamental Principle of Counting, to identify a region there are two choices for each event - out or in - leading to $2^{3}=8$ total regions. 
+
+```{r nice-fig-52, fig.cap='Venn Diagram of Three Events', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+knitr::include_graphics("01-basics-figures/venn_three_events.png")
+```
 
 ## Example - Watching Sports
 A group of students was asked whether or not they like to watch basketball, soccer, and/or football. Here are the results of the survey.
@@ -75,10 +82,9 @@ $$0.80=0.55+0.70-P(F \ and \ P)$$
 
 Solving we find $P(F \ and \ P)=0.55 + 0.70 - 0.80=0.45$ allowing us to complete the Venn diagram.
 
-
-
-
-
+```{r nice-fig-53, fig.cap='Venn Diagram of Paying Taxes', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+knitr::include_graphics("01-basics-figures/venn_paying_taxes.png")
+```
 
 
 ## Exercises {#exercises}

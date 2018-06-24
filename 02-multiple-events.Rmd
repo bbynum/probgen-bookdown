@@ -56,6 +56,10 @@ Consider a multi-step process requiring k steps. If Step1 can be done $n_{1}$ wa
 
 Furthermore, since all outcomes on each individual die are equally likely these 36 possibilities represent equally likely outcomes for the experiment of tossing two dice. We can use this sample space to answer some questions.
 
+```{r nice-fig-23, fig.cap='Sample Space for Two Dice', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+knitr::include_graphics("01-basics-figures/two_dice_sample_space.png")
+```
+
 For example, there is only one combination of dice that yields a sum of 2 (that is 1+1) and there is only one combination of dice that yields a sum of 3 (that is 1+2) but a sum of 3 is twice as likely because when we distinguish the dice we see 1+2 and 2+1 as distinct options and we get $P(sum=2)=1/36$ while $P(sum=3)=2/36$. 
 
 Let's try another one: which is more likely, a sum of 6 or a sum of 7? From the sample space we see five ways to obtain a 6 and six ways to obtain a 7 indicating a sum of 7 is more likely. Stated as probabilities, $P(sum=6)=5/36$ and $P(sum=7)=6/36$.
@@ -72,6 +76,10 @@ F: The sum is less than or equal to 5.
 
 It is helpful to identify members of the sample space satisfying each event. 
 
+```{r nice-fig-24, fig.cap='Sample Space for Two Dice with Events E and F', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+knitr::include_graphics("01-basics-figures/two_dice_sample_space_with_evevents.png")
+```
+
 We see $P(E)=18/36=1/2=0.5$ and also note $P(not \ E)=18/36=1/2=0.5$.
 From the sample space, $P(F)=10/36$ and $P(not \ F)=26/36$.
 
@@ -81,7 +89,15 @@ We think of **OR** as an inclusive or representing the event one or the other or
 
 Conditional probability is trickier. $P(E \mid F)$ means the probability that the sum is even given we know the sum is less than or equal to five. To handle this, we assume the sum is less than or equal to five and this narrows down our sample space to 10 possibilities of which 4 have an even sum yielding $P(E \mid F)=4/10$. 
 
+```{r nice-fig-25, fig.cap='Sample Space for Two Dice Given F', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+knitr::include_graphics("01-basics-figures/two_dice_sample_space_given_F.png")
+```
+
 It means something quite different to consider $P(F \mid E)$, the probability the sum is less than or equal to five given it is even. Out of the 18 even sums, we find 4 of them are less than or equal to five yielding $P(F \mid E)=4/18$.
+
+```{r nice-fig-26, fig.cap='Sample Space for Two Dice Given E', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+knitr::include_graphics("01-basics-figures/two_dice_sample_space_given_E.png")
+```
 
 It is important to note we found all of the probabilities above by focusing on the meaning of the events rather than some fancy formula.
 
@@ -118,7 +134,7 @@ Tallying the orderings we see there are 25 orderings yielding a sum of 9 and 27 
 
 A simulation might confirm this.
 
-```{r nice-tab-23, tidy=FALSE}
+```{r nice-tab-27, tidy=FALSE}
 die1 <- sample(x=1:6, size=10000, replace = TRUE)
 die2 <- sample(x=1:6, size=10000, replace = TRUE)
 die3 <- sample(x=1:6, size=10000, replace = TRUE)
@@ -131,7 +147,7 @@ knitr::kable(
 ```
 
 
-```{r nice-fig-24, fig.cap='Histogram for Tossing Three Dice', out.width='80%', fig.asp=.75, fig.align='center'}
+```{r nice-fig-28, fig.cap='Histogram for Tossing Three Dice', out.width='80%', fig.asp=.75, fig.align='center'}
 ggplot(data=sim_three_dice, aes(x=sum3)) + geom_histogram(aes(y=..density..), binwidth = 1)
 ```
 
