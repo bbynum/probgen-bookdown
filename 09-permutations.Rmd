@@ -29,8 +29,8 @@ Suppose that members of our class, all 20 of you, are to be seated in a row. How
 
 What if Alice and Bob refuse to sit beside one another? Using the Complement Principle, let's force them to sit together, count this, and subtract from the total. Think of putting a rubberband around them then we have only 19 things to order which can be done $19!$ ways and then there are 2 orders for Alice and Bob so seating orders with them together is $2! \cdot 19!$. Putting this together
 
-$$(\text{# of ways with Alice and Bob apart}) = \\ 
-(\text{Total}) - (\text{# of ways with Alice and Bob together}) = \\
+$$(\# \text{ of ways with Alice and Bob apart}) = \\ 
+(\text{Total}) - (\# \text{ of ways with Alice and Bob together}) = \\
 20! - 2! \cdot 19!$$
 
 What if there are 10 men and 10 women and we want no two men sitting together and no two women sitting together? Suppose we start with a man. Then alternating sex and using the Fundamental Counting Principle we see this can be done $10 \cdot 10 \cdot 9 \cdot 9 \cdot 8 \cdot ... \cdot 1 \cdot 1 = 10! \cdot 10!$. Since we could start either with a man or with a women, two choices, the total is $2 \cdot 10! \cdot 10!$.

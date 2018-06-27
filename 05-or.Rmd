@@ -44,7 +44,7 @@ Two overlapping events may be represented in a Venn diagram with two overlapping
 Examine the three Venn diagrams below. The first Venn diagram illustrates the compound event each region represents. The second Venn diagram identifies the number of individuals in each region. The third Venn diagram identifies the proportion of the population in each region, or, equivalently, the probability of selecting an individual in the given region if one person was chosen at random. 
 
 ```{r nice-fig-51, fig.cap='Venn Diagram of Class Composition', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
-knitr::include_graphics("01-basics-figures/venn_class_composition.png")
+knitr::include_graphics("01-basics-figures/venn_diagrams_class_composition.png")
 ```
 
 ## Venn Diagrams for Three Events

@@ -52,7 +52,7 @@ It is often helpful to clarify a probability experiment and its sample space by 
 Since there are 6 ways to roll the first white die and 6 ways to roll the second black die there are $6 \cdot 6 = 36$ ways to roll both dice. This insight uses the Fundamental Counting Principle described below:
 
 ## Fundamental Counting Principle{#fundamental_counting_principle}
-Consider a multi-step process requiring k steps. If Step1 can be done $n_{1}$ ways, Step2 done $n_{2} ways, and so on up to Step k being done $n_{k} ways, then the total number of ways the entire process can be done $n_{1} \cdot n_{2} \cdot ... \codt n_{k}$ ways.
+Consider a multi-step process requiring k steps. If Step1 can be done $n_{1}$ ways, Step2 done $n_{2} ways, and so on up to Step k being done $n_{k} ways, then the total number of ways the entire process can be done $n_{1} \cdot n_{2} \cdot ... \cdot n_{k}$ ways.
 
 Furthermore, since all outcomes on each individual die are equally likely these 36 possibilities represent equally likely outcomes for the experiment of tossing two dice. We can use this sample space to answer some questions.
 
@@ -77,7 +77,7 @@ F: The sum is less than or equal to 5.
 It is helpful to identify members of the sample space satisfying each event. 
 
 ```{r nice-fig-24, fig.cap='Sample Space for Two Dice with Events E and F', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
-knitr::include_graphics("01-basics-figures/two_dice_sample_space_with_evevents.png")
+knitr::include_graphics("01-basics-figures/two_dice_sample_space_with_events.png")
 ```
 
 We see $P(E)=18/36=1/2=0.5$ and also note $P(not \ E)=18/36=1/2=0.5$.
