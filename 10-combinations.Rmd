@@ -1,0 +1,63 @@
+# Combinations {#combinations}
+
+## Introduction {#introduction}
+
+While permutations count ordered arrangements, combinations are unordered collections of items.
+
+
+## Chapter Scenario - Three Counting Problems and an Algebra Problem {#chapter_scenario_three_counting_problems}
+
+Below are three counting problems and one algebra problem. On the surface these appear to be unrelated problems but can you find a deep connection between them? It might help to team up with classmates to gain multiple perspectives. 
+
+Problem 1: Write down all the possible birth orderings for a family of three boys and two girls (for example, BGBBG is one of them).
+
+Problem 2: Find the number of ways that you can walk along the blocks from point A to point B by a path of shortest length.
+
+```{r nice-fig-101, fig.cap='Block-walking Scenario', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+knitr::include_graphics("01-basics-figures/block_walking_scenario.png")
+```
+
+Problem 3: How many ways could two captains be chosen from the five starting members of a basketball team?
+
+Problem 4: Expand the following: $(p + q)^{5}$.
+
+## Example - From Class Line-up to Class Committee {#example_class_lineup_to_class_committee}
+
+If we were to select four people from our class of 20 and line them up, this could be done $P(20,4)=20!/16!=20 \cdot 19 \cdot 18 \cdot 17$ ways. But if we are interested in the number of unordered committees of four rather than ordered line-ups we notice that for each selection of four people, there were $4!=4 \cdot 3 \cdot 2 \cdot 1$ line-ups counted so the number of unordered committees is $(20 \cdot 19 \cdot 18 \cdot 17)/(4 \cdot 3 \cdot 2 \cdot 1)$. 
+
+We call an undordered collection of k objects selected from n distinct objects a combination and use the notation $\dbinom{n}{k}$. A simple way to think of this is to find the permutation of k objects selected from n objects, $P(n,k)=n!/(n-k)!$ and divide out the order, $k!$. Putting all this together we get the following formula.
+
+## Combination Formula
+
+The number of unordered collections of k objects selected from n distinct objects is 
+
+$$\dbinom{n}{k}=\frac{P(n,k)}{k!}=\frac{n!}{(n-k)!k!}=
+\frac{n(n-1)(n-2)...(n-k+1)}{k(k-1)(k-2)...3 \cdot 2 \cdot 1}$$
+
+Using this notation to recap the number of unordered committees selected from 20 students we see
+
+$$\dbinom{20}{4}=\frac{20!}{16! \cdot 4!}=\frac{20 \cdot 19 \cdot 18 \cdot 17}{4 \cdot 3 \cdot 2 \cdot 1}$$
+
+
+## Exercises 
+
+### Exercise - Alphabet
+Consider the 26 letters in our alphabet.
+
+(a) How many different three letter strings can we make if repetition of letters is allowed?
+
+(b) How many different three letter strings can we make if repetition of letters is not allowed?
+
+(c) How many ways could three different letters be chosen?
+
+### Exercise - Facts about Combinations
+
+(a) What is $\dbinom{n}{0}$ for all $n \geq 1$?
+(b) What is $\dbinom{n}{1}$ for all $n \geq 1$?
+(c) What is $\dbinom{n}{n}$ for all $n \geq 1$?
+(d) What is the relationship between $\dbinom{n}{k}$ and $\dbinom{n}{n-k}$?
+
+
+
+
+
