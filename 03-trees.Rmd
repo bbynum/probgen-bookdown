@@ -139,3 +139,6 @@ Draw a tree diagram for the probability experiment of flipping four coins. Label
 
 ### Exercise - Class Committee
 Consider the experiment of selecting a committee of three individuals from a class of 20 of which 8 are male and 12 are female. Draw a tree diagram with associated probabilities for the gender of the first, second, and third person chosen for the committee and find the probabilities the committee consists of 0 females, 1 female, 2 females, and 3 females, respectively.
+
+### Exercise - Kitty Litter
+Turns out much to our surprise the new cat was PREGNANT! Now, we have four little kittens we are not sure what to do with. They are adorable. Wonder about their gender!? I think that the most likely possibility is two girl kittens and two boy kittens. My partner begs to differ and thinks a 3-1 split is more likely. Can you help us out by thoroughly analyzing this situation and clearly explaining which of us is right? We have a bet and I don’t want to be the one to take out the litter box for the next year! Feel free to use your new ideas about visualizing sample spaces with a tree diagram. Be sure to explain your thinking so we can resolve this bet!
