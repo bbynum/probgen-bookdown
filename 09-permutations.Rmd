@@ -1,5 +1,10 @@
 # Permutations {#permutations}
 
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+library(mosaic)
+set.seed(2018)
+```
+
 ## Introduction {#introduction}
 
 Determine correct probabilities relies heavily on correct counting. Combinatorics is the mathematics of counting and in this chapter we learn how to count ordered arranements (permutations) and unordered collections (combinations) for the ultimate purpose of tracking the probabilities of repeated events.
