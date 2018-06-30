@@ -69,7 +69,7 @@ Letting B represent a boy birth and G a girl birth and putting two B's and three
 We can view the problem of identifying a particular birth ordering of two boys and three girls as selecting the birth order position of the two boys or the birth order position of the three girls. Selecting the birth order position of the two boys is equivalent to selecting an unordered collection of two numbers from the set identifying the five birth order positions, {1,2,3,4,5}. This can be done $\dbinom{5}{2}=\frac{5!}{3! \cdot 2!}=10$ ways. Equivalently, selecting the birth order position of the three girls is equivalent to selecting an unordered collection of three numbers from the set {1,2,3,4,5} which can be done $\dbinom{5}{3}=\frac{5!}{2! \cdot 3!}=10$ ways, arriving at the same solution.
 
 
-### Problem 2: 
+### Problem 2 - Block-walking 
 Find the number of ways that you can walk along the blocks from point A to point B by a path of shortest length.
 
 ```{r nice-fig-102, fig.cap='Block-walking Scenario', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
@@ -90,7 +90,7 @@ If we identify the directions one can travel as down (D) or across (A), then a p
 
 In solving the problem using a combinations perspective we see that under the surface, Problems 1 and 2 are equivalent.
 
-### Problem 3: 
+### Problem 3 - Team Captains 
 How many ways could two captains be chosen from the five starting members of a basketball team?
 
 #### Solution 1 - Brute Force
@@ -114,7 +114,7 @@ Given players as members of the set {1,2,3,4,5} we want to select two of them, o
 
 From this solution, we see that Problems 1, 2, and 3, although from very different real-world contexts, are combinatorially equivalent.
 
-### Problem 4: 
+### Problem 4 - Binomial Expansion 
 Expand the following: $(p + q)^{5}$.
 
 #### Solution 1 - Brute Force
