@@ -67,7 +67,11 @@ A group of students was asked whether or not they like to watch basketball, socc
 * Number choosing both soccer and football: 18
 * Number choosing basketball and soccer and football: 8
 
-We can draw a Venn Diagram by identifying with regions B for basketball, S for soccer, F for football, and T representing the total number surveyed. We want to determine how many individuals there are in each of the eight regions. As in the example with two overlapping events, the key problem-solving strategy is to start with the overlap. 
+We can draw a Venn Diagram by identifying with regions B for basketball, S for soccer, F for football, and T representing the total number surveyed. We want to determine how many individuals there are in each of the eight regions. As in the example with two overlapping events, the key problem-solving strategy is to start with the overlap. Here we see some of the overlapping regions described. Can you proceed outward to complete the Venn diagram?
+
+```{r nice-fig-53, fig.cap='Venn Diagram for Three Sports', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+knitr::include_graphics("01-basics-figures/venn_for_three_sports.png")
+```
 
 ## Revisiting the Chapter Scenario - Paying Taxes {#revisit_chapter_scenario}
 
@@ -82,7 +86,7 @@ $$0.80=0.55+0.70-P(F \ and \ P)$$
 
 Solving we find $P(F \ and \ P)=0.55 + 0.70 - 0.80=0.45$ allowing us to complete the Venn diagram.
 
-```{r nice-fig-53, fig.cap='Venn Diagram of Paying Taxes', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-54, fig.cap='Venn Diagram of Paying Taxes', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/venn_paying_taxes.png")
 ```
 
