@@ -1,3 +1,119 @@
 # The Binomial Distribution
 
-We describe some cool stuff about the Binomial Distribution in this chapter.
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+library(mosaic)
+set.seed(2018)
+```
+
+## Introduction {#introduction}
+
+If we run an experiment where each trial has the same probability of success and failure, we can use the binomial distribution to determine the probability of any particular number of successes on a given number of trials.
+
+## Chapter Scenario - Tennis First Serve Percentage
+
+Sara Errani get about 79% of her first serves in. How unusual would it be for her to make 95% or more of her first serves on the next 20 tries?
+
+## The Binomial Distribution
+
+The binomial distribution is a discrete probability distribution describing the outcome of n independent trials in an experiment where each trial has only two outcomes identified as success and failure. Given n independent trials and the probability of a successful trial p, the probability of having x successful outcomes is as follows.
+
+$$P(x)=\binom{n}{x}p^x(1-p)^{n-x}$$
+
+Examining the three key pieces of the binomial distribution,  the initial combination, $\binom{n}{x}$, counts the arrangements of $x$ successes and $n-x$ failures, $p^x$ is the probability of x successes and $p^{n-x}$ is the probability of $n-x$ failures.
+
+
+## Example - Throwing Darts
+
+### Individual Binomial Probabilities
+
+Suppose that a very good dart player hits the bulls-eye 15% of the time. Suppose she makes 25 throws. 
+
+Here is the probability she makes exactly 5 bulls-eyes.
+
+```{r}
+dbinom(5, size=25, prob=0.15) 
+```
+
+We can find the probabilities she makes 0, 1, 2, 3, 4, and 5 bulls-eyes in 25 trials with the following code.
+
+```{r}
+dbinom(c(0,1,2,3,4,5), size=25, prob=0.15) 
+```
+
+
+Here's a quick way to get all individual probabilities by using `0:25`, the entire range of possibilities.
+
+```{r}
+dbinom(0:25, size=25, prob=0.15) 
+```
+
+### Cumulative Probabilities
+
+Suppose we want to find the cumulative probability she makes less than or equal to 5 bulls-eyes in 25 trials. Try this.
+
+```{r}
+pbinom(5, size=25, prob=0.15) 
+```
+
+Be careful. If we want to find the cumulative probability she makes less than 5 bulls-eyes in 25 trials, note this is different.
+
+```{r}
+pbinom(4, size=25, prob=0.15) 
+```
+
+Again, we can find cumulative probabilities for multiple values.
+
+```{r}
+pbinom(0:25, size=25, prob=0.15) 
+```
+
+
+To find the probability she makes between 3 and 7, inclusive, check out the following. It is tricky.
+
+```{r}
+pbinom(7, size=25, prob=0.15) - pbinom(2, size=25, prob=0.15)
+```
+
+We often need to use the complement property to find the probability we seek. For example, if we want to find the cumulative probability she makes more than 5 bulls-eyes in 25 trials try this.
+
+```{r}
+1 - pbinom(5, size=25, prob=0.15) 
+```
+
+And if we want to find the cumulative probability she makes at least 5 bulls-eyes in 25 trials then...
+
+```{r}
+1 - pbinom(4, size=25, prob=0.15) 
+```
+
+
+## Visualizing the Binomial Distribution
+
+Much like we use `pdist()` and `qdist()` from the `mosaic` package to compute and visualize normal probabilities, the `xpbinom()` and `xqbinom()` commands handle binomial probabilities.
+
+Again, she is pretty good and hits the bulls-eye 15% of the time. What happens when she makes 25 throws.
+
+Here is a visualization showing almost all individual probabilities. 
+
+```{r}
+xpbinom(0:25, size = 25, prob = 0.15)
+```
+
+
+## Exercises {#exercises}
+
+### Exercises - Birth Orderings
+Consider the potential birth orderings by gender – boy or girl - for a family with four children. Assume getting a girl and getting a boy are equally likely.
+
+(a) Given that a family has four children which sequence of boy and girl births is most likely:  BBBB, BGGB, or GGGG? Explain.
+
+(b) Find the probability distribution for the number of girls in the family.
+
+(c) In fact, births are more likely to be boys than girls.  In the United States in 1981, for example, there were 1,860,000 boy births and 1,769,000 girl births.  In other words, 51.3% of all births were boys and 48.7% girls.  Using these as estimates for the probabilities of a boy birth and girl birth, and assuming sexes of births are independent, recalculate the probabilities for the different gender compositions in a family of four. 
+
+### Exercise - Slot Machine
+Consider a slot machine with five wheels where each wheel contains ten symbols. On each wheel there is one JACKPOT symbol and nine other non-jackpot symbols, thus, there is binary outcome - either a success (Jackpot) or a failure (non-Jackpot). Counting the number of Jackpot symbols follows a binomial distribution. A prize is won if three or more jackpot symbols are showing. Find the probability of this happening.
+
+### Exercise - Pounding Pennies
+A random sample of pennies are set on edge and knocked over by gently pounding on the table. It may seem totally weird, but someone conjectures that this process we will call “pounding pennies” is significantly different from flipping a fair coin where the percentage of heads is 50%. In an experiment, we obtained 182 heads and 142 tails. Would this be considered an unusual event if the true percentage of heads was really 50%? Explain. (Note, we often consider as "unusual" an event that happens less than 5% of the time.)
+
