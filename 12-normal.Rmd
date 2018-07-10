@@ -1,4 +1,138 @@
 # Normal Distribution {#normal}
 
-Not everything is Normal (we certainly aren't), but it's useful!
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+library(mosaic)
+set.seed(2018)
+```
+
+
+## Introduction {#introduction}
+
+Not everything is Normal (we certainly aren't), but it is useful to model data that is unimodal, symmetric, and without outliers. A statistical "model" is a simplification or an idealization. Reality is, of course, never perfectly bell-shaped. Real data is not exactly symmetric with one clear peak in the middle. Nevertheless, this abstract model can give us good answers if used properly.
+
+## Chapter Scenario - Tips on the Weekend {#chapter_scenario_tips_on_the_weekend}
+
+Suppose a friend of yours is working as a server. Suppose that on Fridays tips average $120 with a standard deviation of $30 and are normally distributed. We say $N(\mu = 120, \sigma = 30).$ The distribution would look like this:
+
+```{r nice-fig-121, fig.cap='Histogram for Friday Tips', out.width='80%', fig.asp=.75, fig.align='center'}
+ggplot(data.frame(x = c(30, 210)), aes(x)) +
+    stat_function(fun = dnorm, args = list(mean = 120, sd = 30)) +
+    scale_x_continuous(breaks = c(30,60,90,120,150,180,210))
+```
+
+Suppose that Saturdays are a little different with tips normally distributed with a mean of $\$90$ and a standard deviation of $\$20$,  $N(\mu = 90, \sigma = 20)$. Here we can visualize the distribution:
+
+```{r nice-fig-122, fig.cap='Histogram for Saturday Tips', out.width='80%', fig.asp=.75, fig.align='center'}
+# Again, don't worry about the syntax here.
+ggplot(data.frame(x = c(30, 150)), aes(x)) +
+    stat_function(fun = dnorm, args = list(mean = 90, sd = 20)) +
+    scale_x_continuous(breaks = c(30, 50, 70, 90, 110, 130, 150))
+```
+
+Suppose your friend really needs $\$200$ in tips this weekend. Rent is due. The broader question before us is what the distribution of total tips on the weekend, Friday plus Saturday, looks like. Is it normal? What is the mean? What is the standard deviation? As a simplifying assumption we will assume that based on past experience Friday tips and Saturday tips are independent.
+
+## The Roots of the Normal {#the_roots_of_the_normal}
+
+The normal bell-shaped curve is so ubiquitous it is almost taken for granted. It is helpful to see its origins by examining sums of independent random variables. We will use the experiment of tossing a die to illustrate how the normal distribution emerges. Consider the experiment of tossing one die and plotting the results in a histogram. What would you expect for the shape, center, and spread of this data?
+
+Code below simulates the toss of one die and puts this data into an official R data frame to facilitate the analysis and visualizes the data in a histogram. The code the the histogram uses the `ggplot2` package, the standard for plotting data in R.
+
+```{r nice-fig-123, fig.cap='Histogram for Saturday Tips', out.width='80%', fig.asp=.75, fig.align='center'}
+Die1 <- sample(c(1,2,3,4,5,6), 10000, replace = TRUE)
+Dice_data <- data.frame(Die1)
+ggplot(data=Dice_data, aes(x=Die1)) + geom_histogram()
+```
+
+The casino game craps revolves around the sum of the toss of two dice. If the experiment of tossing two dice and computing the sum was done many times and the results plotted in a histogram what would you expect for the shape, center, and spread?
+
+### Simulating the Toss of Two Dice
+
+Code below simulates the sum of two dice. We visualize with a histogram.
+
+```{r nice-fig-124, fig.cap='Histogram for Saturday Tips', out.width='80%', fig.asp=.75, fig.align='center'}
+Dice_data$Die2 <- sample(c(1,2,3,4,5,6), 10000, replace = TRUE)
+Dice_data$Sum <- Dice_data$Die1 + Dice_data$Die2
+ggplot(data=Dice_data, aes(x=Sum)) + geom_histogram()
+```
+
+Comparing with the results of the two simulation, while one die resulted in a flat, uniform distribution, we see that the distribution for the sum of two dice is a triangular distribution. Why is it that when summing two dice, we see a tendency towards a mound-shaped distribution?
+
+We adapt the code above to simulate the sum of three dice and visualize with a histogram.
+
+```{r nice-fig-125, fig.cap='Histogram for Saturday Tips', out.width='80%', fig.asp=.75, fig.align='center'}
+Dice_data$Die3 <- sample(c(1,2,3,4,5,6), 10000, replace = TRUE)
+Dice_data$Sum3 <- Dice_data$Die1 + Dice_data$Die2 + Dice_data$Die3
+ggplot(data=Dice_data, aes(x=Sum)) + geom_histogram()
+```
+
+We observe that summing three dice, the distribution becomes increasingly mound-shaped.
+
+## The Central Limit Theorem
+
+The Central Limit Theorem indicates that the sum of independent random variables as well as the sample means converge to the normal distribution as the sample size increases. Below is code crafted to illustrate the sum of 50 tosses of a die as well as the sample mean of these 50 tosses.
+
+```{r nice-fig-126, fig.cap='Histogram for Saturday Tips', out.width='80%', fig.asp=.75, fig.align='center'}
+die_matrix <- data.frame(matrix(sample(1:6, 500000, replace=TRUE), ncol=50))
+die_matrix$sum <- rowSums(die_matrix)
+die_matrix$mean <- die_matrix$sum/50
+head(die_matrix[,51:52])
+```
+
+Let's take a look at the histogram of the sum of 50 dice.
+
+```{r nice-fig-127, fig.cap='Histogram for Saturday Tips', out.width='80%', fig.asp=.75, fig.align='center'}
+ggplot(data=die_matrix, aes(x=sum)) + geom_histogram()
+```
+
+The average is the sum divided by 50 and should be close to 3.5 but varies. Let's examine the histogram.
+
+```{r nice-fig-128, fig.cap='Histogram for Saturday Tips', out.width='80%', fig.asp=.75, fig.align='center'}
+ggplot(data=die_matrix, aes(x=mean)) + geom_histogram()
+```
+
+The histograms of the sum of 50 dice and the mean of 50 dice have identical shapes, it is only the scale that changes.
+
+## Conclusion
+
+Through simulating the toss of one die, the sum of two, three, and then more we see that sums of a random variable even if it is not originally from a mound-shaped distribution (note, the distribution for a single die is discrete uniform) we find the sums increasing become mound-shaped. And sample means are really sample sums just re-scaled by dividing by the sample size. This is the secret to why the normal distribution emerges when we examine sample means. 
+
+
+## Chapter Scenario Revisited - Tips on the Weekend
+
+Recall, Friday tips are normal and Saturday tips are normal. Before examining the theory, let's run a simulation to get an idea of what to expect.
+
+The code below simulates 1000 Friday tips calling the variable `friday` rounded to the nearest dollar and, similarly, 1000 Saturday night tips, then their sum, `weekend`, and put them into a dataframe for ease of analysis.
+
+```{r}
+friday <- round(rnorm(1000, mean = 120, sd = 30), 0)
+saturday <- round(rnorm(1000, mean=90, sd=20), 0)
+weekend <- friday + saturday
+tips_data <- data.frame(friday, saturday, weekend)
+```
+
+Let's visualize the `weekend` variable in a histogram.
+
+```{r nice-fig-129, fig.cap='Histogram for Saturday Tips', out.width='80%', fig.asp=.75, fig.align='center'}
+ggplot(data=tips_data, aes(x=weekend)) + geom_histogram(binwidth=10)
+```
+
+It appears that adding these two independent normal random variables generated another normal. Let's examine summary statistics to see the mean and standard deviation.
+
+```{r}
+favstats(tips_data$weekend)
+```
+
+Note that the mean is around $\$210$ which we might expect since the mean of Friday tips was $\$120$ and the mean of Saturday night tips was $\$90$. The standard deviation of weekend tips is bigger than the individual standard deviations of $\$30$ and $\$20$ but smaller their sum. To understand this we need some theory capture.
+
+## Theory
+
+What really happens when adding independent normal random variables is that the shape is normal, the mean is the sum of the individual means but the standard deviation is the square root of the sum of the squares of the individual standard deviations, a result akin to our familiar Pythagorean Theorem.
+
+For our example where Friday tips are $N(\mu = 120, \sigma = 30)$ and Saturday tips are $N(\mu = 90, \sigma = 20)$ we know that the sum of these is normal with mean $120 + 90$ with a standard deviation of $\sqrt{30^2 + 20^2}$ which equals `r (30^2 + 20^2)^(.5)`. Observe how close the simulated mean and SD are to what the theory says.
+
+## Exercises {#exercises}
+
+### Exercise - Grades
+
+
 
