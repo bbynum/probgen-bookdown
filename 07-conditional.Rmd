@@ -69,6 +69,7 @@ Note: The Blue boxes should sum to 10,000. The Yellow boxes should also sum to 1
 knitr::include_graphics("01-basics-figures/hypothetical_10000_table.png")
 ```
 
+## Exercises {#exercises}
 
 ### Exercise - Condemned Man
 A bag contains 5 white and 8 black balls. A man is condemned to draw a ball and be executed if it is a black one. The man requests that he be allowed to arrange the balls in two bags according to his own preference and then, blindfolded, select one of the two bags and select one of the balls from this bag at random. What is, from the prisoner's point of view, the most favorable division of balls? Explain your answer.
