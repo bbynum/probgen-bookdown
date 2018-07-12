@@ -151,6 +151,25 @@ knitr::kable(
 ggplot(data=sim_three_dice, aes(x=sum3)) + geom_histogram(aes(y=..density..), binwidth = 1)
 ```
 
+## Exercises {#exercises}
+
+### Exercise - My Die, Your Die
+Suppose that I toss a die and you toss a die. Find the probability of the following events.
+(a) Your die is the same result as my die.
+(b) Your die is different than my die.
+(c) Your die is greater than my die.
+
+### Exercise - Three Dice
+Three dice are tossed. Answer the following questions.
+(a) Which is more likely - rolling a sum of 3 or a sum of 18?
+(b) Which is more likely - rolling a sum of 4 or a sum of 17?
+(c) Which is more likely - rolling a sum of 10 or a sum of 11?
+(d) Which is more likely - rolling a sum of 10  or less or rolling a sum of 11 or more?
+
+### Exercise - De Morgan's Laws
+The negation of "A or B" is "not A and not B". The negation of "A and B" is "not A or not B". These logical observatons are called De Morgan's Laws. For the event of tossing two dice with A being the event of rolling doubles and B being the event of rolling a sum of seven, describe the following events verbally and find their probability.
+(a) not(A or B)
+(b) not(A and B)
 
 
 

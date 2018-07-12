@@ -102,6 +102,9 @@ Suppose that a group of 100 first year students were given a survey indicating t
 ### Exercise - Class Survey
 Design and administer a short three-question class survey where each question is a yes or no answer and draw a Venn diagram of the results identifying the number of individuals in each of the eight regions. Questions could relate to almost anything but try to select questions where you will see different responses.
 
+### Exercise - Minding the Gap
+Suppose the probability of event A is 1/3 and the probability of event B is 1/2. What is the possible range of values for P(A or B), that is, what is the smallest possible value for P(A or B) and what is the largest possible value for P(A or B)?
+
 
 
 
