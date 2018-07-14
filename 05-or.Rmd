@@ -28,12 +28,12 @@ If one student is chosen at random what is the probability they are from Utah OR
 
 Let's let U represent the event of being from Utah and B the event of planning to major in a buisness-related field.
 
-### Practice Exercise
+### Practice 
 What is wrong with the following approach?
 
 $$P(U \ or \ B) = P(U)+P(B)= 13/25 + 8/25 = 21/25 \ WRONG!!!$$
 
-You may have spotted the mistake that some individuals have been double-counted. The Addition Principle will take care of this.
+You may have spotted the mistake that some individuals have been double-counted. The Addition Rule will take care of this.
 
 $$P(U \ or \ B) = P(U)+P(B)-P(U \ and \ B) = 13/25 + 8/25 - 5/25 = 16/25$$
 

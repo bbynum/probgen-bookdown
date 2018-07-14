@@ -86,7 +86,7 @@ What is the probability of selecting 1 female rat? There are actually three dist
 
 $$P(1\ female\ rat) = 3 \times (0.6) (0.4)^2 = 0.288$$
 
-### Practice Exercise
+### Practice 
 For the probability experiment described above, choosing three rats at random from a large population of rats that is 40% male and 60% female, what is the probability of getting 2 female rats? 3 female rats?
 
 
@@ -126,7 +126,7 @@ In spite of the numerators being in different orders, we notice that these three
 
 $$P(1\ black) = 3 \times \frac{12}{20} \times \frac{8}{19} \times \frac{7}{18} = 0.295$$
 
-### Practice Exercise
+### Practice 
 For the urn described above containing 12 black and 8 white beads with three beads drawn at random without replacement, what is the probability of obtaining two black beads? What is the probability of obtaining three black beads?
 
 ## Exercises {#exercises}
