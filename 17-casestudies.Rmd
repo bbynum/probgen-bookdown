@@ -181,7 +181,7 @@ We need to determine the probability of winning (ie., passing) in all of these d
 Since these 9 outcomes are the only ones that resolve the bet, we will ignore all occurrences of other sums and use these 9 outcomes as our new sample space as shown below. 
 
 ```{r nice-fig-1712, fig.cap='Sample Space for a Point of Four', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
-#knitr::include_graphics("01-basics-figures/sample_space_point_of_four.png")
+#knitr::include_graphics("01-basics-figures/craps_sample_space_point_of_four.png")
 ```
 
 Since there are three ways to win and six ways to lose, 
@@ -193,7 +193,7 @@ $$P(not \ passing \mid point \ of \ four) = 6/9$$
 With a similar analysis, we can determine the probability of passing and of not passing for points of 5, 6, 8, 9, and 10. These values are shown in the table below.
 
 ```{r nice-fig-1713, fig.cap='Passing and Not Passing for Different Points', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
-#knitr::include_graphics("01-basics-figures/passing_and_not_passing_for_different_points.png")
+#knitr::include_graphics("01-basics-figures/craps_passing_and_not_passing_for_different_points.png")
 ```
 
 To find the probability of winning on a passline bet we need to examine all of these cases. Here is how we can partition winning on the passline bet.
@@ -217,7 +217,7 @@ This means that we lose about 1.4 cents for each dollar bet on the passline. Thi
 Recall, we win a Hardway Six bet by rolling six the hard way with double threes before rolling a six any other way or rolling a seven. The payoff is 9:1. Out of the eleven different ways this bet is resolved as shown in the image below, there is only one way to win. 
 
 ```{r nice-fig-1714, fig.cap='The Hardway Six Sample Space', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
-#knitr::include_graphics("01-basics-figures/hardway_six_sample_space.png")
+#knitr::include_graphics("01-basics-figures/craps_hardway_six_sample_space.png")
 ```
 
 Thus, $P(win Hardway Six)=1/11$ and $P(lose Hardway Six)=10/11$. We find the expectation below
