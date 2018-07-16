@@ -88,6 +88,17 @@ Here’s a game for you.  You flip a coin.  If it comes up tails on the first fl
 knitr::include_graphics("01-basics-figures/st_petersburg_table.png")
 ```
 
+## Exercise - Squared Dots
+(a) Here is a simple game. Roll a die and receive as many dollars as dots that are showing. How much is this game worth?
+(b) Suppose you play a second game where you roll one die, observe the number of dots, and receive the square of that number in dollars. How much is this game worth? 
+(c) The payoff for the second game is always the square of the corresponding payoff for the first game. Is the expectation/mean for the second game the square of the expectation/mean of the first game, more, or less? Explain.
+
+## Exercise - Raising the Stakes
+You lay down a dollar and I lay down a dollar. Then we each roll a die. You roll first. The person with the highest result wins both dollars. If there is a tie the money is divided. 
+(a) If you begin and roll a 3 then what is your expectation/mean? 
+(b) What is the expectation/mean for the other possible outcomes?
+(c) Consider the following wrinkle. Suppose that right after you make your roll, you may immediately roll again but if you exercise this option you must put an additional dollar in the pot. When should you decide to exercise this option and take a second roll?
+(Source: Freudenthal. Probability and Statistics.)
 
 
 
