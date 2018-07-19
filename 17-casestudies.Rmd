@@ -7,7 +7,7 @@ library(mosaic)
 set.seed(2018)
 ```
 
-## Roulette
+## Roulette {#roulette}
 
 ## Chapter Scenario - Conservative or Playa? {#chapter_scenario_conservative_or_playa}
 
@@ -39,6 +39,7 @@ knitr::include_graphics("01-basics-figures/roulette_bet_positions.png")
 ```
 
 ## Analyzing the Even-Money Bets {#analyzing_the_even_money_bets}
+
 First, examine an even money bet, such as a $\$100$ bet on Red. The payout for Red bet is 1 to 1 meaning if you win you win $\$1$ for every $\$1$ bet. The probability distribution describing this bet is as follows. Since there are 18 red slots on the wheel the probability of winning a red bet is 18/38 while the probability of winning a single number bet is 1/38. If we let X represent the winnings the list of all the possible outcomes matched with their associated probabilities P(X) is called the probability distribution.
 
 ```{r nice-fig-174, fig.cap='Roulette Even Money Disribution', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
@@ -47,7 +48,7 @@ knitr::include_graphics("01-basics-figures/roulette_even_money_distribution.png"
 
 The sum of the X*P(X) is  - 5.26 thus the expected payoff for a $100 bet on Red is to lose about five dollars and a quarter.
 
-## Roulette Simulation
+## Roulette Simulation {#roulette_simulation}
 
 Considering a $\$100$ even-money roulette bet, such as a red bet, we can simulate a large number of trials noting the two outcomes or $-\$100$ or $+\$100$ with probabilities $20/38$ and $18/38$, respectively.
 
@@ -71,7 +72,7 @@ favstats(red_bet, data=red_bet_df)
 
 For our simulation of 10,000 trials of $\$100$ red bet, our mean was $-\$6.52$, a little worse than our theoretical expectation of $-\$5.26$. Note also the standard deviation is $99.79$ which makes sense given the typical deviation on either side of the mean is around $100$.
 
-## Analyzing the Single Number Bet
+## Analyzing the Single Number Bet {#analyzing_the_single_number_bet}
 
 Consider a long shot single number bet, such as a $\$100$ bet on the number 7. The single number bet (called a “straight”) has a payout of 35 to 1 meaning if you win you win $\$35$ for every $\$1$ bet. There is only one way to win so the probability of winning is 1/38. We complete the table below to find the probability distribution and expected value for $\$100$ bet on a single number.
 
@@ -135,7 +136,7 @@ knitr::include_graphics("01-basics-figures/roulette_european_layout.png")
 (b) Recall the expected payoff on an even-money bet American double-zero wheel is $-\$5.26$. Is the expectation on a European single-zero wheel the same, more negative, or less negative? 
 (c) Determine the expectation for one of the other bets (there is no in prison rule for the non-even-money bets). Is it the same, more negative, or less negative than the corresponding bet in American roulette?
 
-## Craps
+## Craps {#craps}
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 library(mosaic)
@@ -152,7 +153,7 @@ knitr::include_graphics("01-basics-figures/craps_layout.png")
 
 Some bets are single-roll bets, resolved with one toss of the dice, and others are multi-roll bets, where it may take many rolls before the bet is decided. One of the multi-roll bets is the Hardway 6. To win this bet you have to roll a sum of six the hard way, that is, with double-threes, before rolling a sum of six the easy way (1,5 or 2,4) or before rolling a sum of seven. This bet has a payoff of 9:1. What is the probability of winning this bet and what is the expectation?
 
-## Single Roll Craps Bets
+## Single Roll Craps Bets {#single_roll_craps_bets}
 
 Some craps bets are single roll bets, resolved in one toss of the dice. For example, one can make the Eleven or Five Six bet. If a sum of 11 comes up you win. Otherwise, you lose. The payoff is 15:1. Examining the sample space for dice there are 2 ways to win and 34 ways to lose, thus, $P(win \ eleven \ bet)=2/36$ and $P(lose \ eleven \ bet)=34/36$. We can calculate the expectation on the eleven bet assuming a $\$1$ bet.
 
@@ -160,7 +161,7 @@ $$Mean= 15 \cdot \frac{2}{36}+(-1) \cdot \frac{34}{36}=\frac{-4}{36}=-0.111$$
 
 Thus, we expect to lose 11.1 cents on average for every 1 dollar bet on the eleven bet, an $11.1\%$ house advantage.
 
-## The Craps Passline Bet Explained
+## The Craps Passline Bet Explained {#the_craps_passline_bet_explained}
 
 The heart of craps is the passline bet. The player rolling the dice must make this bet and other players around the table may join her (or, to be contrary, may bet against her). The passline bet pays off at even money, 1:1, and is potentially a multi-roll bet. The first roll of the dice on the passline bet is called the come out roll and you win on this first roll if you roll a sum of 7 or 11 (this is called a natural) and you lose on the first roll if you roll a sum of 2, 3, or 12 (this is called craps). It helps to have an image of the sample space for rolling two dice handy. 
 
@@ -226,7 +227,7 @@ $$Mean= (+9) \cdot \frac{1}{11} + (-1) \cdot \frac{10}{11}= \frac{-1}{11}=-0.090
 
 On average, on the Hardway Six we lose about 9 cents per dollar bet for a house advantage of $9.09\%$.
 
-## Exercises
+## Exercises {#exercises}
 
 ### Exercise - Single Roll Bet
 Find the expected value on the Aces bet, a single roll bet where double ones is a winner and everything else is a loser. This bet pays off at 30:1.
@@ -251,6 +252,89 @@ When a point is established a pass line player may place a bet equal to the orig
 (a) Determine true odds for each possible point - 4, 5, 6, 8, 9, 10. That is, determine the payoff odds that would result in a fair bet with expected value of 0. 
 (b) Consider a $\$10$ passline bet with a $\$10$ free odds bet taken whenever possible. The expected value for a $\$10$ passline bet is -0.140. Given that the additional odds bet is a fair bet, what would the expectation be on the $\$10$ passline bet with $\$10$ free odds taken whenever possible? Explain.
 
+## Keno {#keno}
+
+In Keno, a player pays $1 and chooses some numbers between 1 and 80 by marking them on a Keno card.
+
+```{r nice-fig-1715, fig.cap='Keno Card', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+#knitr::include_graphics("01-basics-figures/keno_card.png")
+```
+
+Then the computer randomly selects 20 numbers.  Depending on how many of the player’s numbers match (“catch”) the chosen numbers, they win different amounts of money as shown in the payoff table below. 
+
+```{r nice-fig-1716, fig.cap='Keno Payouts', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+#knitr::include_graphics("01-basics-figures/keno_payouts.png")
+```
+
+## Analyzing a One-spot Keno Ticket
+
+For example, on a one-spot ticket, the player pays $\$1$ and marks one number and if it is among the 20 selected by the computer, the player wins $\$3$ for a net win of $+\$2$. Keno probabilities can be found using the hypergeometric model with m=20 good numbers, n=60 bad numbers, with k=1 selected and x is the number of good ones selected.  The expected value is the sum of the payoffs times the probabilities. 
+
+$$Mean = -1 \cdot P(catch \ 0) + 2 \cdot P(catch \ 1)=-1 \cdot \frac{60}{80} + 2 \cdot \frac{20}{80}=-\frac{20}{80}=-0.25$$
+
+Not such a great game from the player's vantage point as they lose on average a quarter per dollar bet for a $25\%$ house advantage.
+
+We can use the R code below to find the expected value for a $\$1$ one-spot ticket by first creating a vector of the hypergeometric probabilities and a vector of the amounts won/lost. 
+
+```{r}
+probs_one_spot <- dhyper(x=0:1, m=20, n=60, k=1)
+amounts_one_spot <- c(-1,2)
+distribution_one_spot <- data.frame(probs_one_spot, amounts_one_spot)
+distribution_one_spot
+```
+
+We can calculate the mean expected value by deterimining the sum of the amounts multiplied by the probs.
+
+```{r}
+expectation_one_spot <- sum(amounts_one_spot*probs_one_spot)
+expectation_one_spot
+```
+
+## Analyzing a Two-spot Keno Ticket
+
+Suppose a player buys a $\$1$ ticket marking two spots. If they catch 0 spots they lose $\$1$, if they catch one spot the get their dollar back and break even, and if they catch two spots they get $\$9$ back for a net profit of $\$8$. Determining the expected value by hand using the hypergeometric probability distribution we see
+
+$$Mean = -1 \cdot \frac{\dbinom{20}{0}\dbinom{60}{2}}{\dbinom{80}{2}} + 0 \cdot \frac{\dbinom{20}{1}\dbinom{60}{1}}{\dbinom{80}{2}} + 8 \cdot \frac{\dbinom{20}{2}\dbinom{60}{0}}{\dbinom{80}{2}}= \\ 
+-1 \cdot 0.560 + 0 \cdot 0.380 + 8 \cdot 0.060 = -0.079 $$
+
+With R code:
+
+```{r}
+probs_two_spot <- dhyper(x=0:2, m=20, n=60, k=2)
+amounts_two_spot <- c(-1,0,8)
+distribution_two_spot <- data.frame(probs_two_spot, amounts_two_spot)
+distribution_two_spot
+```
+
+We calculate the mean expected value.
+
+```{r}
+expectation_two_spot <- sum(amounts_two_spot*probs_two_spot)
+expectation_two_spot
+```
+
+The two-spot ticket has a much better expected value than a one-spot ticket.
 
 
+## Exercises {#exercises}
+
+### Exercise - Analyzing a Three-spot and Four-spot Keno Tickets
+
+Find the expected value for a three-spot Keno ticket and a four-spot Keno ticket and make comparisons about which is more advantageous (or, rather, less disadvantageous) for the player.
+
+### Exercise - Changing Perspectives
+
+Suppose a player has marked an 5-spot Keno ticket. In the analysis above, we consider the m=20 good numbers and n=60 bad numbers and k=5 numbers selected with x representing the numbers we catch and use this hypergeometric model. For example,
+
+$$P(catch \ 3) = \frac{\dbinom{20}{3}\dbinom{60}{2}}{\dbinom{80}{8}}=0.084$$
+
+An alternative approach is to consider that we have m=5 good ones that we've selected and n=75 bad ones we haven't selected and then the computer chooses k=20 with x representing the number of good ones selected. Thus,
+
+$$P(catch \ 3) = \frac{\dbinom{5}{3}\dbinom{75}{17}}{\dbinom{80}{20}}=0.084$$
+
+For a 5-spot ticket show the probabilities of catching 0, catching 1, and catching 2 using both techniques and confirm they yield the same answers.
+
+### Exercise (Group Project) - Complete Analysis of Keno
+
+As a group project, find the expected values for a one-spot ticket, a two-spot ticket, and so on all the way through a 15-spot ticket and identify which bet has the worst expected value or the player and which has the best expected value.
 
