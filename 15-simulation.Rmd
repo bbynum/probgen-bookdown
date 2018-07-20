@@ -48,14 +48,15 @@ Let's start by generating points in a square region of the plane with x and y bo
 x <- runif(n=1000, min=-9, max=9)
 y <- runif(n=1000, min=-9, max=9)
 plane <- data.frame(x,y)
-ggplot(data=plane, aes(x=x, y=y)) + geom_point()
+ggplot(data=plane, aes(x=x, y=y)) + geom_point() + 
+  coord_fixed(ratio = 1)
 ```
 
-We need to select only these points that would be on a circular dartboard of radius 9. The equation of a circle of radius 9 centered at the origin is $x^{2}+y^{2}=9^{2}$ and the interior of the circle is all points such that $x^{2}+y^{2} \lt 9^{2}$ and we can select all of these rows from the dataframe `plane` and call it `dartboard`. 
+We need to select only these points that would be on a circular dartboard of radius 9. The equation of a circle of radius 9 centered at the origin is $x^{2}+y^{2}=9^{2}$ and the interior of the circle is all points such that $x^{2}+y^{2} < 9^{2}$ and we can select all of these rows from the dataframe `plane` and call it `dartboard`. 
 
 ```{r}
 dartboard <- plane[plane$x^2+plane$y^2 < 81,]
-ggplot(data=dartboard, aes(x=x, y=y)) + geom_point()
+ggplot(data=dartboard, aes(x=x, y=y)) + geom_point() + coord_fixed(ratio = 1)
 ```
 
 Nice, random darts! Now we can create a new variable `distance` using the Pythagorean Theorem distance formula.
@@ -77,8 +78,7 @@ Running summary statistics.
 favstats(dartboard$distance)
 ```
 
-We see the mean distance is 5.9 inches, close to 6 inches, about 2/3 of the radius. 
-
+We see the mean distance is 5.90 inches, close to 6 inches, about 2/3 of the radius. The median is a little bigger at 6.23 inches, consistent with a negatively skewed distance data.
 
 
 ## Example - The Holey Cube
@@ -102,19 +102,24 @@ points <- data.frame(x,y,z)
 head(points)
 ```
 
-Points not in the drilled out cylinders are now identified as ones not in either of the three circles. The circle in the xy-plane is $x^{2}+y^{2}=1$, the circle in the xz-plane is $x^{2}+z^{2}=1$ and the circle in the yz-plane is $y^{2}+z^{2}=1$. By replacing equality with $\gt$ we identify points not in the removed circles with the *and* logical connective.
+Points not in the drilled out cylinders are now identified as ones not in either of the three circles. The circle in the xy-plane is $x^{2}+y^{2}=1$, the circle in the xz-plane is $x^{2}+z^{2}=1$ and the circle in the yz-plane is $y^{2}+z^{2}=1$. By replacing equality with > we identify points not in the removed circles with the *and* logical connective.
 
 ```{r}
 points$holey_cube <- points$x^2+points$y^2>1 & 
                      points$x^2+points$z^2>1 &
                      points$y^2+points$z^2>1
-head(points)
+head(points, n=10)
 ```
 
 Since `points` is a logical variable with $1=TRUE$ we can sum the `points` variable to see how many and what proportion of the 10,000 points are left. 
 
 ```{r}
 sum(points$holey_cube)
+```
+
+In our simulation, `r sum(points$holey_cube)` of the 10000 points still remain after the holes are drilled, or `r sum(points$holey_cube)/100` $\%$ of the points.
+
+```{r}
 prob_holey_cube <- sum(points$holey_cube)/10000
 prob_holey_cube
 ```
@@ -126,19 +131,7 @@ volume <- prob_holey_cube * 64
 volume
 ```
 
-
-
-We could visualize the points in 3D as follows.
-
-```{r}
-#library(rgl)
-#library(car)
-#scatter3d(points$x,points$y,points$z,
-#        point.col = "blue", surface=FALSE)
-#scatter3d(x,y,z, data=points,
- #       point.col = "blue", surface=FALSE)
-```
-
+The holey cube has a volume of `r volume` cubic centimeters.
 
 ## Exercises {#exercises}
 

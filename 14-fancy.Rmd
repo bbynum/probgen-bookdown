@@ -9,9 +9,9 @@ set.seed(2018)
 
 We have learned about important discrete random variables such as the binomial and about important continuous random variables such as the normal. In this chapter we add to our repertoire some other useful distributions including the geometric, negative binomial, and poisson discrete random variables and the uniform and exponential continuous random variables. 
 
-## Chapter Scenario - {#chapter_scenario}
+## Chapter Scenario - Lovin' the Airport {#chapter_scenario_lovin_the_airport}
 
-
+Suppose a domestic flight leaves at 5:00pm and has 50 passengers who show up independently at the airport at uniformly random times between 3:15pm and 4:30pm. How many passengers can we expect to have arrived at the airport by 4:00pm, one hour before takeoff? How confident can we be in this answer?
 
 
 ## The Geometric Random Variable {#the_geometric_random_variable}
@@ -55,11 +55,15 @@ In general, for a geometric random variable with probability of success p, the e
 
 Assume we have a geometric random variable with probability of success parameter p. We can use R functions from the `mosaic` package but there is a wrinkle. These functions count the number of failures before the first success, not the total number of trials. Consequently, we need to adjust the input by adjusting by 1. It is a little tricky.
 
-* To find the individual probability of x trials needed to obtain the first success, $P(X=x)$, use `dgeom(x-1, prob)`.
-* To find the cumulative probability of less than or equal to x trials needed to obtain the first success, $P(X \leq x)$, use `pgeom(q=x-1, prob=p, lower.tail = TRUE)`.
-* To visualize the cumulative probability $P(X \leq x)$ use `pdist(dist="geom", prob=p, q=x-1)`.
-* To find the inverse probability, that is the value of x such that $P(X \leq x) = p$ use `qgeom(p, prob=p, lower.tail = TRUE)+1`.
-* To generate a random sample of size n from this geometric random variable use `rgeom(n, prob=p)+1`.
+To find the individual probability of x trials needed to obtain the first success, $P(X=x)$, use `dgeom(x-1, prob)`.
+
+To find the cumulative probability of less than or equal to x trials needed to obtain the first success, $P(X \leq x)$, use `pgeom(q=x-1, prob=p, lower.tail = TRUE)`.
+
+To visualize the cumulative probability $P(X \leq x)$ use `pdist(dist="geom", prob=p, q=x-1)`.
+
+To find the inverse probability, that is the value of x such that $P(X \leq x) = p$ use `qgeom(p, prob=p, lower.tail = TRUE)+1`.
+
+To generate a random sample of size n from this geometric random variable use `rgeom(n, prob=p)+1`.
 
 For example, in waiting in roulette for our lucky number seven, the probability of getting a seven on any spin is $p=1/38$ and, as we have seen, the number of rolls needed is a geometric random variable.
 
@@ -125,11 +129,15 @@ This formula would determine the probability of $k$ events occurring. The expect
 
 Assume we have a Poisson random variable with parameter $\lambda$. We often determine $\lambda$ by finding the sample mean from data since the expectation of a Poisson is $\lambda$.
 
-* To find the individual probability of x occurrences, $P(X=x)$, use `dpois(x, lambda)`.
-* To find the cumulative probability of less than or equal to x successes, $P(X \leq x)$, use `ppois(q, lambda, lower.tail = TRUE)`.
-* To visualize the cumulative probability $P(X \leq x)$ use `pdist(dist="pois", lambda, q=x)`.
-* To find the inverse probability, that is the value of x such that $P(X \leq x) = p$ use `qpois(p, lambda, lower.tail = TRUE)`.
-* To generate a random sample of size n from a poisson random variable use `rpois(n, lambda)`.
+To find the individual probability of x occurrences, $P(X=x)$, use `dpois(x, lambda)`.
+
+To find the cumulative probability of less than or equal to x successes, $P(X \leq x)$, use `ppois(q, lambda, lower.tail = TRUE)`.
+
+To visualize the cumulative probability $P(X \leq x)$ use `pdist(dist="pois", lambda, q=x)`.
+
+To find the inverse probability, that is the value of x such that $P(X \leq x) = p$ use `qpois(p, lambda, lower.tail = TRUE)`.
+
+To generate a random sample of size n from a poisson random variable use `rpois(n, lambda)`.
 
 ### Modeling Number of Earthquakes with the Poisson
 
@@ -221,6 +229,7 @@ Since the proportion of white balls is $m/N$ and $k$ are selected, the expectati
 
 Note, that when the sample is large, the hypergeometric distribution is approximated by a binomial distribution.
 
+
 ### The Hypergeometric Random Variable in R
 
 We can use R to calculate probabilities for the hypergeometric random variable X representing the number of white balls drawn given the following parameters:
@@ -229,10 +238,13 @@ We can use R to calculate probabilities for the hypergeometric random variable X
 * n: the number of black balls in the urn
 * k: the number of balls drawn without replacement
 
-* To find the individual probability of x white balls, $P(X=x)$, use `dhyper(x, m, n, k)`.
-* To find the cumulative probability of less than or equal to x successes, $P(X \leq x)$, use `phyper(q=x, m, n, k, lower.tail = TRUE)`.
-* To find the inverse probability, that is the value of x such that $P(X \leq x) = p$ use `qhyper(p, m, n, k, lower.tail = TRUE)`.
-* To generate a random sample of size nn from a poisson random variable use `rhyper(nn, m, n, k)`.
+To find the individual probability of x white balls, $P(X=x)$, use `dhyper(x, m, n, k)`.
+
+To find the cumulative probability of less than or equal to x successes, $P(X \leq x)$, use `phyper(q=x, m, n, k, lower.tail = TRUE)`.
+
+To find the inverse probability, that is the value of x such that $P(X \leq x) = p$ use `qhyper(p, m, n, k, lower.tail = TRUE)`.
+
+To generate a random sample of size nn from a poisson random variable use `rhyper(nn, m, n, k)`.
 
 Illustrating these commands with the situation above we note the following:
 
@@ -297,6 +309,150 @@ rhyper(nn=10, m=12, n=8, k=4)
 
 Drawing from an urn without selection is a model that usefully describes many real-world situations and the hypergeometric random variable captures the key features of this situation.
 
+
+## The Uniform Distribution {#the_uniform_distribution}
+
+The uniform random variable is a continuous random variable that is equally likely along its entire range of possible values. Like the normal distribution, the area under the curve between two values is the probability of the random variable being in the interval but unlike the normal bell-shaped curve, the uniform probability density function is a flat, horizontal line. If the uniform random variable X ranges from a minimum of $a$ to a maximum of $b$, we abbreviate this $X \sim UNIF(a,b)$.
+
+
+
+### The Uniform Probability Density Function {#the_uniform_probability_density_function}
+
+The uniform probability density function is flat and the area under the curve equals the probability. For X, a uniformly distributed random variable with a minimum of a and a maximum of b, $X \sim UNIF(a,b)$, so that the total area under the curve is 1, the height of the curve must be $1/(b-a)$ between a and b and 0 elsewhere. The code below creates a function to plot different uniform random variables
+
+```{r}
+uniform_Plot <- function(a, b){
+  xvals <- data.frame(x = c(a, b)) #Range for x-values
+  ggplot(data.frame(x = xvals),aes(x = x)) + xlim(c(a, b)) + 
+    ylim(0, 1/(b - a)) +
+    stat_function(fun=dunif, args=list(min=a, max=b), geom = "area", 
+                  fill="green", alpha=0.35) + 
+    stat_function(fun = dunif, args = list(min = a, max = b)) +
+    labs(x="\n u", y="f(u) \n", 
+         title=paste0("Uniform Distribution \n With Min = ", a, " & Max = ", b, " \n")) +
+    theme(plot.title=element_text(hjust = 0.5),
+          axis.title.x=element_text(face="bold", color="blue", size=12),
+          axis.title.y=element_text(face="bold", color="blue", size=12)) +
+    geom_vline(xintercept=a, linetype="dashed", color="red") +
+    geom_vline(xintercept=b, linetype="dashed", color="red")
+}
+```
+
+Source: http://dkmathstats.com/plotting-uniform-distributions-in-r-with-ggplot2/ 
+
+Here is the plot of UNIF(4,12).
+
+```{r}
+uniform_Plot(4,12)
+```
+
+
+### The Uniform Random Variable in R
+
+For X a uniform random variable we use the following. Since by default `min=0` and `max=1`, for X that is uniformly distributed between a and b, $X \sim UNIF(a,b)$, we must replace 0 and 1 by a and b, respectively.
+ 
+To find the probability of X being less than q, $P(X < q)$, use `punif(q, min = 0, max = 1, lower.tail = TRUE)`.
+
+To find the probability of X being greater than q, $P(X > q)$, use `punif(q, min = 0, max = 1, lower.tail = FALSE)` or `1-punif(q, min = 0, max = 1, lower.tail = TRUE)`.
+
+To find the inverse probability, that is the value of x such that $P(X \leq x) = p$ use `qunif(p, min = 0, max = 1, lower.tail = TRUE)`.
+
+To generate a random sample of size n from a uniform random variable use `runif(n, min = 0, max = 1)`.
+
+
+### Example - The UNIF(0,1) Random Variable
+
+The basis for most random number generator schemes is a uniform random variable X with a minimum of 0 and a maximum of 1, $X \sim UNIF(0,1)$. The probability density function is visualized below.
+
+```{r}
+uniform_Plot(0,1)
+```
+
+Because the default `min=0` and `max=1` we could leave these parameters out when using `punif()`, `qunif()`, or `runif()`. For example, we can use `runif(n)` to generate a sample of size n. Here is a sample of twenty random UNIF(0,1):
+
+```{r}
+runif(n=20)
+```
+
+Variations on UNIF(0,1) is how other random numbers are generated. Watch what happens when we multiply `runif(n=20)` by 4.
+
+```{r}
+4*runif(n=20)
+```
+
+In this case, we stretched the range so that the values are now UNIF(0,4).
+
+Suppose in addition to stretching by a factor of 4 we subtract 2.
+
+```{r}
+4*runif(n=20) - 2
+```
+
+This generates random uniform numbers UNIF(-2,2).
+
+And if we had added 2 instead:
+
+```{r}
+4*runif(n=20) + 2
+```
+
+Now we are generating random uniform numbers UNIF(2,6).
+
+Of course, we could generate all of these directly using `runif(0,4)`, `runif(-2,2)`, and `runif(2,6)` but now we know a little more about how R does it under the hood.
+
+### Example - Catch a Flight
+
+Suppose that the time check in at the airport for a 5:00pm flight is uniformly distributed from 3:15pm to 4:30pm. If we let X represent the amount of time in minutes after 3:15pm that a person shows up then $X \sim UNIF(0,75)$.
+
+To find the probability a person chosen at random shows up before 4:15pm:
+
+```{r}
+punif(60, min = 0, max = 75, lower.tail = TRUE)
+```
+
+To find the probability a person chosen at random shows up after 4:15pm we have options:
+
+```{r}
+1-punif(60, min = 0, max = 75, lower.tail = TRUE)
+punif(60, min = 0, max = 75, lower.tail = FALSE)
+```
+
+To find the 66th percentile, that is the amount of time after 3:15pm that $66\%$ of people show up:
+
+```{r}
+qunif(0.66, min = 0, max = 75, lower.tail = TRUE)
+```
+
+As a time, this would translate into 3:15pm plus `r qunif(0.66, min = 0, max = 75, lower.tail = TRUE)` minutes which would be 4:04:30pm.
+
+To generate a random sample of 50 passengers and the number of minutes after 3:15pm that they show up:
+
+```{r}
+runif(n=50, min = 0, max = 75)
+```
+
+Doesn't this give you a feeling of power? It would be easy for this go to our head.
+
+## Chapter Scenario Revisited - Lovin' the Airport {#chapter_scenario_revisited_lovin_the_airport}
+
+Recall, a domestic flight leaves at 5:00pm, has 50 passengers who show up independently at uniformly random times between 3:15pm and 4:30pm and we want to know how many passengers we can expect to have arrived by 4:00pm and how confident can we be in this answer?
+
+As we have seen, the time in minutes after 3:15pm that a passenger arrives can be modeled with a uniform random variable, $X \sim UNIF(0,75)$.
+
+The probability an individual passenger chosen at random will have arrived by 4:00pm is
+
+```{r}
+punif(45, min = 0, max = 75, lower.tail = TRUE)
+```
+
+We have 50 passengers and the probability any one of them arrives by 4:00pm is `r punif(45, min = 0, max = 75, lower.tail = TRUE)`. The total number of passengers who have arrived by 4:00pm is thus like a binomial random variable with n=50 and p=`r punif(45, min = 0, max = 75, lower.tail = TRUE)`. The expected number of passengers to have arrived is `r 50*punif(45, min = 0, max = 75, lower.tail = TRUE)` but this could vary. Check out this distribution:
+
+```{r}
+xpbinom(20:40, size = 50, prob = 45/75)
+```
+
+While we expect around `r 50*punif(45, min = 0, max = 75, lower.tail = TRUE)` there is only an `r 100*dbinom(30, size=50, prob=45/75)` $\%$ chance of exactly `r 50*punif(45, min = 0, max = 75, lower.tail = TRUE)`. This kind of knowledge could help us know how to more effectively manage airport traffic.
+
 ## Exercises {#exercises}
 
 ### Exercise - The Geometric Dice Game
@@ -325,8 +481,25 @@ Earthquakes of magnitude greater than 3.0 along the Wasatch front occur on avera
 (c) If we were to explore the number of earthquakes of magnitude greater than 3.0 in the next two-year period instead of the next 8 months explain what value for $\lambda$ would be appropriate in a Poisson model.
 
 ### Exercise - Growth Mindset and Math Errors
+
 Psychologist Carol Dweck, in her book *Mindset: The New Psychology of Success*, advocated that students focus on the learning process to develop their intelligence rather than to think intelligence is fixed. In math this might mean we need to embrace making mistakes as mistakes provide the main context for exploring effective and ineffective approaches to a problem. Suppose that in an active and engaged college math class, an average of 8 math mistakes are made on the whiteboard per class session. Use a Poisson model to find the following.
 (a) What is the probability that in an active and engaged math class there will be 0 math mistakes made on the whiteboard in a class session?
 (b) Is it more likely that there will be fewer than 8 or more than 8 math mistakes made on the whiteboard in a class session?
 (c) One particularly productive session had 10 great mistakes from which to learn. What is the probability of 10 or more mistakes on the whiteboard in a class session?
+
+### Exercise - Transforming UNIF(0,1)
+
+(a) Describe a transformation on `runif(0,1)` that generates uniform random numbers with a min=0 and max=3.
+(b) Describe a transformation on `runif(0,1)` that generates uniform random numbers with a min=-3 and max=3.
+(c) Describe a transformation on `runif(0,1)` that generates uniform random numbers with a min=4 and max=12.
+
+### Exercise - Showing Up for Class
+
+Suppose that in a class of 20 students that begins at 2:00pm, the time each student shows up is independent of other students and is uniformly distributed from 1:55pm to 2:10pm.
+(a) What is the probability a student chosen at random will arrive on time?
+(b) At what time can we be 90% certain a student chosen at random has arrived?
+(c) What is the probability student A shows up before student B?
+(d) What is the probability that a majority of students will show up on time?
+
+
 
