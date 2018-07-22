@@ -491,6 +491,10 @@ Compiling the results for all the different poker hand we have the following tab
 * One Pair
 * High Card
 
+```{r nice-fig-1724, fig.cap='Poker Hands Table', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+knitr::include_graphics("01-basics-figures/poker_hands_table.png")
+```
+
 
 ## Exercises {#exercises}
 
