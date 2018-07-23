@@ -142,8 +142,8 @@ probs <- rep(1/26, 26)
 The expectation is the sum of the suitcase amounts multiplied by their probabilities. This is easy to do by simply multiplying the `suitcase` vector by the `probs` vector.
 
 ```{r}
-deal_mean <- sum(suitcases*probs)
-deal_mean
+deal_expectation <- sum(suitcases*probs)
+deal_expectation
 ```
 
 It is suprising to many that the expectation is $\$131,477.50$. This is the amount the show would need to budget for for each game played. 
@@ -156,10 +156,10 @@ $$Var(X)=\sum_{x} (x - Mean)^{2} \cdot P(x)$$
 
 $$SD(X) = \sqrt{Var(X)}=\sqrt{\sum_{x} (x - Mean)^{2} \cdot P(x)}$$
 
-Given the suitcase amounts `suitcases` and the mean `deal_mean` and the probabilities `probs` we can easily compute the variance and standard deviation.
+Given the suitcase amounts `suitcases` and the mean `deal_expectation` and the probabilities `probs` we can easily compute the variance and standard deviation.
 
 ```{r}
-deal_var <- sum((suitcases-deal_mean)^{2}*probs)
+deal_var <- sum((suitcases-deal_expectation)^{2}*probs)
 deal_var
 deal_sd <- sqrt(deal_var)
 deal_sd
@@ -187,8 +187,8 @@ new_suitcases <- c(0.01, 1, 5, 10, 25, 75, 100, 300, 400,
        500, 750, 1000, 5000, 10000, 25000, 75000, 
        100000, 200000, 500000, 750000)
 new_probs <- rep(1/20, 20)
-new_deal_mean <- sum(suitcases*probs)
-new_deal_mean
+new_deal_expectation <- sum(suitcases*probs)
+new_deal_expectation
 ```
 
 

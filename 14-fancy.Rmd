@@ -49,7 +49,7 @@ To determine the expected value of the geometric random variable requires an inf
 
 When spinning the roulette wheel and counting the number of trials until our first seven occurs, this is a geometric random variable with probability of success $p=1/38$. Getting the lucky number seven happens 1 out of every 38 spins on average so, intuitively, we anticpate the expected number of trials until our first success is 38. And we would be right. It turns out the expected number of trials for the first success is the reciprocal of the probability since $1/(1/38)=38$.
 
-In general, for a geometric random variable with probability of success p, the expectation, that is, the expected number of trials until the first success is $1/p$.
+In general, for a geometric random variable X with probability of success p, the expectation, that is, the expected number of trials until the first success is $E(X)=1/p$. The variance is $Var(X)=\frac{1-p}{p^{2}}$ and standard deviation $SD(X)=\sqrt{\frac{1-p}{p^{2}}}$.
 
 ### The Geometric Random Variable in R
 
@@ -123,7 +123,7 @@ The Poisson distribution is often used to model real-world phenomena related to 
 A discrete random variable X is said to have a Poisson distribution with parameter $\lambda>0$, if, for $k=0,1,2,...$, the probability mass function of X is given by
 
 $$P(X=k)=\frac{\lambda^{k}*e^{-\lambda}}{k!}$$
-This formula would determine the probability of $k$ events occurring. The expected value is $\lambda$, the variance is also $\lambda$, and the standard deviation is $\sqrt{\lambda}$.
+This formula would determine the probability of $k$ events occurring. The expected value for a Poisson random variable with parameter $\lambda$ is $E(X)=\lambda$, the variance is also $Var(X)=\lambda$, and the standard deviation is $SD(X)=\sqrt{\lambda}$.
 
 ### The Poisson Random Variable in R
 
@@ -225,7 +225,7 @@ Drawing a sample without replacement from a population and counting the number o
 
 $$P(X=x)=\frac{\dbinom{m}{x} \cdot \dbinom{n}{k-x}}{\dbinom{m+n}{k}}$$
 
-Since the proportion of white balls is $m/N$ and $k$ are selected, the expectation of the number of white balls selected is $(m \cdot k)/N$. The variance is $\frac{N-k}{N-1} \cdot n \cdot p \cdot (1-p)$.
+For a hypergeometric random variable, since the proportion of white balls is $m/N$ and $k$ are selected, the expectation of the number of white balls selected is $E(X)=(m \cdot k)/N$. The variance is $Var(X)=\frac{N-k}{N-1} \cdot n \cdot p \cdot (1-p)$ and the standard deviation is the square root of the variance.
 
 Note, that when the sample is large, the hypergeometric distribution is approximated by a binomial distribution.
 
@@ -346,6 +346,7 @@ Here is the plot of UNIF(4,12).
 uniform_Plot(4,12)
 ```
 
+For uniform random variable $X \sim UNIF(a,b)$, the expectation is $E(X)=\frac{a+b}{2}$ and the variance is $Var(X)=\frac{(b-a)^{2}}{12}$ and standard deviation $SD(X)=\sqrt{\frac{(b-a)^{2}}{12}}$.
 
 ### The Uniform Random Variable in R
 
@@ -459,7 +460,7 @@ Recall, the Poisson distribution is models the number of events that occur over 
 
 ### The Exponential Probability Density Function
 
-If the average rate of an event is $\lambda$ occurrences per period of time then wait time until the next occurrence can be modeled with an exponential random variable T with probability density function
+If the average rate of an event is $\lambda$ occurrences per period of time then wait time until the next occurrence can be modeled with an exponential random variable $T \sim (\lambda)$ with probability density function
 
 $$f(t)=\lambda \cdot c^{\lambda \cdot t}$$
 
