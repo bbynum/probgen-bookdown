@@ -176,13 +176,13 @@ You are twice as likely to win on the come out roll as to lose but notice most o
 We need to determine the probability of winning (ie., passing) in all of these different cases. Let's start with the case you roll a sum of 4. In the original two dice sample space below we have circled the outcomes that resolve this bet. 
 
 ```{r nice-fig-1711, fig.cap='Sample Space for Two Dice for a Point of Four', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
-#knitr::include_graphics("01-basics-figures/sample_space_two_dice_point_of_four.png")
+knitr::include_graphics("01-basics-figures/sample_space_two_dice_point_of_four.png")
 ```
 
 Since these 9 outcomes are the only ones that resolve the bet, we will ignore all occurrences of other sums and use these 9 outcomes as our new sample space as shown below. 
 
 ```{r nice-fig-1712, fig.cap='Sample Space for a Point of Four', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
-#knitr::include_graphics("01-basics-figures/craps_sample_space_point_of_four.png")
+knitr::include_graphics("01-basics-figures/craps_sample_space_point_of_four.png")
 ```
 
 Since there are three ways to win and six ways to lose, 
@@ -194,7 +194,7 @@ $$P(not \ passing \mid point \ of \ four) = 6/9$$
 With a similar analysis, we can determine the probability of passing and of not passing for points of 5, 6, 8, 9, and 10. These values are shown in the table below.
 
 ```{r nice-fig-1713, fig.cap='Passing and Not Passing for Different Points', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
-#knitr::include_graphics("01-basics-figures/craps_passing_and_not_passing_for_different_points.png")
+knitr::include_graphics("01-basics-figures/craps_passing_and_not_passing_for_different_points.png")
 ```
 
 To find the probability of winning on a passline bet we need to examine all of these cases. Here is how we can partition winning on the passline bet.
@@ -218,7 +218,7 @@ This means that we lose about 1.4 cents for each dollar bet on the passline. Thi
 Recall, we win a Hardway Six bet by rolling six the hard way with double threes before rolling a six any other way or rolling a seven. The payoff is 9:1. Out of the eleven different ways this bet is resolved as shown in the image below, there is only one way to win. 
 
 ```{r nice-fig-1714, fig.cap='The Hardway Six Sample Space', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
-#knitr::include_graphics("01-basics-figures/craps_hardway_six_sample_space.png")
+knitr::include_graphics("01-basics-figures/craps_hardway_six_sample_space.png")
 ```
 
 Thus, $P(win Hardway Six)=1/11$ and $P(lose Hardway Six)=10/11$. We find the expectation below
@@ -387,7 +387,7 @@ This is left as an exercise.
 A full house is three of one kind and two of another. The step-by-step verbal model to construct a full house proceeds but first selecting a kind for the three of a kind and choosing three of that kind, then selecting a second kind and choosing two of that kind.
 
 ```{r nice-fig-1718, fig.cap='Full House Step-by-step Verbal Model', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
-#knitr::include_graphics("01-basics-figures/poker_full_house_verbal_model.png")
+knitr::include_graphics("01-basics-figures/poker_full_house_verbal_model.png")
 ```
 
 ```{r}
@@ -402,7 +402,7 @@ prob_full_house
 A flush is five cards all from the same suit. The step-by-step verbal model to construct a flush proceeds by first selecting a suit and then selecting five cards from that suit. We must then be careful to subtract off the straight flushes as they are actually a stronger hand.
 
 ```{r nice-fig-1719, fig.cap='Flush Step-by-step Verbal Model', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
-#knitr::include_graphics("01-basics-figures/poker_flush_verbal_model.png")
+knitr::include_graphics("01-basics-figures/poker_flush_verbal_model.png")
 ```
 
 ```{r}
@@ -417,7 +417,7 @@ prob_flush
 To count the number of straights we will count all straights and the subtract the straight  that are also flushes which are considered higher hands. To organize in a step-by-step verbal model, first choose a starting point for the straight. There are ten starting points for the smallest card - A,2,3,4,5,6,7,8,9, or 10. Then choose one of each of the five kinds in the straight. Lastly, we subtract off the straight flushes and royal flushes.
 
 ```{r nice-fig-1720, fig.cap='Straight Step-by-step Verbal Model', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
-#knitr::include_graphics("01-basics-figures/poker_straight_verbal_model.png")
+knitr::include_graphics("01-basics-figures/poker_straight_verbal_model.png")
 ```
 
 ```{r}
@@ -433,7 +433,7 @@ prob_straight
 One step-by-step verbal model for three of a kind is to first choose the kind, then choose three of that kind, then choose two other kinds and choose one each of those kinds.
 
 ```{r nice-fig-1721, fig.cap='Three of a Kind Verbal Model', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
-#knitr::include_graphics("01-basics-figures/poker_three_verbal_model.png")
+knitr::include_graphics("01-basics-figures/poker_three_verbal_model.png")
 ```
 
 ```{r}
@@ -449,7 +449,7 @@ prob_three
 Correctly counting the number of two pair hands has a subtlety. It is important to select the two kinds for the two pairs rather than select them sequentially. A correct step-by-step verbal model starts with select two different kinds, then select two of each of these kinds, then select a third kind and select one of this kind.
 
 ```{r nice-fig-1722, fig.cap='Two Pair Verbal Model', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
-#knitr::include_graphics("01-basics-figures/poker_two_verbal_model.png")
+knitr::include_graphics("01-basics-figures/poker_two_verbal_model.png")
 ```
 
 ```{r}
@@ -462,7 +462,7 @@ prob_two_pair
 It is worth exploring a seemingly plausible but incorrect step-by-step verbal model. What if to create a two-pair hand we select one kind, then select two of that kind, then select a second kind, then select two of that kind, then select a third kind and select one of that kind.
 
 ```{r nice-fig-1723, fig.cap='Two Pair Competing Verbal Models', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
-#knitr::include_graphics("01-basics-figures/poker_two_competing_verbal_models.png")
+knitr::include_graphics("01-basics-figures/poker_two_competing_verbal_models.png")
 ```
 
 If we compare and contrast these two verbal models we see most pieces are the same but the correct model has `choose(13,2)` which equals $\frac{13*12}{2*1}$ while in its place the incorrect model has `choose(13,1)*choose(12,1)` which equals $13*12$. Numerically the second model is twice as big as or original model and so twice as wrong, so to speak. To see what is wrong with it, consider the following concrete examples visualized in the diagram below. They are counted as different hands in the verbal model but are really the same hand. The incorrect model imposes an inappropriate order on the two pairs. 
@@ -537,7 +537,7 @@ BINGO is a social game and a good BINGO caller has a few choice bits to spice up
 First of all, how many cards are there? Cards consist of five columns each matching with either B, I, N, G, or O. Each column has five different numbers printed in order of size from top to bottom except the middle column which only has four numbers and a FREE spot in the middle. The B column contains five different numbers from 1 to 15, the I column five different numbers from 16  to 30, the N column a free spot and four different numbers from 31 to 45, the G column five different numbers from 46 to 60, and the O column five different numbers from 61 to 75.
 
 ```{r nice-fig-1726, fig.cap='BINGO Card Verbals Model', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
-#knitr::include_graphics("01-basics-figures/bingo_card_verbal_model.png")
+knitr::include_graphics("01-basics-figures/bingo_card_verbal_model.png")
 ```
 
 This is a big number. We can use R to compute.
@@ -552,7 +552,7 @@ bingo_total
 Suppose you have nothing better to do and are playing BINGO. What is the probability you will win after just four numbers have been drawns. With 75 numbers there are a total of $\dbinom{74}{4}$ ways that four numbers could be drawn but only four sets of four numbers are winners for you as shown. 
 
 ```{r nice-fig-1727, fig.cap='BINGO Win with Four Numbers Drawn', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
-#knitr::include_graphics("01-basics-figures/bingo_win_with_four.png")
+knitr::include_graphics("01-basics-figures/bingo_win_with_four.png")
 ```
 
 So not very likely.
@@ -565,13 +565,13 @@ prob_win_4
 What about the chance you will win after five numbers are called? There are a total of $\dbinom{75}{5}$ ways that five numbers can be drawn and there are now 12 ways to win as shown. 
 
 ```{r nice-fig-1728, fig.cap='BINGO Win with Five Numbers Drawn', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
-#knitr::include_graphics("01-basics-figures/bingo_win_with_five.png")
+knitr::include_graphics("01-basics-figures/bingo_win_with_five.png")
 ```
 
 Winning is more complicated as shown in the verbal model. 
 
 ```{r nice-fig-1729, fig.cap='Verbal Model for BINGO Win with Five Numbers', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
-#knitr::include_graphics("01-basics-figures/bingo_win_with_five_verbal_model.png")
+knitr::include_graphics("01-basics-figures/bingo_win_with_five_verbal_model.png")
 ```
 
 There are eight ways to win with all five numbers. There are four ways to win with four of these numbers with a fifth number that can be any of the other 71 possibilities. 
@@ -586,7 +586,7 @@ Highly dubitable!
 What is the probability of winning with six numbers? Six numbers can be selected a total of $\dbinom{75}{6}$. Again, there are eight ways to win with five numbers and the sixth number can be any of the other 70 possibilities. There are four ways to win with four numbers and the other two numbers can be any of the other 71 possibilities. See the verbal model below.
 
 ```{r nice-fig-1730, fig.cap='Verbal Model for BINGO Win with Six Numbers', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
-#knitr::include_graphics("01-basics-figures/bingo_win_with_six_verbal_model.png")
+knitr::include_graphics("01-basics-figures/bingo_win_with_six_verbal_model.png")
 ```
 
 Computing this:
@@ -601,13 +601,13 @@ We can modify this approach to find the probability of winning after seven numbe
 Then it gets trickier once we get above seven numbers as there is the possibility of winning in multiple ways at the same time so we need to be concerned about double-counting and subtract off any overlap. A verbal model that partially captures this idea is below though it is vague about the overlap. Suppose that $m$ numbers have been called and we want to find the probability of winning.
 
 ```{r nice-fig-1731, fig.cap='Verbal Model for BINGO Win with More than Seven Numbers', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
-#knitr::include_graphics("01-basics-figures/bingo_win_with_more_than_seven_verbal_model.png")
+knitr::include_graphics("01-basics-figures/bingo_win_with_more_than_seven_verbal_model.png")
 ```
 
 We can apply this verbal model in the case of eight numbers being called. With eight numbers called the only overlap is if two different four number Bingos are completed. Since there are four different four number Bingo paths, there are $\dbinom{4}{2}=6$ ways that two of them could be completed. 
 
 ```{r nice-fig-1732, fig.cap='Verbal Model for BINGO Win with Eight Numbers', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
-#knitr::include_graphics("01-basics-figures/bingo_win_with_eight_verbal_model.png")
+knitr::include_graphics("01-basics-figures/bingo_win_with_eight_verbal_model.png")
 ```
 
 Computing the total minus the overlap
@@ -624,7 +624,7 @@ prob_win_8
 Dealing with the overlap gets trickier still as the numbers called increases. For example, with 9 numbers called there could be an overlap of two four number paths or a four number path and a five number path. Here is the verbal model for getting a BINGO with 9 numbers called. 
 
 ```{r nice-fig-1733, fig.cap='Verbal Model for BINGO Win with Nine Numbers', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
-#knitr::include_graphics("01-basics-figures/bingo_win_with_nine_verbal_model.png")
+knitr::include_graphics("01-basics-figures/bingo_win_with_nine_verbal_model.png")
 ```
 
 Computationally, 

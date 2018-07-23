@@ -23,7 +23,7 @@ Suppose you are playing roulette betting on the single number seven and you are 
 Since the roulette wheel has 38 slots we know the probability of getting a seven is $1/38$ and the probability of not getting a seven is $37/38$. Letting S represent the event of getting a seven and N represent the event of not getting a seven we have $P(S)=1/38$ and $P(N)=37/38. Using subscripts to keep track of the first, second, third spin and so on we can visualize the experiment of waiting for the first seven in a tree diagram. 
 
 ```{r nice-fig-141, fig.cap='Tree Diagram - Waiting for Lucky Number 7', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
-#knitr::include_graphics("01-basics-figures/roulette_tree_diagram_lucky_number_7.png")
+knitr::include_graphics("01-basics-figures/roulette_tree_diagram_lucky_number_seven.png")
 ```
 
 What we are really interested in is how long it takes to get our first number seven. To help us think about this distribution, let X count the number of rolls needed to get our first seven. Building up one step at a time we can find the probability X = 1, 2, 3, ... and find the general pattern. We can calculate a few probabilities to get a feel.
