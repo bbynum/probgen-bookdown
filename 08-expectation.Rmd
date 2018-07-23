@@ -8,6 +8,7 @@ set.seed(2018)
 ## Introduction {#introduction}
 We construct probability distributions and compute and interpret the mathematical expectation or expected value.
 
+
 ## Chapter Scenario - Deal or No Deal {#chapter_scenario_deal_or_no_deal}
 
 Have you ever seen the show Deal or No Deal? If so, I feel sorry for you! We can get a sense of Deal or No Deal by searching for an online version one of which can be found at 
@@ -150,23 +151,7 @@ It is suprising to many that the expectation is $\$131,477.50$. This is the amou
 
 The median is quite different. With 26 different suitcase amounts, the median would be halfway between the 13th and the 14th ordered suitcase amounts. That means the theoretical median is $(750 + 1000)/2=875$. The median from our simulation is `r deal_sim_stats$median` with the median usually being either 750 or 1000 and only rarely being exactly 875.
 
-Two other important measures are the variance and the standard deviation which both help describe the varablility of the outcomes. The main idea of the variance is that it is the average squared distance from the mean. The standard deviation is the square root of the variance.
-
-$$Var(X)=\sum_{x} (x - Mean)^{2} \cdot P(x)$$
-
-$$SD(X) = \sqrt{Var(X)}=\sqrt{\sum_{x} (x - Mean)^{2} \cdot P(x)}$$
-
-Given the suitcase amounts `suitcases` and the mean `deal_expectation` and the probabilities `probs` we can easily compute the variance and standard deviation.
-
-```{r}
-deal_var <- sum((suitcases-deal_expectation)^{2}*probs)
-deal_var
-deal_sd <- sqrt(deal_var)
-deal_sd
-```
-
-The standard deviation is large, approximately a quarter of a million, a reflection of the large range of possible winnings.
-We need to look at all of the pieces including the simulation and the theoretical analysis to better understand the situation. Suitcase amounts range from $\$0.01$ to $\$1,000,000$ with a mean of $\$131,477.50$, a median of $\$875$ and a standard deviation of $\$253,584.50$. 
+Two other important measures are the variance and the standard deviation which both help describe the variablility of the outcomes which will be discussed in the next chapter. 
 
 ### Reflection 
 To reflect on what we’ve just experienced think back on the personal maximum you were willing to invest to play one round of Deal or No Deal. Thinking about the opportunity to play one round of Deal or No Deal as an investment opportunity, describe how this information from the simulated sample and the theoretical analysis impacts your thinking about your own personal maximum. Would you now consider paying the same, more, or less than you earlier indicated? In what way were the probability tools including simulation and expected value helpful tools in analyzing Deal or No Deal?
@@ -190,6 +175,7 @@ new_probs <- rep(1/20, 20)
 new_deal_expectation <- sum(suitcases*probs)
 new_deal_expectation
 ```
+
 
 
 ## Exercises {#exercises}
@@ -235,6 +221,8 @@ You lay down a dollar and I lay down a dollar. Then we each roll a die. You roll
 When you play Deal or No Deal after each round the banker offers you a fixed amount. You can take this money and run or you can keep playing – it is up to you. Play the first round of the Deal or No Deal flashgame (http://www.gamesolo.com/flash-game/deal-or-no-deal.html) by opening six of the suitcases and determine your new expected value. Based on this information and amount the banker was willing to pay you to quit, determine whether or not you would take the banker’s offer.
 
 
+
+
 ## Measures of Variability {#measures_of_variability}
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
@@ -244,7 +232,7 @@ set.seed(2018)
 
 ## Introduction {#introduction}
 
-When examining data key features we look for are the shape, center, spread, and unusual values. Similarly, when examining a probability distribution we can see the shape and unusual values by visualizing the probability histogram and we can determine the expected value to shed light on the center of the distribution. But these tell us nothing about one of the most important aspects of a probability distribution to understand - the spread - that is, how the outcomes vary. We use two main measures for variability - variance and standard deviation.
+When examining data key features we look for are the shape, center, spread, and unusual values. Similarly, when examining a probability distribution we can see the shape and unusual values by visualizing the probability histogram and we can determine the expected value to shed light on the center of the distribution. But these tell us nothing about one of the most important aspects of a probability distribution to understand - the spread - that is, how the outcomes vary. We use two main measures for variability - variance and standard deviation. The main idea of the variance is that it is the average squared distance from the mean. The standard deviation is the square root of the variance.
 
 ## Chapter Scenario - Roulette Fun Bus {#chapter_scenario_roulette_fun_bus}
 
@@ -263,6 +251,7 @@ Our goal is to compare the bus ride home for these two groups. At the end of the
 ## Measuring Variability with Variance and Standard Deviation {#measuring_variability_with_variance_and_standard_deviation}
 
 To measure the spread of a random variable, we need a reference point. We use the expected value, this key measure of the center of a distribution, as our reference point. We would like to see how far from the center the values of the random variable are likely to be. For technical reasons, we find the expected value of the square of the difference between random variable X and its mean. This is called the **variance**. The square root of the variance is called the **standard deviation** and have the virtue of being in the same units as the original random variable.
+
 
 ### Definition of Variance
 
@@ -346,6 +335,30 @@ sd
 
 ## Example - Deal or No Deal
 
+Earlier we examined selecting a suitcase from the 26 Deal or No Deal suitcases and discovered the expected value is $\$131477.50$ while the theoretical median is $\$875$. Knowing these facts might impact how much you would be willing to pay to play the game but they are not the whole story. Suitcases amounts range from 1 cent to 1,000,000 dollars. Variance and standard deviation help us quantify how variable the outcomes are. 
+
+We duplicate below the suitcase amounts and the probability vector along with calculating the expected value.
+
+```{r}
+suitcases <- c(0.01, 1, 5, 10, 25, 50, 75, 100, 200, 300, 400, 
+       500, 750, 1000, 5000, 10000, 25000, 50000, 75000, 
+       100000, 200000, 300000, 400000, 500000, 750000, 1000000)
+probs <- rep(1/26, 26)
+deal_expectation <- sum(suitcases*probs)
+deal_expectation
+```
+
+Given the suitcase amounts `suitcases` and the mean `deal_expectation` and the probabilities `probs` we can easily compute the variance and standard deviation.
+
+```{r}
+deal_var <- sum((suitcases-deal_expectation)^{2}*probs)
+deal_var
+deal_sd <- sqrt(deal_var)
+deal_sd
+```
+
+The standard deviation is large, approximately a quarter of a million, a reflection of the large range of possible winnings.
+We need to look at all of the pieces including the simulation and the theoretical analysis to better understand the situation. Suitcase amounts range from $\$0.01$ to $\$1,000,000$ with a mean of $\$131,477.50$, a median of $\$875$ and a standard deviation of $\$253,584.50$. The mean is large but so is the standard deviation. We would need to take this into account when deciding how much we would be willing to pay for the privilege of choosing a suitcase.
 
 
 ## Chapter Scenario Revisited - Roulette Fun Bus
@@ -434,8 +447,5 @@ ggplot(double_decker, aes(x=bus,y=winnings, fill=bus))+geom_boxplot()
 ```
 
 We see there were more large winners and more large losers on the \textcolor{blue}{Blue} bus. There was no such large winners or losers on the \textcolor{red}{Red} bus. Variation matters. Which bus would you rather be on?
-
-## Exercises
-
 
 
