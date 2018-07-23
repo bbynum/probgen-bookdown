@@ -12,7 +12,7 @@ Not everything is Normal (we certainly aren't), but it is useful to model data t
 
 ## Chapter Scenario - Tips on the Weekend {#chapter_scenario_tips_on_the_weekend}
 
-Suppose a friend of yours is working as a server. Suppose that on Fridays tips average $120 with a standard deviation of $30 and are normally distributed. We say $N(\mu = 120, \sigma = 30).$ The distribution would look like this:
+Suppose a friend of yours is working as a server. Suppose that on Fridays tips average $120 with a standard deviation of $30 and are normally distributed. With Friday tips, F, we denote this as $F \sim N(\mu = 120, \sigma = 30)$. The distribution would look like this:
 
 ```{r nice-fig-121, fig.cap='Histogram for Friday Tips', out.width='80%', fig.asp=.75, fig.align='center'}
 ggplot(data.frame(x = c(30, 210)), aes(x)) +
@@ -20,7 +20,7 @@ ggplot(data.frame(x = c(30, 210)), aes(x)) +
     scale_x_continuous(breaks = c(30,60,90,120,150,180,210))
 ```
 
-Suppose that Saturdays are a little different with tips normally distributed with a mean of $\$90$ and a standard deviation of $\$20$,  $N(\mu = 90, \sigma = 20)$. Here we can visualize the distribution:
+Suppose that Saturday tips, S, are a little different with tips normally distributed with a mean of $\$90$ and a standard deviation of $\$20$, so  $S \sim N(\mu = 90, \sigma = 20)$. Here we can visualize the distribution:
 
 ```{r nice-fig-122, fig.cap='Histogram for Saturday Tips', out.width='80%', fig.asp=.75, fig.align='center'}
 # Again, don't worry about the syntax here.
@@ -29,7 +29,7 @@ ggplot(data.frame(x = c(30, 150)), aes(x)) +
     scale_x_continuous(breaks = c(30, 50, 70, 90, 110, 130, 150))
 ```
 
-Suppose your friend really needs $\$200$ in tips this weekend. Rent is due. The broader question before us is what the distribution of total tips on the weekend, Friday plus Saturday, looks like. Is it normal? What is the mean? What is the standard deviation? As a simplifying assumption we will assume that based on past experience Friday tips and Saturday tips are independent.
+Suppose your friend really needs $\$200$ in tips this weekend. Rent is due. The broader question before us is what the distribution of total tips on the weekend, Friday plus Saturday (F + S), looks like. Is it normal? What is the mean? What is the standard deviation? As a simplifying assumption we will assume that based on past experience Friday tips and Saturday tips are independent.
 
 ## The Roots of the Normal {#the_roots_of_the_normal}
 
@@ -99,7 +99,7 @@ Through simulating the toss of one die, the sum of two, three, and then more we 
 
 ## Chapter Scenario Revisited - Tips on the Weekend
 
-Recall, Friday tips are normal and Saturday tips are normal. Before examining the theory, let's run a simulation to get an idea of what to expect.
+Recall, Friday tips are normal and Saturday tips are normal with $F \sim N(\mu = 120, \sigma = 30)$ and $S \sim N(\mu = 90, \sigma = 20)$. Before examining the theory, let's run a simulation to get an idea of what to expect.
 
 The code below simulates 1000 Friday tips calling the variable `friday` rounded to the nearest dollar and, similarly, 1000 Saturday night tips, then their sum, `weekend`, and put them into a dataframe for ease of analysis.
 
@@ -126,7 +126,7 @@ Note that the mean is around $\$210$ which we might expect since the mean of Fri
 
 ## Theory
 
-What really happens when adding independent normal random variables is that the shape is normal, the mean is the sum of the individual means but the standard deviation is the square root of the sum of the squares of the individual standard deviations, a result akin to our familiar Pythagorean Theorem.
+What really happens when adding independent normal random variables is that the shape is normal, the mean is the sum of the individual means but the standard deviation is the square root of the sum of the squares of the individual standard deviations, a result akin to our familiar Pythagorean Theorem. In summary, given independent normal distributions X and Y with $X \sim N(\mu_{X}, \sigma_{X})$ and $Y \sim N(\mu_{Y}, \sigma_{Y})$ we know $X+Y \sim N(\mu_{X}+\mu_{Y}, \sqrt{\sigma_{X}^{2}+\sigma_{Y}^{2}})$.
 
 For our example where Friday tips are $N(\mu = 120, \sigma = 30)$ and Saturday tips are $N(\mu = 90, \sigma = 20)$ we know that the sum of these is normal with mean $120 + 90$ with a standard deviation of $\sqrt{30^2 + 20^2}$ which equals `r (30^2 + 20^2)^(.5)`. Observe how close the simulated mean and SD are to what the theory says.
 

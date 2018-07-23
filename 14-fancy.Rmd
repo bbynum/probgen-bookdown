@@ -41,13 +41,13 @@ In this situation, we have independent trials and the same probability of succes
 
 ### The Geometric Distribution
 
-Given independent trials with a constant probability of success, p, on each trial the number failures before the first success, X, is a geometric random variable with probability density function
+Given independent trials with a constant probability of success, p, on each trial the number failures before the first success, X, is a geometric random variable, $X \sim GEOM(p)$, with probability density function
 
 $$\text{For all positive integers n}, P(X=x)=(1-p)^{x-1} \cdot p$$
 
 To determine the expected value of the geometric random variable requires an infinite sum and some calculus but we will examine it intuitively. 
 
-When spinning the roulette wheel and counting the number of trials until our first seven occurs, this is a geometric random variable with probability of success $p=1/38$. Getting the lucky number seven happens 1 out of every 38 spins on average so, intuitively, we anticpate the expected number of trials until our first success is 38. And we would be right. It turns out the expected number of trials for the first success is the reciprocal of the probability since $1/(1/38)=38$.
+When spinning the roulette wheel and counting the number of trials until our first seven occurs, this is a geometric random variable with probability of success $p=1/38$, $X \sim GEOM(1/38)$. Getting the lucky number seven happens 1 out of every 38 spins on average so, intuitively, we anticpate the expected number of trials until our first success is 38. And we would be right. It turns out the expected number of trials for the first success is the reciprocal of the probability since $1/(1/38)=38$.
 
 In general, for a geometric random variable X with probability of success p, the expectation, that is, the expected number of trials until the first success is $E(X)=1/p$. The variance is $Var(X)=\frac{1-p}{p^{2}}$ and standard deviation $SD(X)=\sqrt{\frac{1-p}{p^{2}}}$.
 
@@ -120,7 +120,7 @@ The important thing to remember is that these R commands count the number of fai
 
 The Poisson distribution is often used to model real-world phenomena related to the number of certain events that occur over a specified period of time such as the number of math errors made in a typical math class, the number of text messages received during class, or even the chance of an earthquake occurring sometime this semester.
 
-A discrete random variable X is said to have a Poisson distribution with parameter $\lambda>0$, if, for $k=0,1,2,...$, the probability mass function of X is given by
+A discrete random variable X is said to have a Poisson distribution with parameter $\lambda>0$, if, for $k=0,1,2,...$, is denoted as $X \sim POI(\lambda)$ with the probability mass function of X given by
 
 $$P(X=k)=\frac{\lambda^{k}*e^{-\lambda}}{k!}$$
 This formula would determine the probability of $k$ events occurring. The expected value for a Poisson random variable with parameter $\lambda$ is $E(X)=\lambda$, the variance is also $Var(X)=\lambda$, and the standard deviation is $SD(X)=\sqrt{\lambda}$.
@@ -149,7 +149,7 @@ Consider how the Poisson can be used to model different phenomena. One key is th
 
 Suppose that we make the simplifying assumption that the number of earthquakes of a given magnitude that occur in a given time period is a Poisson distribution and that the estimate of the recurrence interval can be used to determine the parameter .
 
-Suppose that we are interested in the occurrence of earthquakes of magnitude greater than 3.0 during a two-semester period of 8 months. Since the estimate of the recurrence interval is 4 months we would expect approximately two earthquakes in eight months thus we would model the number of earthquakes with parameter $\lambda=2$.
+Suppose that we are interested in the occurrence of earthquakes of magnitude greater than 3.0 during a two-semester period of 8 months. Since the estimate of the recurrence interval is 4 months we would expect approximately two earthquakes in eight months thus we would model the number of earthquakes, X, as a Poisson with parameter $\lambda=2$, $X \sim POI(2)$.
 
 To find the probability of 0 earthquakes in a two-semester period:
 
@@ -221,7 +221,7 @@ Situations similar to this which we can understand as equivalent to having an ur
 
 ### The Hypergeometric Distribution
 
-Drawing a sample without replacement from a population and counting the number of successes is modeled by the hypergeometric distribution. Such a situation can be conceived as drawing without replacement $k$ balls from an urn containing $m$ white balls and $n$ black balls where the hypergeometric random variable $X$ counts the number of white balls selected. The total number of balls we call $N$ and $N=m+n$. If $k$ balls total are selected and $x$ of them are white then $k-x$ of them are black. $X$ can take on values from $0$ to the minimum of $k$ and $m$ and has the following probability distribution
+Drawing a sample without replacement from a population and counting the number of successes is modeled by the hypergeometric distribution. Such a situation can be conceived as drawing without replacement $k$ balls from an urn containing $m$ white balls and $n$ black balls where the hypergeometric random variable $X \sim HYP(m,n,k)$ counts the number of white balls selected. The total number of balls we call $N$ and $N=m+n$. If $k$ balls total are selected and $x$ of them are white then $k-x$ of them are black. $X$ can take on values from $0$ to the minimum of $k$ and $m$ and has the following probability distribution
 
 $$P(X=x)=\frac{\dbinom{m}{x} \cdot \dbinom{n}{k-x}}{\dbinom{m+n}{k}}$$
 
@@ -232,7 +232,7 @@ Note, that when the sample is large, the hypergeometric distribution is approxim
 
 ### The Hypergeometric Random Variable in R
 
-We can use R to calculate probabilities for the hypergeometric random variable X representing the number of white balls drawn given the following parameters:
+We can use R to calculate probabilities for the hypergeometric random variable $X \sim HYP(m,n,k)$ representing the number of white balls drawn given the following parameters:
 
 * m: the number of white balls in the urn
 * n: the number of black balls in the urn
@@ -248,12 +248,12 @@ To generate a random sample of size nn from a poisson random variable use `rhype
 
 Illustrating these commands with the situation above we note the following:
 
-* x: the number of liberal students selected (or white balls selected)
+* X: the number of liberal students selected (or white balls selected)
 * m=12: the number of liberals in class (or white balls in urn)
 * n=8: the number of conservatives in class (or black balls in urn)
-* k: the number of students selected (or balls drawn without replacement)
+* k=4: the number of students selected (or balls drawn without replacement)
 
-Here we find the probability of three liberal students (and one conservative) being selected is `r dhyper(x=3, m=12, n=8, k=4)`:
+We describe the distribution of liberal students selected as $X \sim HYP(12,8,4)$. Here, we find the probability of three liberal students (and one conservative) being selected is `r dhyper(x=3, m=12, n=8, k=4)`:
 
 ```{r}
 dhyper(x=3, m=12, n=8, k=4)

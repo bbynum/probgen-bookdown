@@ -15,7 +15,7 @@ Sara Errani get about 79% of her first serves in. How unusual would it be for he
 
 ## The Binomial Distribution
 
-The binomial distribution is a discrete probability distribution describing the outcome of n independent trials in an experiment where each trial has only two outcomes identified as success and failure. Given n independent trials and the probability of a successful trial p, the probability of having x successful outcomes is as follows.
+The binomial distribution is a discrete probability distribution describing the outcome of n independent trials in an experiment where each trial has only two outcomes identified as success and failure. Given n independent trials and the probability of a successful trial p, the probability of having X successful outcomes is a binomial denoted $X \sim BIN(n,p)$ with the probability density function as follows.
 
 $$P(x)=\binom{n}{x}p^x(1-p)^{n-x}$$
 
@@ -26,7 +26,7 @@ Examining the three key pieces of the binomial distribution,  the initial combin
 
 ### Individual Binomial Probabilities
 
-Suppose that a very good dart player hits the bulls-eye 15% of the time. Suppose she makes 25 throws. 
+Suppose that a very good dart player hits the bulls-eye 15% of the time. Suppose she makes 25 throws. If X is the number of bulls-eyes we know $X \sim BIN(25,0.15)$. 
 
 Here is the probability she makes exactly 5 bulls-eyes.
 
