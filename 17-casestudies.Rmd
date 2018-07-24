@@ -905,3 +905,7 @@ How many people need to buy tickets for the probability of a winner to be at lea
 ### Exercise - Think Positive Expectation
 
 How big would the Grand Prize need to be in order for the expected value to turn positive? (Ignore the possibility that there is more than one winner.)
+
+### Exercise - Thinking about Dependencies
+
+When finding the probability of at least one winner if n tickets were sold we assumed that each individual independently chooses their own ticket. If this was not the case and there were patterns in the selection of tickets where some patterns were more likely to be chosen than others, would this increase or decrease the probability of at least one winner if n tickets were sold? Explain.
