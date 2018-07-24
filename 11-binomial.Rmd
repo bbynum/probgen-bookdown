@@ -117,3 +117,64 @@ Consider a slot machine with five wheels where each wheel contains ten symbols. 
 ### Exercise - Pounding Pennies
 A random sample of pennies are set on edge and knocked over by gently pounding on the table. It may seem totally weird, but someone conjectures that this process we will call “pounding pennies” is significantly different from flipping a fair coin where the percentage of heads is 50%. In an experiment, we obtained 182 heads and 142 tails. Would this be considered an unusual event if the true percentage of heads was really 50%? Explain. (Note, we often consider as "unusual" an event that happens less than 5% of the time.)
 
+### Exercise - Jasmine Recommends
+According to Sam nothing is more relaxing than a movie and some popcorn. Suppose she rates 75% of the movies Jasmine recommends to her with a “thumbs up.” What is the probability she will rate all four of the next movies Jasmine recommends with a “thumbs up”?
+
+### Exercise - Cancer Indicence
+Marijke enjoys thinking about diseases. She knows the number of new cases of cancer (cancer incidence) is 454.8 per 100,000 men and women per year (based on 2008-2012 cases). Given this rate, what is the probability that out of 100 people selected at random, none of them will get cancer?
+
+### Exercise - Famous Places
+Nicole likes to travel. Assume she has been to 70% of famous locations. If five famous locations are chosen at random, what is the probability she has already visited fewer than four of them?
+
+### Exercise - Stealing Dogs
+When Kennedy sees a dog there is a 90% chance she will try to steal that dog for her own. What is the probability that she will want to steal at least 5 of the next 6 dogs she sees?
+
+### Exercise - Please Read this Book!
+Sarah is a reader. She likes most of the novels she reads. Last year she liked 17 of the 20 novels she read. Assuming this proportion is approximately the true proportion of novels she likes, what is the probability she will like at least 90% of the next 10 novels she reads?
+
+### Exercise - The Animal Pictionary
+In a picture book of animals, Allison can identify 80% of the species. Suppose 100 animals are chosen at random to test her knowledge. What is the probability she can name at least 75 of them?
+
+### Exercise - Not that Funny!
+When Jake tells a joke, approximately 40% of the people laugh. If Jake tells a joke to our class of 21 people, what is the probability a majority will laugh?
+
+### Exercise - Beat the Dean
+Isaac beats the dean at ping pong approximately 1 time in a 100. What is the probability he will win at least one of the next 10 games?
+
+### Exercise - Perro No Habla Espanol
+Marin often tries to speak Spanish with dogs. Only 35% of the dogs she speaks with understand her. What is the probability that between seis y ocho of the next diez dogs will understand what she is saying?
+
+### Exercise - The Kitty Genovese Case
+Kayla likes insights from psychology. In one famous situation, it was reported that 38 bystanders neglected to intervene when Kitty Genovese was murdered. Find the probability of this occurring if we assume 1% of people will intervene. Find the probability of this occurring if we assume 5% of people will intervene. Find the probability of this occurring if we think 10% of people will intervene.
+
+### Exercise - Sweeping Three
+Jamie likes lacrosse. Suppose two teams of equal strength play three games. What is the probability of one team winning all three games?
+
+### Exercise - Stop Browsing Pinterest During Class
+Jordan can only afford to buy 2% of the boats he sees on Pinterest. What is the probability he cannot afford to buy any of the next 20 boats he views?
+
+### Exercise - To Sweat or Not to Sweat
+Assuming each day is a new day, Grace wakes up and makes a decision about whether or not to exercise. Historically she chooses to exercise on about 2/3 of the days and not exercise on about 1/3 of the days. In a given week, what is the probability she will not exercise all seven days?
+
+### Exercise - I Lift Things Up, I Set Things Down
+Luke can pretty well spot when a fellow weight lifter is using steroids and thinks about 20% of the gym rats he sees do. If a dozen of these individuals are selected at random at the gym to receive a free pound of liquid protein, what is the probability at least one of them uses steroids?
+
+### Exercise - Liking Probability
+Tegan likes learning and enjoys what she learns in probability class at least half of the time. Suppose there are 28 class sessions over the course of the semester. What is the probability she enjoys what she learns on at least 16 of the sessions?
+
+### Exercise - Swimming in the Ocean
+Emily swims in the ocean when the sun is shining. Suppose that on her favorite beach the sun shines 80% of the time. What is the probability she will go there four days in a row and not get to swim at least one day?
+
+### Exercise - Biking the Double Black Diamond
+When riding a double black diamond trail, Niklas crashes his mountain bike 6 out of every 10 times on average. Suppose he rides five trails in one day. Find and visualize the probabilities he crashes 0 times, 1 time, 2 times, 3 times, 4 times, and 5 times.
+
+### Exercise - Sloth-lore
+Jasmine like sloths. According to Wikipedia, “Currently living sloths belong largely to two families, Megalonychidae ("two-toed" sloths) and Bradypodidae (three-toed sloths). All living sloths have in fact three toes; the "two-toed" sloths, however, have only two fingers. Two-toed sloths generally move faster than three-toed sloths. Both types tend to occupy the same forests; in most areas, one species of three-toed sloth and one species of the larger two-toed sloth will jointly predominate.” Suppose that 61% of the population are three-toed sloths and 39% of the population are larger two-toed sloths. If 10 sloths are chosen at random to participate in a focus group screening the movie Zootopia (Jasmine also like movies), what is the probability less than half of the sloths chosen are three-toed sloths?
+
+### Exercise - Set, Spike, Kill
+Audrey and Taylor like playing volleyball. When spiking the ball, Audrey gets a kill 40% of the time and Taylor gets a kill 45% of the time. If in the next game each of them get three chances to spike the ball, what is the probability Audrey gets more kills than Taylor? (Hint: Look at all the different cases and be careful with your ANDs and ORs.)
+
+### Exercise - DIY Binomial
+Make up your own binomial problem. Then solve it.
+
+
