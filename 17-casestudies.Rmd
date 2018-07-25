@@ -902,9 +902,13 @@ Find the probability of winning Powerball in each of the following ways.
 
 How many people need to buy tickets for the probability of a winner to be at least 0.90?
 
+### Exercise - Today: 522 Million Dollar Jackpot
+
+As reported on NBC Evening News with Lester Holt on July 24, 2018, the Powerball jackpot topped $\$522$ million. What is the expected value of a $\$2$ ticket?
+
 ### Exercise - Think Positive Expectation
 
-How big would the Grand Prize need to be in order for the expected value to turn positive? (Ignore the possibility that there is more than one winner.)
+How big would the Grand Prize need to be in order for the expected value to turn positive? (Ignore the possibility that there is more than one winner.) Would this mean that spending a chunk of your money on Powerball is a good investment? Explain.
 
 ### Exercise - Thinking about Dependencies
 
