@@ -40,17 +40,17 @@ The main reason that natural phenomena often are approximately normal is the Cen
 
 ## The Normal Distribution in R
 
-Given normal random variable X with parameters $\mu$ and $\sigma$
+Given normal random variable X with parameters $\mu$ and $\sigma$:
 
-To find the probability of X being less than q, $P(X < q)$, and visualize the region use `pnorm(q, mean, sd)`. 
+To find the probability of X being less than q, $P(X < q)$, use `pnorm(q, mean, sd)` or use `pdist("norm", q, mean, sd, plot = FALSE)`. To visualize the region and report the probability of X being less than q, $P(X < q)$, use `pdist(dist="norm", q, mean, sd)`. To visualize the region and not report the probability use `pdist(dist="norm", q, mean, sd, invisible=TRUE)`.
 
-To find the probability of X being greater than q, $P(X > q)$, and visualize the region use the complement principle and compute `1-pnorm(q, mean, sd)`.
+To find the probability of X being greater than q, $P(X > q)$, use the complement principle and compute `1-pnorm(q, mean, sd)` or include `lower.tail=FALSE` and find `pnorm(q, mean, sd, lower.tail=FALSE)` .
 
-To find the inverse probability, that is the value of x such that $P(X \leq x) = p$ and visualize the region use `qnorm(p, mean, sd)`.
+To find the inverse probability, that is the value of x such that $P(X \leq x) = p$ use `qnorm(p, mean, sd)`. To visualize the region and report the value of x such that $P(X \leq x) = p$ use `qdist(dist="norm", p, mean, sd)`. To visualize the region and not report the value use `$P(X \leq x) = p$ use `qnorm(p, mean, sd, plot=FALSE)`.
 
-In the commands above, to visualize the region and not report the probability include `invisible=TRUE`. To report the probability and not visualize the region include `plot=FALSE`.
+To generate a random sample of size n from a uniform random variable use `rnorm(n, mean, sd)`.
 
-To generate a random sample of size n from a uniform random variable use `rnorm(n, mean = 0, sd = 1)`.
+For all of the commands above the default value for the mean is 0 and the default value for the standard deviation is 1 generating results for the standard normal.
 
 
 ## Example - Normal Blood Pressure
@@ -72,7 +72,7 @@ If we are interested in finding the proportion or percentage of individuals with
 To find the proportion of males with normal blood pressure who have SBP below 120:
 
 ```{r}
-pdist("norm", q = 120, mean = 113.8, sd = 10.8)
+pnorm(q=120, mean=113.8, sd=10.8)
 ```
 
 To get the proportion only and not the plot:
