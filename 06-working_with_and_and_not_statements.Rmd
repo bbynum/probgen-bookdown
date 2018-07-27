@@ -32,7 +32,7 @@ Each of these games was an even-money game meaning the payoff ratio was 1:1 wher
 
 We can use simulation to recreate the Chevalier's experience. The code below simulates 10,000 trials of Game One and documents the number of wins and losses.
 
-```{r nice-tab-61, tidy=FALSE}
+```{r nice-tab-601, tidy=FALSE}
 die_tosses <- matrix(sample(1:6, 4*10000, replace=TRUE), ncol=4) #generate die tosses
 sixes_logic <- die_tosses==6 #identify where there are sixes (TRUE=1, FALSE=0)
 number_of_sixes <- apply(sixes_logic, 1, sum) #Tabulate the number of sixes in each game
@@ -47,7 +47,7 @@ knitr::kable(
 
 The simulated Chevalier in this simulation would notice winning $51.39\%$ of the time. Let's simulate 10,000 trials of Game Two for comparison sake.
 
-```{r nice-tab-62, tidy=FALSE}
+```{r nice-tab-602, tidy=FALSE}
 
 two_Die_tosses <- matrix(sample(1:6, 24*10000, replace=TRUE) + 
     sample(1:6, 24*10000, replace=TRUE), ncol=24) #generate 10000 trials of 24 two dice rolls
@@ -120,7 +120,7 @@ The gambler bets on the chance of getting at least one six on four rolls of a di
 
 Consider drawing a tree diagram for four tosses of the die including the probabilities along each branch. For each toss of the die we need only identify two branches – NOT SIX (1,2,3,4 or 5) or SIX (6). You can stop the branch whenever a six occurs since the gambler wins in this instance.
 
-```{r nice-fig-63, fig.cap='Tree Diagram for Game One', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-603, fig.cap='Tree Diagram for Game One', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/chevalier_game_one.png")
 ```
 
@@ -141,7 +141,7 @@ Recall, in this game the gambler rolls a pair of dice and has 24 chances to obta
 
 Consider what a tree diagram would look like for this game. If we let event $D_{i}$ represent getting a double six on the $i^{th}$ roll of the dice and $N_{i}$ represent its complement we can stop the branching as a win whenever we hit a double six. 
 
-```{r nice-fig-64, fig.cap='Venn Diagram of Class Composition', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-604, fig.cap='Venn Diagram of Class Composition', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/chevalier_game_two.png")
 ```
 
@@ -188,7 +188,7 @@ Extend this thinking to find the probability of no match with five people.
 
 We want to describe the solution in general for any number of people n according to the tree diagram below. 
 
-```{r nice-fig-65, fig.cap='Tree Diagram for Birthday Problem', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-605, fig.cap='Tree Diagram for Birthday Problem', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/birthday_problem_tree_diagram.png")
 ```
 

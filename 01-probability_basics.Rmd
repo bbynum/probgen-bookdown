@@ -1,4 +1,4 @@
-# Probability Basics {#basics}
+# Probability Basics {#probability_basics}
 
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
@@ -14,7 +14,7 @@ In this chapter, basic terminology and principles of probability are introduced.
 
 There are three cards – one with a blue dot on both sides, one with a red dot on both sides, and one with a blue dot on one side and a red dot on the other.  The cards are shuffled (both interspersed and randomly turned over) and you receive one of the three cards and it is placed face down on the table.  If the other side of the card has a different color dot, you win $\$1$ while if the other side of the card has the same color dot you lose $\$1$.  
 
-```{r nice-fig-11, fig.cap='Three-Spot Card Game', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-101, fig.cap='Three-Spot Card Game', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/three_spot_card_game.png")
 ```
 
@@ -34,7 +34,7 @@ Consider a die is tossed and we examine whether the outcome. We say it is a fair
 
 Running a simulation of tossing a die might be instructive here. The R code below performs 10,000 trials of tossing a die and recording the results in both a table and a histogram. At this point, focus on the output and don't worry so much about the R code.
 
-```{r nice-tab-12, tidy=FALSE}
+```{r nice-tab-102, tidy=FALSE}
 die <- sample(x=1:6, size=10000, replace = TRUE)
 sim_die <- data.frame(die)
 knitr::kable(
@@ -45,7 +45,7 @@ knitr::kable(
 
 Because samples vary, we do not get each face appearing exactly $1/6$ of the time but when we examine the data visually in a histogram we see how similar the outcomes are.
 
-```{r nice-fig-13, fig.cap='Histogram for Tossing One Die', out.width='80%', fig.asp=.75, fig.align='center'}
+```{r nice-fig-103, fig.cap='Histogram for Tossing One Die', out.width='80%', fig.asp=.75, fig.align='center'}
 ggplot(data=sim_die, aes(x=die)) + geom_histogram(aes(y=..density..), binwidth = 1)
 ```
 
@@ -130,19 +130,19 @@ For the experiment of tossing one die and the events defined above, we can find 
 
 In the image of the sample space below we see that after circling the elements that are even and marking the element that is six, a total of three elements are identified. Thus, $P(E \ or \ S)=3/6$.
 
-```{r nice-fig-14, fig.cap='Sample Space for E or S', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-104, fig.cap='Sample Space for E or S', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
 #knitr::include_graphics("01-basics-figures/one_die_sample_space_E_or_S.png")
 ```
 
 In the image of the sample space below we see that after circling the elements that are even and boxing the elements that are less than three, a total of three elements are identified. Thus, $P(E \ or \ L)=3/6$.
 
-```{r nice-fig-15, fig.cap='Sample Space for E or L', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-105, fig.cap='Sample Space for E or L', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
 #knitr::include_graphics("01-basics-figures/one_die_sample_space_E_or_L.png")
 ```
 
 In the image of the sample space below we see that after putting a triangle around the element six and boxing the elements that are less than three, a total of four elements are identified. Thus, $P(S \ or \ L)=4/6$.
 
-```{r nice-fig-16, fig.cap='Sample Space for S or L', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-106, fig.cap='Sample Space for S or L', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
 #knitr::include_graphics("01-basics-figures/one_die_sample_space_S_or_L.png")
 ```
 
@@ -205,13 +205,13 @@ Out of these six elements of the sample space, in four of the cases is the other
 ### Exercise - The Monty Hall Problem
 You are shown three doors.  Behind one is a car, behind the other two are goats.  You are to choose one door.  Hopefully you get the car.  To spice it up, Let’s Make a Deal host, Monty Hall, who knows exactly what is behind each door, reveals a donkey behind one of the doors that you have not chosen.  Now, there remain two doors – the one you chose, and the other unopened door.  Monty asks you if you want to switch doors.  Should you?
 
-```{r nice-fig-17, fig.cap='Monty Hall Problem', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-107, fig.cap='Monty Hall Problem', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/monty_hall_problem.png")
 ```
 
 ### Exercise - Twelve-sided Die
 Consider the different probability experiment of tossing one 12-sided Dungeons and Dragons dice. Describe the sample space and identify several events and find the probabilities of these simple events as well as at least one complement, one AND, one OR, and one conditional probability. Use probability function notation where appropriate.
 
-```{r nice-fig-18, fig.cap='Twelve-sided Die', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-108, fig.cap='Twelve-sided Die', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/12_sided_die.png")
 ```

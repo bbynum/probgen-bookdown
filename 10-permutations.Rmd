@@ -63,7 +63,7 @@ Find the number of possible rearrangements for the following names - JON, BRAN, 
 
 ### Exercise - License Plates
 
-```{r nice-fig-91, fig.cap='Utah License Plates', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1001, fig.cap='Utah License Plates', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/utah_license_plates.png")
 ```
 

@@ -1,4 +1,4 @@
-# Interlude - In an Attempt to Kill the Student, the Authors Solve the Same Simple Problem Four Ways (One Bad and Three Good) {#kill_the_student}
+# Interlude - In an Attempt to Kill the Student, the Authors Solve the Same Simple Problem Four Ways (One Bad and Three Good) {#interlude_four_problems}
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 library(mosaic)
@@ -17,7 +17,7 @@ In the game of Risk competitors resolve attacks by rolling dice. Suppose that yo
 
 While there are six sides to each die, because we are primarily interested in whether or not we obtain a six, we will use the tree diagram below where event **S** represents getting a six and event **N** represents getting a non-six, ie., 1, 2, 3, 4, or 5.
 
-```{r nice-fig-41, fig.cap='Tree Diagram for Sixes on Two Dice', out.width='60%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-401, fig.cap='Tree Diagram for Sixes on Two Dice', out.width='60%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/tree_two_dice_sixes.png")
 ```
 
