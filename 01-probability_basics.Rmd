@@ -131,19 +131,19 @@ For the experiment of tossing one die and the events defined above, we can find 
 In the image of the sample space below we see that after circling the elements that are even and marking the element that is six, a total of three elements are identified. Thus, $P(E \ or \ S)=3/6$.
 
 ```{r nice-fig-104, fig.cap='Sample Space for E or S', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
-#knitr::include_graphics("01-basics-figures/one_die_sample_space_E_or_S.png")
+knitr::include_graphics("01-basics-figures/one_die_sample_space_E_or_S.png")
 ```
 
 In the image of the sample space below we see that after circling the elements that are even and boxing the elements that are less than three, a total of three elements are identified. Thus, $P(E \ or \ L)=3/6$.
 
 ```{r nice-fig-105, fig.cap='Sample Space for E or L', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
-#knitr::include_graphics("01-basics-figures/one_die_sample_space_E_or_L.png")
+knitr::include_graphics("01-basics-figures/one_die_sample_space_E_or_L.png")
 ```
 
 In the image of the sample space below we see that after putting a triangle around the element six and boxing the elements that are less than three, a total of four elements are identified. Thus, $P(S \ or \ L)=4/6$.
 
 ```{r nice-fig-106, fig.cap='Sample Space for S or L', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
-#knitr::include_graphics("01-basics-figures/one_die_sample_space_S_or_L.png")
+knitr::include_graphics("01-basics-figures/one_die_sample_space_S_or_L.png")
 ```
 
 ### Minding the Overlap

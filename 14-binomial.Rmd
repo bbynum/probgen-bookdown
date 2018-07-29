@@ -197,13 +197,13 @@ If we let A represent the number of kills for Audrey and T the number of kills f
 To explore the possibilities we look at all the different cases and be careful with our ANDs and ORs. The table below shows the different possible combinations of kills for Audrey and kills for Taylor with the cells highlighted where Audrey has more kills than Taylor.
 
 ```{r nice-fig-111, fig.cap='Table for Number of Volleyball Kills by Audrey and Taylor', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
-#knitr::include_graphics("01-basics-figures/volleyball_kills_table.png")
+knitr::include_graphics("01-basics-figures/volleyball_kills_table.png")
 ```
 
 The verbal model below describes the cases where Audrey has more kills than Taylor.
 
 ```{r nice-fig-112, fig.cap='Verbal Model for Audrey Having More Kills Than Taylor', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
-#knitr::include_graphics("01-basics-figures/volleyball_kills_verbal_model.png")
+knitr::include_graphics("01-basics-figures/volleyball_kills_verbal_model.png")
 ```
 
 To find $P(A>T)$ we find the following:

@@ -117,7 +117,7 @@ $$\text{For any two independent random variables X and Y}, \ SD(X+Y)=\sqrt{SD^{2
 This result can be visualized as if SD(X) and SD(Y) were legs of a right triangle with hypotenuse SD(X+Y).
 
 ```{r nice-fig-1602, fig.cap='The Pythagorean Theorem of Standard Deviations', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
-#knitr::include_graphics("01-basics-figures/pythagorean_theorem_of_standard_deviations.png")
+knitr::include_graphics("01-basics-figures/pythagorean_theorem_of_standard_deviations.png")
 ```
 
 For example, we can use the Pythagorean Theorem of Standard Deviations and the fact that for one spin of the wheel with integers 0 to 100 the theoretical standard deviation is 29.15 to explain the standard deviation you received when you analyzed the data gathered in the simulation of Game Two. 
