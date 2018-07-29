@@ -1,4 +1,4 @@
-# Simulation {#simulation}
+# Monte Carlo Simulation {#monte_carlo_simulation}
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 library(mosaic)
