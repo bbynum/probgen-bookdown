@@ -77,14 +77,18 @@ ggplot(data=stacked_wheels, aes(x=values)) +
   facet_grid(ind ~ .) 
 ```
 
-Game One has what looks like a flat, uniform disribution while Game Two appears mound-shaped. Can we provide a reasonable explanation for WHY the two distributions have the different shapes that they do. 
+Game One has what looks like a flat, uniform disribution while Game Two appears mound-shaped. Can we provide a reasonable explanation for WHY the two distributions have the different shapes that they do? Consider the grid below showing one dot for each combination of a result from the first spin from 0 to 100 and a result from the second spin from 0 to 100.
+
+```{r nice-fig-1601, fig.cap='Sample Space for Game Two', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+knitr::include_graphics("01-basics-figures/wheels_of_fortune_grid.png")
+```
 
 An intuitive explanation might note that when playing Game One we are just as likely to get a small value from 0 to 10 as to get a middle value from 95 to 105 as to get a large value from 190 to 200. But when playing Game Two, there are many more ways to get a middle value than there is to get a small value and than there is to get a large value. For example, to get a small total in Game Two both spins must be small and, similarly, to get a large total in Game Two both spins must be large. But to get a middle value can happen many ways - by adding a small and a large or two medium-size values. There are many more combinations of numbers summing to a middle number than there are summing to either a small or a large number. 
 
 Examine the sample space of equally likely outcomes for the two wheels in the 101 x 101 grid below where the rows represent the represent the result on the wheel one and the columns the result on wheel two. Shaded in green are the results with the sum from 0 to 10. Shaded in red are the results with the sum from 95 to 105. Shaded in blue are the results with the sum from 190 to 200. Which is more likely?
 
-```{r nice-fig-1601, fig.cap='Sample Space for Game Two', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
-knitr::include_graphics("01-basics-figures/wheels_of_fortune_grid.png")
+```{r nice-fig-1602, fig.cap='Small, Medium, and Large Game Two Results', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+#knitr::include_graphics("01-basics-figures/wheels_of_fortune_grid_shaded.png")
 ```
 
 We see here the beginnings of important ideas about sampling distributions and how the shape, center, and spread change when summing independent random variables and the first hints of the Central Limit Theorem which reveals why the normal, bell-shaped distribution occurs when we gather sample data and examine sums or means. There is so much more to learn. Let's capture some theory.
@@ -116,7 +120,7 @@ $$\text{For any two independent random variables X and Y}, \ SD(X+Y)=\sqrt{SD^{2
 
 This result can be visualized as if SD(X) and SD(Y) were legs of a right triangle with hypotenuse SD(X+Y).
 
-```{r nice-fig-1602, fig.cap='The Pythagorean Theorem of Standard Deviations', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1603, fig.cap='The Pythagorean Theorem of Standard Deviations', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/pythagorean_theorem_of_standard_deviations.png")
 ```
 
@@ -147,7 +151,7 @@ The normal bell-shaped curve is so ubiquitous it is almost taken for granted. It
 
 Code below simulates the toss of one die and puts this data into an official R data frame to facilitate the analysis and visualizes the data in a histogram. The code the the histogram uses the `ggplot2` package, the standard for plotting data in R.
 
-```{r nice-fig-1603, fig.cap='Histogram for Saturday Tips', out.width='80%', fig.asp=.75, fig.align='center'}
+```{r nice-fig-1604, fig.cap='Histogram for Saturday Tips', out.width='80%', fig.asp=.75, fig.align='center'}
 Die1 <- sample(c(1,2,3,4,5,6), 10000, replace = TRUE)
 Dice_data <- data.frame(Die1)
 ggplot(data=Dice_data, aes(x=Die1)) + geom_histogram()
@@ -161,7 +165,7 @@ The casino game craps revolves around the sum of the toss of two dice. If the ex
 
 Code below simulates the sum of two dice. We visualize with a histogram.
 
-```{r nice-fig-1604, fig.cap='Histogram for Saturday Tips', out.width='80%', fig.asp=.75, fig.align='center'}
+```{r nice-fig-1605, fig.cap='Histogram for Saturday Tips', out.width='80%', fig.asp=.75, fig.align='center'}
 Dice_data$Die2 <- sample(c(1,2,3,4,5,6), 10000, replace = TRUE)
 Dice_data$Sum <- Dice_data$Die1 + Dice_data$Die2
 ggplot(data=Dice_data, aes(x=Sum)) + geom_histogram()
@@ -173,7 +177,7 @@ The theoretical expectation for the sum of two dice is $3.5 + 3.5=7.0$. The theo
 
 Moving on, we adapt the code above to simulate the sum of three dice and visualize with a histogram.
 
-```{r nice-fig-1605, fig.cap='Histogram for Saturday Tips', out.width='80%', fig.asp=.75, fig.align='center'}
+```{r nice-fig-1606, fig.cap='Histogram for Saturday Tips', out.width='80%', fig.asp=.75, fig.align='center'}
 Dice_data$Die3 <- sample(c(1,2,3,4,5,6), 10000, replace = TRUE)
 Dice_data$Sum3 <- Dice_data$Die1 + Dice_data$Die2 + Dice_data$Die3
 ggplot(data=Dice_data, aes(x=Sum)) + geom_histogram()
@@ -183,7 +187,7 @@ We observe that summing three dice, the distribution becomes increasingly mound-
 
 Below is code crafted to illustrate the sum of 50 tosses of a die as well as the sample mean of these 50 tosses.
 
-```{r nice-fig-1606, fig.cap='Histogram for Saturday Tips', out.width='80%', fig.asp=.75, fig.align='center'}
+```{r nice-fig-1607, fig.cap='Histogram for Saturday Tips', out.width='80%', fig.asp=.75, fig.align='center'}
 die_matrix <- data.frame(matrix(sample(1:6, 500000, replace=TRUE), ncol=50))
 die_matrix$sum <- rowSums(die_matrix)
 die_matrix$mean <- die_matrix$sum/50
@@ -192,13 +196,13 @@ head(die_matrix[,51:52])
 
 Let's take a look at the histogram of the sum of 50 dice.
 
-```{r nice-fig-1607, fig.cap='Histogram for Saturday Tips', out.width='80%', fig.asp=.75, fig.align='center'}
+```{r nice-fig-1608, fig.cap='Histogram for Saturday Tips', out.width='80%', fig.asp=.75, fig.align='center'}
 ggplot(data=die_matrix, aes(x=sum)) + geom_histogram()
 ```
 
 The average is the sum divided by 50 and should be close to 3.5 but varies. Let's examine the histogram.
 
-```{r nice-fig-1608, fig.cap='Histogram for Saturday Tips', out.width='80%', fig.asp=.75, fig.align='center'}
+```{r nice-fig-1609, fig.cap='Histogram for Saturday Tips', out.width='80%', fig.asp=.75, fig.align='center'}
 ggplot(data=die_matrix, aes(x=mean)) + geom_histogram()
 ```
 
@@ -237,7 +241,7 @@ For independent $X \sim N(\mu_{X}, \sigma_{X})$ and $Y \sim N(\mu_{Y}, \sigma_{Y
 
 Suppose a friend of yours is working as a server. Suppose that on Fridays tips average $120 with a standard deviation of $30 and are normally distributed. With Friday tips, F, we denote this as $F \sim N(\mu = 120, \sigma = 30)$. The distribution would look like this:
 
-```{r nice-fig-1609, fig.cap='Histogram for Friday Tips', out.width='80%', fig.asp=.75, fig.align='center'}
+```{r nice-fig-1610, fig.cap='Histogram for Friday Tips', out.width='80%', fig.asp=.75, fig.align='center'}
 ggplot(data.frame(x = c(30, 210)), aes(x)) +
     stat_function(fun = dnorm, args = list(mean = 120, sd = 30)) +
     scale_x_continuous(breaks = c(30,60,90,120,150,180,210))
@@ -245,7 +249,7 @@ ggplot(data.frame(x = c(30, 210)), aes(x)) +
 
 Suppose that Saturday tips, S, are a little different with tips normally distributed with a mean of $\$90$ and a standard deviation of $\$20$, so  $S \sim N(\mu = 90, \sigma = 20)$. Here we can visualize the distribution:
 
-```{r nice-fig-1610, fig.cap='Histogram for Saturday Tips', out.width='80%', fig.asp=.75, fig.align='center'}
+```{r nice-fig-1611, fig.cap='Histogram for Saturday Tips', out.width='80%', fig.asp=.75, fig.align='center'}
 # Again, don't worry about the syntax here.
 ggplot(data.frame(x = c(30, 150)), aes(x)) +
     stat_function(fun = dnorm, args = list(mean = 90, sd = 20)) +
@@ -267,7 +271,7 @@ tips_data <- data.frame(friday, saturday, weekend)
 
 Let's visualize the `weekend` variable in a histogram.
 
-```{r nice-fig-1611, fig.cap='Histogram for Saturday Tips', out.width='80%', fig.asp=.75, fig.align='center'}
+```{r nice-fig-1612, fig.cap='Histogram for Saturday Tips', out.width='80%', fig.asp=.75, fig.align='center'}
 ggplot(data=tips_data, aes(x=weekend)) + geom_histogram(binwidth=10)
 ```
 
@@ -311,13 +315,13 @@ It may not be the Zombie Apocalypse but we want to be ready just in case. There 
 
 If you are an Alpha Zombie your ZPI comes from a single chromosome so you roll one die. For example, if an Alpha rolls a 2 that is their power. If you are a Beta Zombie your ZPI comes from two chromosomes so you roll two dice and find the average. If a Beta rolled a 3 and a 6 their ZPI is 4.5, the average of 3 and 6.
 
-```{r nice-fig-1612, fig.cap='Zombie Apocalypse Characters', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1613, fig.cap='Zombie Apocalypse Characters', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/zombie_apocalypse_characters.png")
 ```
 
 (a) To get a feel for this game, play the game with friends or classmates at least 10 times recording results in the table provided on the hardcopy page distributed in class.
 
-```{r nice-fig-1613, fig.cap='Zombie Apocalypse Data Table', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1614, fig.cap='Zombie Apocalypse Data Table', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/zombie_apocalypse_table.png")
 ```
 
@@ -332,7 +336,7 @@ knitr::include_graphics("01-basics-figures/zombie_apocalypse_table.png")
 ### Exercise - Dungeons and Dragons Dice
 In Dungeons and Dragons there are a number of different types of die including a traditional six-sided die and a 12-sided die. 
 
-```{r nice-fig-1614, fig.cap='Dungeons and Dragons Dice', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1615, fig.cap='Dungeons and Dragons Dice', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/dungeons_and_dragons_dice.png")
 ```
 
@@ -347,7 +351,7 @@ Suppose the wheel of fortune wheel with slots numbered 0 to 100 all equally like
 
 The chart below shows the mean and standard deviation for the blood pressure of individuals with normal blood pressure. If two individuals with normal blood pressure are chosen at random, what is the probability the male has the higher blood pressure?
 
-```{r nice-fig-1615, fig.cap='Normal and Pre/Hypertensive Blood Pressure by Sex', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1616, fig.cap='Normal and Pre/Hypertensive Blood Pressure by Sex', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/normal_blood_pressure.png")
 ```
 
