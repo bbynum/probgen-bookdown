@@ -50,10 +50,16 @@ $$P(\text{both male} \mid \text{first one is male}) = \frac{P(\text{both male an
 
 As described earlier, one valuable model for thinking about probability questions is an urn model. When drawing from an urn without replacement we recognize that probabilities change depending on which balls were previously drawn and it is the tool of conditional probability that is required to determine this. 
 
-Consider an urn containing 8 blue balls and 5 red balls. If two balls are drawn without replacement we can find the probabilities of the different possibilities. A tree diagram illustrates the possibilities where B represents drawing a blue ball and R represents drawing a red ball and a subscript of 1 or 2 identifies whether we are referring to the first or second ball, respectively. The probabilities on the branches for the second ball choice are all conditional probabilities.
+Consider an urn containing 8 blue balls and 5 red balls. If two balls are drawn without replacement we can find the probabilities of the different possibilities.
 
-```{r nice-fig-701, fig.cap='Decision Table', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
-#knitr::include_graphics("01-basics-figures/tree_diagram_for_blue_red_urn.png")
+```{r nice-fig-701, fig.cap='Urn Model', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+knitr::include_graphics("01-basics-figures/urn2_red_blue.png")
+```
+
+A tree diagram illustrates the possibilities where B represents drawing a blue ball and R represents drawing a red ball and a subscript of 1 or 2 identifies whether we are referring to the first or second ball, respectively. The probabilities on the branches for the second ball choice are all conditional probabilities.
+
+```{r nice-fig-702, fig.cap='Decision Table', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+knitr::include_graphics("01-basics-figures/tree_diagram_for_blue_red_urn.png")
 ```
 
 Multiplying down the branches works great. Watch how this translates into conditional probabilities.
@@ -118,7 +124,7 @@ Recall the proposal to test every United States university student for illicit d
 
 Suppose a Westminster student chosen at random tests positive for illicit drug use. What is probability this student actually is an illicit drug user?
 
-```{r nice-fig-702, fig.cap='Decision Table', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-703, fig.cap='Decision Table', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/error_types.png")
 ```
 
@@ -140,7 +146,7 @@ Based on the provided information we know the following:
 
 A tree diagram visualizes the relationships between these probabilities.
 
-```{r nice-fig-703, fig.cap='Drug Testing Tree Diagram', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-704, fig.cap='Drug Testing Tree Diagram', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/drug_testing_tree_diagram.png")
 ```
 
@@ -166,7 +172,7 @@ We can complete the “Hypothetical 10,000” table below using your understandi
 
 Note: The Blue boxes should sum to 10,000. The Yellow boxes should also sum to 10,000. And the Green boxes should sum to 10,000.
 
-```{r nice-fig-704, fig.cap='Hypothetical 10,000 Table', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-705, fig.cap='Hypothetical 10,000 Table', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/hypothetical_10000_table.png")
 ```
 

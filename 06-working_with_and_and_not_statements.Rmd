@@ -141,7 +141,7 @@ Recall, in this game the gambler rolls a pair of dice and has 24 chances to obta
 
 Consider what a tree diagram would look like for this game. If we let event $D_{i}$ represent getting a double six on the $i^{th}$ roll of the dice and $N_{i}$ represent its complement we can stop the branching as a win whenever we hit a double six. 
 
-```{r nice-fig-604, fig.cap='Venn Diagram of Class Composition', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-604, fig.cap='Tree Diagram for Game Two', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/chevalier_game_two.png")
 ```
 
@@ -161,12 +161,14 @@ Given 365 days of the year (We ignore Leap Day February 29 with apologies to the
 
 Recall The Multiplication Rule shows us that to obtain the probability of two potentially consecutive events we multiply related probabilities:
 
-	$$P(A \ and \ B)= P(A) \cdot P(B \ \mid \ A)$$
-	If the events A and B are independent then $P(A \ and \ B)=P(A) \cdot P(B)$.
+$$P(A \ and \ B)= P(A) \cdot P(B \ \mid \ A)$$
+
+If the events A and B are independent then $P(A \ and \ B)=P(A) \cdot P(B)$.
 
 The Complement Rule confirms that the probability of an event occurring is one minus the probability the event does not occur:
 
 $$P(A)= 1-P(not \ A)$$
+
 Remember, this can also be written $P(A)=1-P(not \ A)$.
 
 We will build up our way into solving this problem by imagining that individuals walk into the room one at a time and announce their birthday to see if it matches or not with anyone else who is in the room.
