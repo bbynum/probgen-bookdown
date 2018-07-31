@@ -11,7 +11,7 @@ Poker has hit the big time with millions of players worldwide and even a World S
 
 For starters we will use our probability skills to verify the ranking of hands as shown in the diagram below.
 
-```{r nice-fig-1717, fig.cap='Poker Hands Ranked', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1717, fig.cap='Poker Hands Ranked', out.width='70%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/poker_hands_ranked.png")
 ```
 
@@ -51,7 +51,7 @@ This is left as an exercise.
 
 A full house is three of one kind and two of another. The step-by-step verbal model to construct a full house proceeds but first selecting a kind for the three of a kind and choosing three of that kind, then selecting a second kind and choosing two of that kind.
 
-```{r nice-fig-1718, fig.cap='Full House Step-by-step Verbal Model', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1718, fig.cap='Full House Step-by-step Verbal Model', out.width='80%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/poker_full_house_verbal_model.png")
 ```
 
@@ -66,7 +66,7 @@ prob_full_house
 
 A flush is five cards all from the same suit. The step-by-step verbal model to construct a flush proceeds by first selecting a suit and then selecting five cards from that suit. We must then be careful to subtract off the straight flushes as they are actually a stronger hand.
 
-```{r nice-fig-1719, fig.cap='Flush Step-by-step Verbal Model', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1719, fig.cap='Flush Step-by-step Verbal Model', out.width='80%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/poker_flush_verbal_model.png")
 ```
 
@@ -81,7 +81,7 @@ prob_flush
 
 To count the number of straights we will count all straights and the subtract the straight  that are also flushes which are considered higher hands. To organize in a step-by-step verbal model, first choose a starting point for the straight. There are ten starting points for the smallest card - A,2,3,4,5,6,7,8,9, or 10. Then choose one of each of the five kinds in the straight. Lastly, we subtract off the straight flushes and royal flushes.
 
-```{r nice-fig-1720, fig.cap='Straight Step-by-step Verbal Model', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1720, fig.cap='Straight Step-by-step Verbal Model', out.width='80%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/poker_straight_verbal_model.png")
 ```
 
@@ -97,7 +97,7 @@ prob_straight
 
 One step-by-step verbal model for three of a kind is to first choose the kind, then choose three of that kind, then choose two other kinds and choose one each of those kinds.
 
-```{r nice-fig-1721, fig.cap='Three of a Kind Verbal Model', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1721, fig.cap='Three of a Kind Verbal Model', out.width='80%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/poker_three_verbal_model.png")
 ```
 
@@ -113,7 +113,7 @@ prob_three
 
 Correctly counting the number of two pair hands has a subtlety. It is important to select the two kinds for the two pairs rather than select them sequentially. A correct step-by-step verbal model starts with select two different kinds, then select two of each of these kinds, then select a third kind and select one of this kind.
 
-```{r nice-fig-1722, fig.cap='Two Pair Verbal Model', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1722, fig.cap='Two Pair Verbal Model', out.width='80%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/poker_two_verbal_model.png")
 ```
 
@@ -126,7 +126,7 @@ prob_two_pair
 
 It is worth exploring a seemingly plausible but incorrect step-by-step verbal model. What if to create a two-pair hand we select one kind, then select two of that kind, then select a second kind, then select two of that kind, then select a third kind and select one of that kind.
 
-```{r nice-fig-1723, fig.cap='Two Pair Competing Verbal Models', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1723, fig.cap='Two Pair Competing Verbal Models', out.width='80%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/poker_two_competing_verbal_models.png")
 ```
 
@@ -156,7 +156,7 @@ Compiling the results for all the different poker hand we have the following tab
 * One Pair
 * High Card
 
-```{r nice-fig-1724, fig.cap='Poker Hands Table', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1724, fig.cap='Poker Hands Table', out.width='70%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/poker_hands_table.png")
 ```
 

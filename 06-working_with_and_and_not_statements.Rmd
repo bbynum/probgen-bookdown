@@ -120,7 +120,7 @@ The gambler bets on the chance of getting at least one six on four rolls of a di
 
 Consider drawing a tree diagram for four tosses of the die including the probabilities along each branch. For each toss of the die we need only identify two branches – NOT SIX (1,2,3,4 or 5) or SIX (6). You can stop the branch whenever a six occurs since the gambler wins in this instance.
 
-```{r nice-fig-603, fig.cap='Tree Diagram for Game One', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-603, fig.cap='Tree Diagram for Game One', out.width='60%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/chevalier_game_one.png")
 ```
 
@@ -141,7 +141,7 @@ Recall, in this game the gambler rolls a pair of dice and has 24 chances to obta
 
 Consider what a tree diagram would look like for this game. If we let event $D_{i}$ represent getting a double six on the $i^{th}$ roll of the dice and $N_{i}$ represent its complement we can stop the branching as a win whenever we hit a double six. 
 
-```{r nice-fig-604, fig.cap='Tree Diagram for Game Two', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-604, fig.cap='Tree Diagram for Game Two', out.width='60%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/chevalier_game_two.png")
 ```
 
@@ -190,7 +190,7 @@ Extend this thinking to find the probability of no match with five people.
 
 We want to describe the solution in general for any number of people n according to the tree diagram below. 
 
-```{r nice-fig-605, fig.cap='Tree Diagram for Birthday Problem', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-605, fig.cap='Tree Diagram for Birthday Problem', out.width='60%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/birthday_problem_tree_diagram.png")
 ```
 

@@ -19,7 +19,7 @@ Problem 1: Write down all the possible birth orderings for a family of three boy
 
 Problem 2: Find the number of ways that you can walk along the blocks from point A to point B by a path of shortest length.
 
-```{r nice-fig-1101, fig.cap='Block-walking Scenario', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1101, fig.cap='Block-walking Scenario', out.width='40%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/block_walking_scenario.png")
 ```
 
@@ -72,7 +72,7 @@ We can view the problem of identifying a particular birth ordering of two boys a
 ### Problem 2 - Block-walking 
 Find the number of ways that you can walk along the blocks from point A to point B by a path of shortest length.
 
-```{r nice-fig-1102, fig.cap='Block-walking Scenario', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1102, fig.cap='Block-walking Scenario', out.width='40%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/block_walking_scenario.png")
 ```
 

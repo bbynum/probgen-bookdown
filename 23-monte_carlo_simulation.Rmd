@@ -87,7 +87,7 @@ Monte Carlo Simulation is the data equivalent of throwing a large number of rand
 
 Here is our challenge: Imagine a cube with sides all of length four centimeters which has cylindrical holes bored out from the center of each face clear through the cube where each cylinder has a diameter of three centimeters. Check out the picture below. Since the volume of the resulting solid cannot be determined using the analytical methods of calculus, we use the Monte Carlo method to estimate the volume of the resulting solid.
 
-```{r nice-fig-1751, fig.cap='The Holey Cube', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1751, fig.cap='The Holey Cube', out.width='50%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/holey_cube.png")
 ```
 
@@ -139,7 +139,7 @@ The holey cube has a volume of `r volume` cubic centimeters.
 
 In 1877, Lewis Haupt, Professor of Civic Engineering at the University of Pennsylvania, laid out his ideas for urban planning including the street design below.
 
-```{r nice-fig-1752, fig.cap='Haupt Urban Planning Model', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1752, fig.cap='Haupt Urban Planning Model', out.width='60%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/haupt_urban_planning.png")
 ```
 

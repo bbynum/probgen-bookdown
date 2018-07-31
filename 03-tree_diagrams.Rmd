@@ -9,11 +9,17 @@ set.seed(2018)
 
 In this chapter,  tree diagrams are introduced as important tools to analyze probability questions. 
 
-## Chapter Scenario - Flipping Two Coins {#chapter_scenario}
+## Chapter Scenario - Kitty Litter {#chapter_scenario_kitty_litter}
+
+Turns out much to our surprise the new cat was PREGNANT! Now, we have four little kittens we are not sure what to do with. They are adorable. Wonder about their gender!? I think that the most likely possibility is two girl kittens and two boy kittens. My partner begs to differ and thinks a 3-1 split is more likely. Can you help us out by thoroughly analyzing this situation and clearly explaining which of us is right? We have a bet and I don’t want to be the one to take out the litter box for the next year! 
+
+## Example - Flipping Two Coins {#example_flipping_two_coins}
 
 Imagine a simple situation where two coins are tossed and the number of heads is observed and the outcome has some relevance for you depending on whether the result yields 0, 1, or 2 heads. Do you think each of these outcomes is equally likely? What do you think is the probability of each of these outcomes?
 
 We use this coin-flipping scenario as a primary example not because we have inherent interest flipping coins but because this scenario is an effective model for many real-world situations such as gene inheritance. 
+
+We can review probability terminology, run a simulation, and then see how tree diagrams help us analyze this situation.
 
 ## Terminology Review {#terminology_review}
 
@@ -51,7 +57,7 @@ The outcomes of a probability experiment can be catalogued with a tree diagram w
 
 Consider the tree diagram for flipping a single coin where we label each node as either H for Heads or T for tails and label the probability along each branch.
 
-```{r nice-fig-303, fig.cap='Tree Diagram for One Coin', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-303, fig.cap='Tree Diagram for One Coin', out.width='50%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/tree_one_coin.png")
 ```
 
@@ -74,7 +80,7 @@ $$P(2\ heads) = P(HH) = (0.5)(0.5) = 0.25$$
 
 Now consider the experiment of choosing three rats at random from a large population of rats that is 40% male and 60% female. Just as we did for coins, we can draw a tree diagram with branches representing the sex of the first, second, and third rat chosen and label the associated probabilities on each branch. Selecting the rats and identifying gender would be equivalent to having a coin that lands on one side 40% of the time and on the other 60% of the time. In the tree diagram below, we have added subscripts to identify whether we are referring to the first, second, or third rat selected.
 
-```{r nice-fig-305, fig.cap='Tree Diagram for Three Rats', out.width='60%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-305, fig.cap='Tree Diagram for Three Rats', out.width='70%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/tree_rat_sex.png")
 ```
 
@@ -89,6 +95,24 @@ $$P(1\ female\ rat) = 3 \times (0.6) (0.4)^2 = 0.288$$
 ### Practice 
 For the probability experiment described above, choosing three rats at random from a large population of rats that is 40% male and 60% female, what is the probability of getting 2 female rats? 3 female rats?
 
+## Chapter Scenario Revisited - Kitty Litter {#chapter_scenario_revisited_kitty_litter}
+
+Recall our surprise - four kittens on the way! Concerning the kittens sexes, is a 2-2 or a 3-1 split is more likely? There was a bet riding on the matter. Were you able to help us? Did you use a tree diagram to visualize the sample space?
+
+We can let F represent the event of a female kitten and M represent the event of a male kitten. We can use subscripts 1, 2, 3, and 4 to represent the first-born, second-born, and so on. 
+
+A tree diagram will show us there are 16 possible birth orderings by sex. Assuming that getting a female kitten and getting a male kitten are equally likely events, all branches in this tree are equally likely.
+
+```{r nice-fig-306, fig.cap='Tree Diagram for Four Kittens', out.width='60%', fig.asp=.75, fig.align='center', echo=FALSE}
+knitr::include_graphics("01-basics-figures/tree_diagram_four_kittens.png")
+```
+
+Counting branches, we see there are six branches with a 2-2 sex split of two female kittens and two male kittens. Thus, the probability of a 2-2 sex split is $6/16$.
+
+Again counting branches, there are eight branches with a 3-1 sex split of either three females and one male or three males and one female. Thus, the probability of a 3-1 sex split is $8/16=1/2$.
+
+Therefore, the 3-1 split is more likely than the 2-2 split. Is it possible they can be trained to enjoy the go out of doors and not in the house?
+
 
 ## The Urn Model {#the_urn_model}
 
@@ -98,13 +122,13 @@ For probability experiments two useful models are the coin-flipping model and th
 
 Consider an urn with some beads in it. Imagine the urn has 20 beads 12 of which are black and 8 white and we are to draw out three of these beads at random and we want to find the probability of ending up with 0, 1, 2, or 3 black beads. 
 
-```{r nice-fig-306, fig.cap='The Urn Model', out.width='60%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-307, fig.cap='The Urn Model', out.width='60%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/urn1_picture.png")
 ```
 
 First, we need to be clear up one question: is the drawing out of beads to be done with replacement or without replacement? By **with replacement** we mean that after each draw of one bead, it is replaced, the beads thoroughly mixed, before another bead is selected at random. By **without replacement** we mean that after one bead is removed, it is not replaced before the next bead is selected. Note, if we are selecting three beads at once this could be viewed as equivalent to selecting the beads one at a time without replacement. 
 
-```{r nice-fig-307, fig.cap='Tree Diagram for Three Beads', out.width='60%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-308, fig.cap='Tree Diagram for Three Beads', out.width='70%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/tree_urn1.png")
 ```
 
@@ -129,6 +153,17 @@ $$P(1\ black) = 3 \times \frac{12}{20} \times \frac{8}{19} \times \frac{7}{18} =
 ### Practice 
 For the urn described above containing 12 black and 8 white beads with three beads drawn at random without replacement, what is the probability of obtaining two black beads? What is the probability of obtaining three black beads?
 
+### An Urn Model with Replacement 
+
+Consider a situation where an urn contains beads that are drawn **with replacement**. This means that after one bead has been randomly selected, its color is noted and it is replaced in the urn before the second one is randomly drawn and after each draw the bead is replaced. In this context, the composition of the urn remains the same and the probabilities do not change meaning that what happens when drawing one bead is independent of what happens on another draw. 
+
+An urn model where beads are drawn with replacement can represent many probability experiments. Consider the chapter scenario. An urn model representing examining the sex composition of four kittens would be an urn containing two beads, one white and one black, where the white bead represents a female kitten and a black bead represents a male kitten. From this urn, four beads would be drawn at random with replacement.
+
+```{r nice-fig-309, fig.cap='An Urn Model for Four Kittens', out.width='60%', fig.asp=.75, fig.align='center', echo=FALSE}
+knitr::include_graphics("01-basics-figures/urn_model_four_kittens.png")
+```
+
+
 ## Exercises {#exercises}
 
 ### Exercise - Three Coins in the Fountain
@@ -140,5 +175,4 @@ Draw a tree diagram for the probability experiment of flipping four coins. Label
 ### Exercise - Class Committee
 Consider the experiment of selecting a committee of three individuals from a class of 20 of which 8 are male and 12 are female. Draw a tree diagram with associated probabilities for the gender of the first, second, and third person chosen for the committee and find the probabilities the committee consists of 0 females, 1 female, 2 females, and 3 females, respectively.
 
-### Exercise - Kitty Litter
-Turns out much to our surprise the new cat was PREGNANT! Now, we have four little kittens we are not sure what to do with. They are adorable. Wonder about their gender!? I think that the most likely possibility is two girl kittens and two boy kittens. My partner begs to differ and thinks a 3-1 split is more likely. Can you help us out by thoroughly analyzing this situation and clearly explaining which of us is right? We have a bet and I don’t want to be the one to take out the litter box for the next year! Feel free to use your new ideas about visualizing sample spaces with a tree diagram. Be sure to explain your thinking so we can resolve this bet!
+

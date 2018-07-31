@@ -13,7 +13,7 @@ If the Fun Bus to Wendover is a double-decker and full there will be around 100 
 
 You all know BINGO.  Get five in a row up, down, or diagonally and win. Variations of BINGO include Blackout (completely fill your card), wedding cake (completely fill top, middle, and bottom row) T (make a T shape), Z (you can figure this one out), and getting all four corners.  Bingo cards look like this:
 
-```{r nice-fig-1725, fig.cap='BINGO Card', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1725, fig.cap='BINGO Card', out.width='40%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/bingo_card.png")
 ```
 
@@ -21,7 +21,7 @@ BINGO is a social game and a good BINGO caller has a few choice bits to spice up
 
 First of all, how many cards are there? Cards consist of five columns each matching with either B, I, N, G, or O. Each column has five different numbers printed in order of size from top to bottom except the middle column which only has four numbers and a FREE spot in the middle. The B column contains five different numbers from 1 to 15, the I column five different numbers from 16  to 30, the N column a free spot and four different numbers from 31 to 45, the G column five different numbers from 46 to 60, and the O column five different numbers from 61 to 75.
 
-```{r nice-fig-1726, fig.cap='BINGO Card Verbals Model', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1726, fig.cap='BINGO Card Verbals Model', out.width='80%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/bingo_card_verbal_model.png")
 ```
 
@@ -36,7 +36,7 @@ bingo_total
 
 Suppose you have nothing better to do and are playing BINGO. What is the probability you will win after just four numbers have been drawns. With 75 numbers there are a total of $\dbinom{74}{4}$ ways that four numbers could be drawn but only four sets of four numbers are winners for you as shown. 
 
-```{r nice-fig-1727, fig.cap='BINGO Win with Four Numbers Drawn', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1727, fig.cap='BINGO Win with Four Numbers Drawn', out.width='60%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/bingo_win_with_four.png")
 ```
 
@@ -49,13 +49,13 @@ prob_win_4
 
 What about the chance you will win after five numbers are called? There are a total of $\dbinom{75}{5}$ ways that five numbers can be drawn and there are now 12 ways to win as shown. 
 
-```{r nice-fig-1728, fig.cap='BINGO Win with Five Numbers Drawn', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1728, fig.cap='BINGO Win with Five Numbers Drawn', out.width='60%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/bingo_win_with_five.png")
 ```
 
 Winning is more complicated as shown in the verbal model. 
 
-```{r nice-fig-1729, fig.cap='Verbal Model for BINGO Win with Five Numbers', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1729, fig.cap='Verbal Model for BINGO Win with Five Numbers', out.width='80%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/bingo_win_with_five_verbal_model.png")
 ```
 
@@ -70,7 +70,7 @@ Highly dubitable!
 
 What is the probability of winning with six numbers? Six numbers can be selected a total of $\dbinom{75}{6}$. Again, there are eight ways to win with five numbers and the sixth number can be any of the other 70 possibilities. There are four ways to win with four numbers and the other two numbers can be any of the other 71 possibilities. See the verbal model below.
 
-```{r nice-fig-1730, fig.cap='Verbal Model for BINGO Win with Six Numbers', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1730, fig.cap='Verbal Model for BINGO Win with Six Numbers', out.width='80%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/bingo_win_with_six_verbal_model.png")
 ```
 
@@ -85,13 +85,13 @@ We can modify this approach to find the probability of winning after seven numbe
 
 Then it gets trickier once we get above seven numbers as there is the possibility of winning in multiple ways at the same time so we need to be concerned about double-counting and subtract off any overlap. A verbal model that partially captures this idea is below though it is vague about the overlap. Suppose that $m$ numbers have been called and we want to find the probability of winning.
 
-```{r nice-fig-1731, fig.cap='Verbal Model for BINGO Win with More than Seven Numbers', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1731, fig.cap='Verbal Model for BINGO Win with More than Seven Numbers', out.width='80%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/bingo_win_with_more_than_seven_verbal_model.png")
 ```
 
 We can apply this verbal model in the case of eight numbers being called. With eight numbers called the only overlap is if two different four number Bingos are completed. Since there are four different four number Bingo paths, there are $\dbinom{4}{2}=6$ ways that two of them could be completed. 
 
-```{r nice-fig-1732, fig.cap='Verbal Model for BINGO Win with Eight Numbers', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1732, fig.cap='Verbal Model for BINGO Win with Eight Numbers', out.width='80%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/bingo_win_with_eight_verbal_model.png")
 ```
 
@@ -108,7 +108,7 @@ prob_win_8
 
 Dealing with the overlap gets trickier still as the numbers called increases. For example, with 9 numbers called there could be an overlap of two four number paths or a four number path and a five number path. Here is the verbal model for getting a BINGO with 9 numbers called. 
 
-```{r nice-fig-1733, fig.cap='Verbal Model for BINGO Win with Nine Numbers', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1733, fig.cap='Verbal Model for BINGO Win with Nine Numbers', out.width='80%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/bingo_win_with_nine_verbal_model.png")
 ```
 

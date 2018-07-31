@@ -57,7 +57,7 @@ For all of the commands above the default value for the mean is 0 and the defaul
 
 Blood pressure varies normally and the mean and standard deviation for males and females both with normal blood pressure and with pre/hypertension is described in the table below.
 
-```{r nice-fig-1501, fig.cap='Normal and Pre/Hypertensive Blood Pressure by Sex', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1501, fig.cap='Normal and Pre/Hypertensive Blood Pressure by Sex', out.width='70%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/normal_blood_pressure.png")
 ```
 
@@ -246,19 +246,19 @@ Suppose that scores in the math department historically follow a normal distribu
 
 (b) Consider the Traditional Grading System where a score of 90 or higher receives an A, 80 to less than 90 receives a B, 70 to less than 80 receives a C, 60 to less than 70 receives a D and below 60 receives an F. Complete the table below to determine the percentage of students obtaining each grade for this Traditional Grading System and visualize the A, B, C, D, and F regions on a plot of the normal probability density function.
 
-```{r nice-fig-1502, fig.cap='The Traditional Grading System', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1502, fig.cap='The Traditional Grading System', out.width='70%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/grading_system_traditional.png")
 ```
 
 (c) Consider the Standardized Grading System where being more than 2 standard deviations above the mean receives an A, being between 1 and 2 standard deviations above the mean receives a B, being within 1 standard deviation on either side of the mean receives a C, being between 1 and 2 standard deviations below the mean receives a D, and being more than 2 standard deviations below the mean receives an F. Complete the table below identifying both the point range and percentage of students for each grade and visualize the A, B, C, D, and F regions on a plot of the normal probability density function.
 
-```{r nice-fig-1503, fig.cap='The Standardized Grading System', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1503, fig.cap='The Standardized Grading System', out.width='70%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/grading_system_standardized.png")
 ```
 
 (d) Consider the Curved Grading System where the top 10% of students receive an A, the next 15% of students receive a B, the middle 50% of students receive a C, the next 15% of students receive a D, and the bottom 10% of students receive an F. (a)	Complete the table below finding the point range for each grade and visualize the A, B, C, D, and F regions on a plot of the normal probability density function.
 
-```{r nice-fig-1504, fig.cap='The Curved Grading System', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1504, fig.cap='The Curved Grading System', out.width='70%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/grading_system_curved.png")
 ```
 
@@ -266,7 +266,7 @@ knitr::include_graphics("01-basics-figures/grading_system_curved.png")
 
 (f) Devise your own grading scheme completing the table below and explaining your rationale.
 
-```{r nice-fig-1505, fig.cap='Your Own Grading System', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1505, fig.cap='Your Own Grading System', out.width='70%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/grading_system_blank.png")
 ```
 

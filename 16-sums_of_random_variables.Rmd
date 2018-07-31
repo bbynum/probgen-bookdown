@@ -79,7 +79,7 @@ ggplot(data=stacked_wheels, aes(x=values)) +
 
 Game One has what looks like a flat, uniform disribution while Game Two appears mound-shaped. Can we provide a reasonable explanation for WHY the two distributions have the different shapes that they do? Consider the grid below showing one dot for each combination of a result from the first spin from 0 to 100 and a result from the second spin from 0 to 100.
 
-```{r nice-fig-1601, fig.cap='Sample Space for Game Two', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1601, fig.cap='Sample Space for Game Two', out.width='80%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/wheels_of_fortune_grid.png")
 ```
 
@@ -87,7 +87,7 @@ An intuitive explanation might note that when playing Game One we are just as li
 
 Examine the sample space of equally likely outcomes for the two wheels in the 101 x 101 grid below where the rows represent the represent the result on the wheel one and the columns the result on wheel two. Shaded in green are the results with the sum from 0 to 10. Shaded in red are the results with the sum from 95 to 105. Shaded in blue are the results with the sum from 190 to 200. Which is more likely?
 
-```{r nice-fig-1602, fig.cap='Small, Medium, and Large Game Two Results', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1602, fig.cap='Small, Medium, and Large Game Two Results', out.width='80%', fig.asp=.75, fig.align='center', echo=FALSE}
 #knitr::include_graphics("01-basics-figures/wheels_of_fortune_grid_shaded.png")
 ```
 
@@ -120,7 +120,7 @@ $$\text{For any two independent random variables X and Y}, \ SD(X+Y)=\sqrt{SD^{2
 
 This result can be visualized as if SD(X) and SD(Y) were legs of a right triangle with hypotenuse SD(X+Y).
 
-```{r nice-fig-1603, fig.cap='The Pythagorean Theorem of Standard Deviations', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1603, fig.cap='The Pythagorean Theorem of Standard Deviations', out.width='60%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/pythagorean_theorem_of_standard_deviations.png")
 ```
 
@@ -315,13 +315,13 @@ It may not be the Zombie Apocalypse but we want to be ready just in case. There 
 
 If you are an Alpha Zombie your ZPI comes from a single chromosome so you roll one die. For example, if an Alpha rolls a 2 that is their power. If you are a Beta Zombie your ZPI comes from two chromosomes so you roll two dice and find the average. If a Beta rolled a 3 and a 6 their ZPI is 4.5, the average of 3 and 6.
 
-```{r nice-fig-1613, fig.cap='Zombie Apocalypse Characters', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1613, fig.cap='Zombie Apocalypse Characters', out.width='60%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/zombie_apocalypse_characters.png")
 ```
 
 (a) To get a feel for this game, play the game with friends or classmates at least 10 times recording results in the table provided on the hardcopy page distributed in class.
 
-```{r nice-fig-1614, fig.cap='Zombie Apocalypse Data Table', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1614, fig.cap='Zombie Apocalypse Data Table', out.width='80%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/zombie_apocalypse_table.png")
 ```
 
@@ -336,7 +336,7 @@ knitr::include_graphics("01-basics-figures/zombie_apocalypse_table.png")
 ### Exercise - Dungeons and Dragons Dice
 In Dungeons and Dragons there are a number of different types of die including a traditional six-sided die and a 12-sided die. 
 
-```{r nice-fig-1615, fig.cap='Dungeons and Dragons Dice', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1615, fig.cap='Dungeons and Dragons Dice', out.width='50%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/dungeons_and_dragons_dice.png")
 ```
 
@@ -351,7 +351,7 @@ Suppose the wheel of fortune wheel with slots numbered 0 to 100 all equally like
 
 The chart below shows the mean and standard deviation for the blood pressure of individuals with normal blood pressure. If two individuals with normal blood pressure are chosen at random, what is the probability the male has the higher blood pressure?
 
-```{r nice-fig-1616, fig.cap='Normal and Pre/Hypertensive Blood Pressure by Sex', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1616, fig.cap='Normal and Pre/Hypertensive Blood Pressure by Sex', out.width='80%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/normal_blood_pressure.png")
 ```
 

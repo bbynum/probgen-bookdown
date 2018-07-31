@@ -20,7 +20,7 @@ Suppose you are playing roulette betting on the single number seven and you are 
 
 Since the roulette wheel has 38 slots we know the probability of getting a seven is $1/38$ and the probability of not getting a seven is $37/38$. Letting S represent the event of getting a seven and N represent the event of not getting a seven we have $P(S)=1/38$ and $P(N)=37/38. Using subscripts to keep track of the first, second, third spin and so on we can visualize the experiment of waiting for the first seven in a tree diagram. 
 
-```{r nice-fig-1701, fig.cap='Tree Diagram - Waiting for Lucky Number 7', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1701, fig.cap='Tree Diagram - Waiting for Lucky Number 7', out.width='70%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/roulette_tree_diagram_lucky_number_seven.png")
 ```
 
@@ -123,7 +123,7 @@ Two players, called Alpha and Beta, play against each other in what we'll call t
 
 In the following web posting (http://apbr.org/metrics/viewtopic.php?f=2&t=8167) it is claimed NBA players make 2.6% of shots beyond half court. Assuming this claim is true, on average how many shots would it take from beyond half court to make one? If an NBA player was ready to take a shot from beyond half court and a buddy offers you 20 to 1 odds on the player making it would this be a better bet for your buddy or for you? Explain. (Note, if the shot is made you win $\$20$ and if the shot is not made you lose $\$1$.)
 
-```{r nice-fig-1702, fig.cap='NBA Blog Posting', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1702, fig.cap='NBA Blog Posting', out.width='70%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/nba_blog_posting.png")
 ```
 
