@@ -1,6 +1,6 @@
 --- 
-title: "Probability and Genetics"
-author: "Bill Bynum and Brian Avery"
+title: "Probability, Risk, and Reward"
+author: "Bill Bynum with Brian Avery"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
@@ -16,7 +16,15 @@ description: "Probability and genetics, genetics and probability, free open-sour
 
 ## Motivation
 
+Probability can be counterintuitive and is often taught late in a formal mathematics education (if at all) and not frequently learned by social scientists, life scientists, business students and health science majors. Yet, the tools of probability are incredibly useful to understand phenomena in all of these fields. Our experience teaching probabilty together leads us to believe that there is a real need for teaching and explanatory materials in applied probability that is accessible without advanced prerequisite mathematics knowledge. 
+
+To do this, we use a simple model of identifying an interesting problem and asking the learner to identify their preconceptions. When shared these preconceptions generate hypotheses and give the students a little skin in the game. Now we are ready for some experience to use as evidence. We gain experience through data collection and simulation this guides us to capture the theory that can explain the phenomena. Rinse and repeat again and again and we have seen students refine their intuition and reason probabilistically in new settings.  
+
+
 ## About the Authors
+
+Bill has taught in the math and data science programs at Westminster College for 150 years. He has a M.A. in mathematics from University of Colorado.
+
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages

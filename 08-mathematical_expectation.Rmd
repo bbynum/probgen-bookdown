@@ -116,7 +116,7 @@ head(deal_sim)
 We can visualize the results and see if our preconception regarding the distribution was accurate or not. 
 
 ```{r nice-fig-806, fig.cap='Deal or No Deal Simulation Results', out.width='80%', fig.asp=.75, fig.align='center'}
-ggplot(deal_sim, aes(deal_sim))+geom_histogram()
+ggplot(deal_sim, aes(amount))+geom_histogram()
 ```
 
 And we can run the numbers.
