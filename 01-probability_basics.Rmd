@@ -8,7 +8,7 @@ set.seed(2018)
 
 ## Introduction {#introduction}
 
-Probability is the measure of the likelihood of an event. In this chapter, basic terminology and principles of probability are introduced beginning with simple events and then examining how to handle compound events involving the logical not, and, or connectives and introducing conditional probability.  
+Probability is the measure of the likelihood of an event. In this chapter, basic terminology and principles of probability are introduced beginning with simple events and then examining how to handle compound events involving the logical not, and, or connectives. Then it gets exciting when we introduce conditional probability.  
 
 ## Chapter Scenario - The Three-Spot Card Game {#chapter_scenario}
 
