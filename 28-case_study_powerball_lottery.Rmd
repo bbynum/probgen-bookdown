@@ -5,7 +5,7 @@ library(mosaic)
 set.seed(2018)
 ```
 
-```{r nice-fig-1734, fig.cap='Powerball Logo', out.width='40%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1734, fig.cap='Powerball Logo', out.width='60%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/powerball_logo.png")
 ```
 
@@ -13,7 +13,7 @@ knitr::include_graphics("01-basics-figures/powerball_logo.png")
 
 The Powerball Lottery is a multi-state lottery held twice a week. Most states participate (except Alabama, Alaska, Hawaii, Louisiana, Nevada, and Utah). A ticket costs two dollars. The player selects five different numbers from 1 to 69 for the white balls and one number from 1 to 26 for the red Powerball. If your five numbers match the five winning numbers and your Powerball matches the winning Powerball, then you can buy everything you want. The Powerball selected can be the same as one of the white balls selected. There are nine ways to win as shown in the graphic below.
 
-```{r nice-fig-1735, fig.cap='Ways to Win Powerball', out.width='80%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1735, fig.cap='Ways to Win Powerball', out.width='90%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/powerball_ways_to_win.png")
 ```
 
