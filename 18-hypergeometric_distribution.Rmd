@@ -17,7 +17,7 @@ A political science class has 12 liberal students and 8 conservative students. F
 
 We can envision a class with 12 liberal students and 8 conservative students in an urn model. Imagine 20 balls in an urn that are otherwise identical except that 12 balls are white representing liberal students and 8 balls are black representing conservative students. Concerning the political leanings of four students selected at random from the class, drawing four balls without replacement from this urn is equivalent. 
 
-```{r nice-fig-1801, fig.cap='Urn Model for Class Composition', out.width='60%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-1801, fig.cap='Urn Model for Class Composition', out.width='70%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/urn3_liberal_conservative.png")
 ```
 

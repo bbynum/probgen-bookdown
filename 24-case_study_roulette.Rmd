@@ -14,7 +14,7 @@ Suppose that you have $100 to make one bet. Would you make an even money bet, li
 
 To play roulette you place a bet and spin the wheel. If the wheel matches your bet you win; if not, you lose. Remember that a roulette wheel contains slots numbered 1 through 36, half of them red, half black and green 0 and 00 slots.  The table layout and payout schedule are below.
 
-```{r nice-fig-171, fig.cap='American Roulette Wheel and Layout', out.width='70%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-171, fig.cap='American Roulette Wheel and Layout', out.width='90%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/roulette_american_layout.png")
 ```
 
@@ -25,13 +25,13 @@ Note that European roulette as played in Monte Carlo only has the green zero and
 
 The payoff odds vary depending on your bet. The harder it is to win your bet, the greater the payoff odds. The payoff odds are shown in the table 
 
-```{r nice-fig-172, fig.cap='Roulette Payoff Odds', out.width='80%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-172, fig.cap='Roulette Payoff Odds', out.width='90%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/roulette_payoff_odds.png")
 ```
 
 Each player at the table will have different color chips and may make several bets at once by placing their chips in the right location as shown below.
 
-```{r nice-fig-173, fig.cap='Roulette Bet Positions', out.width='30%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-173, fig.cap='Roulette Bet Positions', out.width='50%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/roulette_bet_positions.png")
 ```
 
@@ -39,7 +39,7 @@ knitr::include_graphics("01-basics-figures/roulette_bet_positions.png")
 
 First, examine an even money bet, such as a $\$100$ bet on Red. The payout for Red bet is 1 to 1 meaning if you win you win $\$1$ for every $\$1$ bet. The probability distribution describing this bet is as follows. Since there are 18 red slots on the wheel the probability of winning a red bet is 18/38 while the probability of winning a single number bet is 1/38. If we let X represent the winnings the list of all the possible outcomes matched with their associated probabilities P(X) is called the probability distribution.
 
-```{r nice-fig-174, fig.cap='Roulette Even Money Disribution', out.width='70%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-174, fig.cap='Roulette Even Money Disribution', out.width='90%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/roulette_even_money_distribution.png")
 ```
 
@@ -73,7 +73,7 @@ For our simulation of 10,000 trials of $\$100$ red bet, our mean was $-\$6.52$, 
 
 Consider a long shot single number bet, such as a $\$100$ bet on the number 7. The single number bet (called a “straight”) has a payout of 35 to 1 meaning if you win you win $\$35$ for every $\$1$ bet. There is only one way to win so the probability of winning is 1/38. We complete the table below to find the probability distribution and expected value for $\$100$ bet on a single number.
 
-```{r nice-fig-176, fig.cap='Roulette Single Number Disribution', out.width='70%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-176, fig.cap='Roulette Single Number Disribution', out.width='90%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/roulette_single_number_distribution.png")
 ```
 
@@ -125,7 +125,7 @@ One nice rule for determining the roulette payoffs is the following formula we�
 ### Exercise - European Roulette
 European roulette as played in Monte Carlo, for example, is different than American roulette. In European roulette there is only a single zero…no double zero. In addition, in an even money bet such as a bet on red, if the ball lands on the green 0 on the first spin, then your bet is put “in prison” and gets to stay there one more round. In such a case, on the second round, if one of your spots comes up, instead of losing you get your bet back and on any other spot you lose. Here we examine the difference the single zero and the “in prison” rule has on the expectation.
 
-```{r nice-fig-178, fig.cap='European Roulette Wheel and Layout', out.width='60%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-178, fig.cap='European Roulette Wheel and Layout', out.width='80%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/roulette_european_layout.png")
 ```
 

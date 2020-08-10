@@ -14,13 +14,13 @@ We construct probability distributions and compute and interpret the mathematica
 Have you ever seen the show Deal or No Deal? If so, I feel sorry for you! We can get a sense of Deal or No Deal by searching for an online version one of which can be found at 
 http://www.gamesolo.com/flash-game/deal-or-no-deal.html .
 
-```{r nice-fig-801, fig.cap='Howie Mandel and Deal or No Deal', out.width='40%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-801, fig.cap='Howie Mandel and Deal or No Deal', out.width='60%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/deal_or_no_deal_howie.png")
 ```
 
 A player chooses one of 26 suitcases each containing a different amount of money from $\$0.01$ to $\$1,000,000$. The values below show the dollar amounts of the 26 suitcases.
 
-```{r nice-fig-802, fig.cap='Deal or No Deal Suitcases', out.width='60%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-802, fig.cap='Deal or No Deal Suitcases', out.width='70%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/deal_or_no_deal_suitcases.png")
 ```
 

@@ -9,7 +9,7 @@ set.seed(2018)
 
 In the game of craps, players can make a plethora of bets on the outcome of two dice. See the craps layout below.
 
-```{r nice-fig-179, fig.cap='Craps Layout', out.width='70%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r nice-fig-179, fig.cap='Craps Layout', out.width='80%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("01-basics-figures/craps_layout.png")
 ```
 
